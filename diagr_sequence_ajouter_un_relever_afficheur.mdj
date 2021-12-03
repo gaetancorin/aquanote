@@ -558,7 +558,7 @@
 												"$ref": "AAAAAAF9JD4qFRKDdaQ="
 											},
 											"edgePosition": 1,
-											"text": "2 : Afficher la page inscription"
+											"text": "2 : Afficher la page insertion"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -670,7 +670,7 @@
 												"$ref": "AAAAAAF9JD5zahKZviM="
 											},
 											"edgePosition": 1,
-											"text": "3 : inserer les informations d inscription"
+											"text": "3 : inserer les informations d insertion"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -1338,7 +1338,7 @@
 												"$ref": "AAAAAAF9JEbbwRNCxT4="
 											},
 											"edgePosition": 1,
-											"text": "9 : afficher page de relevé avec la donnée enregistrée",
+											"text": "9 : afficher page de relevé avec la nouvelle donnée enregistrée",
 											"wordWrap": true
 										},
 										{
@@ -1432,7 +1432,7 @@
 									"top": 784,
 									"width": 489,
 									"height": 140,
-									"text": "(4) scénario alternatif :\nCe scénario commence au point 4 du scénario nominal\n4.1 Le SI indique a l'utilisateur que les informations fournies ne sont pas correct\n4.2 L'uytilisateur saisit a nouveau les informations.\nDans ce scénario nominal on considère que les informations sont OK."
+									"text": "(4) scénario alternatif :\nCe scénario commence au point 4 du scénario nominal\n4.1 Le SI indique a l'utilisateur que les informations fournies ne sont pas correct\n4.2 L'utilisateur saisit a nouveau les informations.\nDans ce scénario nominal on considère que les informations sont OK."
 								},
 								{
 									"_type": "UMLNoteView",
@@ -1471,7 +1471,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF9FJfWZdV9/Eg="
 							},
-							"name": "Afficher la page inscription",
+							"name": "Afficher la page insertion",
 							"source": {
 								"$ref": "AAAAAAF9FJlLF9WtuCE="
 							},
@@ -1486,7 +1486,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF9FJfWZdV9/Eg="
 							},
-							"name": "inserer les informations d inscription",
+							"name": "inserer les informations d insertion",
 							"source": {
 								"$ref": "AAAAAAF9FJkQM9WNlTw="
 							},
@@ -1571,7 +1571,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF9FJfWZdV9/Eg="
 							},
-							"name": "afficher page de relevé avec la donnée enregistrée",
+							"name": "afficher page de relevé avec la nouvelle donnée enregistrée",
 							"source": {
 								"$ref": "AAAAAAF9FJlLF9WtuCE="
 							},
