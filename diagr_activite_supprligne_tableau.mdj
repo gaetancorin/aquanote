@@ -1306,7 +1306,7 @@
 											"top": 95,
 											"width": 327,
 											"height": 30,
-											"text": "demander une modification d'un enregistrement selectionner",
+											"text": "demander un changement d'une ligne selectionner",
 											"wordWrap": true
 										},
 										{
@@ -2897,7 +2897,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF9E9SZMjZTskw="
 							},
-							"name": "demander une modification d'un enregistrement selectionner",
+							"name": "demander un changement d'une ligne selectionner",
 							"kind": "acceptSignal"
 						}
 					]
