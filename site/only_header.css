@@ -1,0 +1,115 @@
+
+/* --- retirer css par default navigateur --*/
+
+body{
+    background-color: #f6f6f6;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400;    
+}
+h2{
+    margin: 0px;
+}
+
+/* ///////////-- HEADER --\\\\\\\\\\ */
+
+/* --------header top_nav------ */
+
+header div{
+    width: 100vw;
+    height: 8vw;
+    min-height: 50px;
+    max-height: 80px;
+    background-color: #deefff;
+    border-bottom: solid 3px black;
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    
+}
+
+header div h2{
+    margin-left: 8vw;
+    font-weight: 400;
+    align-self: center;
+    justify-self: start;
+    font-size: 1.2em;  
+}
+
+
+header div img{
+    width: 30px;
+    display: block;
+    margin-right: 5vw;
+    align-self: center;
+    justify-self: end;
+}
+
+header div p{
+    align-self: center;
+    justify-self: center;
+}
+
+
+/* ----- header bottom_nav ----*/
+
+nav ul{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    border-collapse: collapse;  
+
+}
+
+li{
+    padding: 0px;
+    flex-grow: 1;
+    list-style-type: none;
+    background-color: rgba(222, 239, 255, 0.5);
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;  
+    box-shadow: inset 0px 0px 15px rgba(0, 32, 138, 0.1); 
+}
+
+nav ul li:first-of-type{
+    background-color: rgba(222, 239, 255, 0);
+    border: none;
+    box-shadow: none;
+}
+
+li  a img{
+    width: 6vw;
+    max-width: 40px;
+    display: block;
+    padding: 3vw 0px;
+    margin: 0 auto;
+
+}
+
+/*////////--  HEADER RESPONSIVE --\\\\\\\\ */
+
+@media screen and (min-width: 600px){
+
+    /* header top_nav-responsive */
+
+    header div img{
+        width: 40px;
+
+    }
+
+    header div h2{
+        font-size: 1.5em;  
+    }
+
+    /* header bottom_nav-responsive */
+
+    li  a img{
+        max-width: 40px;
+        padding: 30px 0px;
+    
+    }
+
+}
+
