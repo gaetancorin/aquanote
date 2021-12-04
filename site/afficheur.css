@@ -16,18 +16,21 @@ header div{
     background-color: #deefff;
     border-bottom: solid 3px black;
     
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     
 }
 
 header div h2{
     margin-left: 10vw;
-    font-weight: 400;
- 
-    
+    font-weight: 400;  
+}
+
+
+header div img{
+    width: 40px;
+    display: block;
+    margin-right: 5vw;
 }
 
 nav ul{
@@ -65,8 +68,3 @@ li  a img{
 
 }
 
-div img{
-    width: 40px;
-    display: block;
-    margin-right: 5vw;
-}
