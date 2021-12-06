@@ -162,22 +162,26 @@ label[class="switch"] {
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
+    outline: 4px solid black;
+    outline-offset: -4px;
   }
   
   .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
+    height: 34px;
+    width: 34px;
+    left: 0px;
+    bottom: 0px;
+    background-color: #b92323;
     -webkit-transition: .4s;
     transition: .4s;
+    outline: 4px solid black;
+    outline-offset: -4px;
   }
   
-  input:checked + .slider {
-    background-color: #2196F3;
+  input:checked + .slider:before {
+    background-color: #2c82db;
   }
   
   input:focus + .slider {
