@@ -126,11 +126,21 @@ form{
 form > div{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
 }
 
+label[for="date"]{
+    font-weight: 500;
+}
+
 input[type="date"]{
-    height: 50px;
+    height: 40px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
 }
 
 p{
@@ -206,5 +216,14 @@ label[class="switch"] {
     border-radius: 50%;
   }
 
-
+/* /////// CONTENU AFFICHEUR-responsive\\\\\\\\ */
   
+@media screen and (min-width: 600px){
+
+input[type="date"]{
+    font-size: 20px;
+    border-bottom: solid 1px black;
+
+}
+
+}
