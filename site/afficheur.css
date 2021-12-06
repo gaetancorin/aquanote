@@ -11,6 +11,8 @@ h2{
     margin: 0px;
 }
 
+input{border: none;}
+
 /* ///////////-- HEADER --\\\\\\\\\\ */
 
 /* --------header top_nav------ */
@@ -116,7 +118,7 @@ li  a img{
 /* /////// CONTENU AFFICHEUR \\\\\\\\ */
 
 form{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 10vw auto 0 auto;
     text-align: center;
     width: 90%;
@@ -134,17 +136,18 @@ label[for="date"]{
     font-weight: 500;
 }
 
+
 input[type="date"]{
-    height: 40px;
-    border: none;
+    height: 30px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
+    border-bottom: solid 1px black;
 }
 
-p{
-    font-size: 16px;
+form div div p{
+    font-size: 14px;
     font-weight: 500;
     margin: 0;
 }
@@ -224,6 +227,14 @@ input[type="date"]{
     font-size: 20px;
     border-bottom: solid 1px black;
 
+}
+
+/* ---bouton explication responsive--- */
+
+form div div p{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
 }
 
 }
