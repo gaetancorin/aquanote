@@ -11,7 +11,6 @@ h2{
     margin: 0px;
 }
 
-input{border: none;}
 
 /* ///////////-- HEADER --\\\\\\\\\\ */
 
@@ -141,6 +140,7 @@ label[for="date"]{
 
 
 input[type="date"]{
+    border: none;
     height: 30px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -291,4 +291,23 @@ input[type="text"]{
     padding: 3%;
     font-size: 15px;
     font-weight: 500;
+}
+
+.wrap_data_button{
+    width: 160px;
+    height: 60px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+
+div input[type="submit"]{
+    width: calc(160px - 20px);
+    height: 60px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    background-color: #2c82d2;
+    color: #ffffff;
+    box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.25);
 }
