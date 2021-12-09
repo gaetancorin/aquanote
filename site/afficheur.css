@@ -121,7 +121,7 @@ form{
     margin: calc(25px + 2vw) auto 0 auto;
     text-align: center;
     width: 90%;
-    min-width: 333px;
+    min-width: 350px;
     max-width: 750px;
 }
 
@@ -247,7 +247,7 @@ form div div p{
 form > div:nth-child(2){
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 
@@ -260,9 +260,14 @@ form > div:nth-child(2){
     max-width: 210px;
     min-height: 60px;
     max-height: 78px;
+    margin-left: 10px;
+    margin-right: 10px;
 
     background-color: white;
     text-align: start;
+
+    margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 12px;
 }
 
@@ -318,6 +323,9 @@ input[type="text"]{
     max-height: 78px;
 
     text-align: center;
+
+    margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 12px;
 }
 
