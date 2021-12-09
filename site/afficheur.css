@@ -310,7 +310,8 @@ input[type="text"]{
     position: relative;
     width: min-content;
     padding: 3%;
-    font-size: 15px;
+    font-size: calc(10px + 1.1vw);
+    color: rgb(49, 49, 49);
     font-weight: 500;
 }
 
@@ -339,7 +340,7 @@ div input[type="submit"]{
     min-height: 60px;
     max-height: 78px;
 
-    font-size: 15px;
+    font-size: calc(10px + 1.1vw);
     font-weight: 500;
     color: #ffffff;
     border-radius: 10px;
