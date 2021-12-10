@@ -11,12 +11,16 @@ h2{
     margin: 0px;
 }
 
+p{
+    margin: 0px;
+}
+
 
 /* ///////////-- HEADER --\\\\\\\\\\ */
 
-/* --------header top_nav------ */
+/* --------header header_top------ */
 
-header div{
+.header_top{
     width: 100vw;
     height: 55px;
     background-color: #deefff;
@@ -27,7 +31,7 @@ header div{
     
 }
 
-header div h2{
+.aquarium_name{
     margin-left: 8vw;
     font-weight: 400;
     align-self: center;
@@ -35,8 +39,12 @@ header div h2{
     font-size: 1.1em;  
 }
 
+.logo{
+    align-self: center;
+    justify-self: center;
+}
 
-header div img{
+.hamburger_header{
     width: 34px;
     display: block;
     margin-right: 5vw;
@@ -44,16 +52,11 @@ header div img{
     justify-self: end;
 }
 
-header div p{
-    align-self: center;
-    justify-self: center;
-}
+
+/* ----- header_bottom ----*/
 
 
-/* ----- header bottom_nav ----*/
-
-
-nav ul{
+.header_bottom{
     padding: 0px;
     margin: 0px;
     display: flex;
@@ -62,7 +65,7 @@ nav ul{
 
 }
 
-li{
+.navigation{
     padding: 0px;
     flex-grow: 1;
     list-style-type: none;
@@ -70,24 +73,24 @@ li{
     box-shadow: inset 0px 0px 15px rgba(0, 32, 138, 0.1); 
 }
 
-nav ul li:first-of-type{
+.navigation:first-of-type{
     background-color: rgba(222, 239, 255, 0);
     border: none;
     box-shadow: none;
 }
 
-nav ul li:nth-of-type(2){
+.navigation:nth-of-type(2){
     border-left: solid 2px black;
     border-right: solid 2px black;
     border-bottom: solid 2px black; 
 }
 
-nav ul li:nth-of-type(3){
+.navigation:nth-of-type(3){
     border-right: solid 2px black;
     border-bottom: solid 2px black; 
 }
 
-li  a img{
+.navigation  a img{
     width: 6vw;
     max-width: 40px;
     display: block;
@@ -100,24 +103,23 @@ li  a img{
 
 @media screen and (min-width: 600px){
 
-    /* header top_nav-responsive */
+    /* header_top /// responsive */
 
-    header div{
+    .header_top{
         height: 60px;
     }
 
-    header div img{
+    .hamburger_header{
         width: 38px;
-
     }
 
-    header div h2{
+    .aquarium_name{
         font-size: 1.3em;  
     }
 
-    /* header bottom_nav-responsive */
+    /* header_bottom /// responsive */
 
-    li  a img{
+    .navigation a img{
         max-width: 32px;
         padding: 12px 0px;
     
@@ -125,10 +127,13 @@ li  a img{
 
 }
 
+
+
+
 /* /////// CONTENU AFFICHEUR \\\\\\\\ */
 
 form{
-     border: 1px solid black;
+     /* border: 1px solid black; */
     margin: calc(25px + 2vw) auto 0 auto;
     text-align: center;
     width: 90%;
@@ -136,7 +141,15 @@ form{
     max-width: 600px;
 }
 
-form > div:nth-child(1){
+@media screen and (min-width: 750px){
+    form{
+        max-width: 750px;
+    }
+}
+
+/*////// DATE ET CHECKBOX \\\\\\\\*/
+
+.date_and_checkbox{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -160,30 +173,30 @@ input[type="date"]{
     border-bottom: solid 1px black;
 }
 
-form div div p{
+.explain_checkbox{
     font-size: 12px;
     font-weight: 600;
     margin: 0;
     margin-bottom: 5px;
 }
 
-/* ---------- Bouton explication ---------*/
+/* ---------- Bouton checkbox en slider ------*/
 /* represente la partie cliquable caché derrière slider*/
-label[class="switch"] {
+.label_click {
     position: relative;
     display: inline-block;
     width: 18px;
     height: 34px;
   }
   /* transforme le label en checkbox mais opacité 0 */
-  .switch input { 
+  input[type="checkbox"] { 
     opacity: 0;
     width: 0;
     height: 0;
   }
   
   /* represente le bouton visuel mais aucun lien avec checkbox */
-  .slider {
+  .fake_button {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -191,13 +204,14 @@ label[class="switch"] {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .6s;
-    transition: .6s;
     outline: 2px solid black;
     outline-offset: -2px;
+    border-radius: 18px;
+    -webkit-transition: .6s;
+    transition: .6s;
   }
   
-  .slider:before {
+  .fake_button:before {
     position: absolute;
     content: "";
     height: 18px;
@@ -205,58 +219,39 @@ label[class="switch"] {
     left: 0px;
     bottom: 0px;
     background-color: #b92323;
-    -webkit-transition: .6s;
-    transition: .6s;
     outline: 2px solid black;
     outline-offset: -2px;
+    border-radius: 50%;
+    -webkit-transition: .6s;
+    transition: .6s;
   }
   
-  input:checked + .slider:before {
-    background-color: #2c82db;
-  }
-  
-  input:focus + .slider {
+  input:focus + .fake_button {
     box-shadow: 0 0 1px #2196F3;
   }
   
-  input:checked + .slider:before {
+  input:checked + .fake_button:before {
     -webkit-transform: translatey(-16px);
     -ms-transform: translatey(-16px);
     transform: translatey(-16px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 18px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
+    background-color: #2c82db;
+
   }
 
-/* /////// CONTENU AFFICHEUR-responsive\\\\\\\\ */
+/* /////// DATE ET CHECKBOX-responsive\\\\\\\\ */
   
 @media screen and (min-width: 600px){
 
-input[type="date"]{
-    font-size: 20px;
-    border-bottom: solid 1px black;
-
-}
-
-@media screen and (min-width: 750px){
-    form{
-        max-width: 750px;
+    input[type="date"]{
+        font-size: 20px;
+        border-bottom: solid 1px black;  
     }
-}
-
 /* -----bouton explication responsive----- */
-
-form div div p{
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0;
-}
+    .explain_checkbox{
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+    }
 
 }
 
@@ -298,6 +293,30 @@ form > div:nth-child(2){
     border-bottom: solid 10px #b8b8b8;
     outline: 9px solid white;
     outline-offset: -9px;
+}
+
+.pourcentage{
+    width: calc(100px + 15vw);
+    height: calc(40px + 5vw);
+    min-width: 160px;
+    max-width: 210px;
+    min-height: 60px;
+    max-height: 78px;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    position: absolute;
+    text-align: end;
+}
+
+.pourcentage p{
+    display: inline-block;
+    font-size: 25px; 
+    font-weight: 400; 
+    align-self: flex-end;
+    padding: 6px 7px;
+
 }
 
 
@@ -384,11 +403,6 @@ form > div:nth-child(3){
 
 
 input[id="notation"]{
-/* Mode blanc avec trait et sans border     */
-/* border-bottom: solid 5px #b8b8b8;
-outline: 3px solid white;
-outline-offset: -3px;
-background-color: white; */
     display: inline-block;
     height: 30px;
     flex-grow: 1;
@@ -399,6 +413,13 @@ background-color: white; */
 
 @media screen and (min-width: 750px){
 
+    .pourcentage p{
+        font-size: 30px; 
+        font-weight: 400; 
+
+    
+    }
+
     form > div:nth-child(3){
         width: calc(320px + 45vw);
         max-width: 650px;
@@ -407,7 +428,7 @@ background-color: white; */
 
     .label_notation{
         font-size: 16px;
-        margin-right: 10px;
+        margin-right: 20px;
     }
 
     input[id="notation"]{
