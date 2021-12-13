@@ -174,14 +174,14 @@
 											"left": 118,
 											"top": 80,
 											"width": 1,
-											"height": 617
+											"height": 561
 										}
 									],
 									"font": "Arial;15;0",
 									"left": 72,
 									"top": 40,
 									"width": 91.68212890625,
-									"height": 657,
+									"height": 601,
 									"nameCompartment": {
 										"$ref": "AAAAAAF9JQspEA/Mk5s="
 									},
@@ -290,14 +290,14 @@
 											"left": 516,
 											"top": 80,
 											"width": 1,
-											"height": 609
+											"height": 553
 										}
 									],
 									"font": "Arial;15;0",
 									"left": 480,
 									"top": 40,
 									"width": 72.736328125,
-									"height": 649,
+									"height": 593,
 									"nameCompartment": {
 										"$ref": "AAAAAAF9JQs8Wg/s4To="
 									},
@@ -406,14 +406,14 @@
 											"left": 892,
 											"top": 80,
 											"width": 1,
-											"height": 609
+											"height": 553
 										}
 									],
 									"font": "Arial;15;0",
 									"left": 856,
 									"top": 40,
 									"width": 72.736328125,
-									"height": 649,
+									"height": 593,
 									"nameCompartment": {
 										"$ref": "AAAAAAF9JQtQJhAMgCM="
 									},
@@ -1654,8 +1654,8 @@
 										"$ref": "AAAAAAF9JQp55g+7tVg="
 									},
 									"font": "Arial;15;0",
-									"left": 128,
-									"top": 736,
+									"left": 120,
+									"top": 680,
 									"width": 409,
 									"height": 93,
 									"text": "(9) scénario d'erreur :\nLe serveur de la base de donnée ne répond pas\n9.1 Le SI indique au visiteur que la base de donnée ne répond pas\nLe scénario se termine a ce point"

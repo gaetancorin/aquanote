@@ -1428,8 +1428,8 @@
 										"$ref": "AAAAAAF9FJfWZtV+Q/M="
 									},
 									"font": "Arial;15;0",
-									"left": 144,
-									"top": 784,
+									"left": 120,
+									"top": 672,
 									"width": 489,
 									"height": 140,
 									"text": "(4) scénario alternatif :\nCe scénario commence au point 4 du scénario nominal\n4.1 Le SI indique a l'utilisateur que les informations fournies ne sont pas correct\n4.2 L'utilisateur saisit a nouveau les informations.\nDans ce scénario nominal on considère que les informations sont OK."
@@ -1441,8 +1441,8 @@
 										"$ref": "AAAAAAF9FJfWZtV+Q/M="
 									},
 									"font": "Arial;15;0",
-									"left": 656,
-									"top": 784,
+									"left": 632,
+									"top": 672,
 									"width": 401,
 									"height": 113,
 									"text": "(8) scénario d'erreur :\nLe serveur de la base de donnée ne répond pas\n8.1 Le SI indique a l'utilisateur que la base de donnée ne répond pas\nLe scénario se termine a ce point"
