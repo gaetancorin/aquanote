@@ -4333,7 +4333,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 393,
+									"left": 398,
 									"top": 508,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -4354,7 +4354,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 397,
+									"left": 402,
 									"top": 494,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -4375,7 +4375,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 384,
+									"left": 389,
 									"top": 537,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -4459,7 +4459,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 555,
+									"left": 565,
 									"top": 555,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -4479,7 +4479,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 556,
+									"left": 567,
 									"top": 542,
 									"height": 13,
 									"alpha": -0.7853981633974483,
@@ -4499,7 +4499,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 551,
+									"left": 562,
 									"top": 583,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -4549,7 +4549,7 @@
 								"$ref": "AAAAAAF8/zbsUrmKhxc="
 							},
 							"lineStyle": 1,
-							"points": "202:476;576:583",
+							"points": "202:476;587:583",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF9ADhxawKJSto="
@@ -9952,11 +9952,11 @@
 											"fillColor": "#e4ffe4",
 											"fontColor": "#ff0000",
 											"font": "Arial;15;1",
-											"left": 516,
+											"left": 520,
 											"top": 596,
-											"width": 253,
+											"width": 272,
 											"height": 15,
-											"text": "Afficher section diagramme tableau"
+											"text": "Afficher section diagramme calendrier"
 										},
 										{
 											"_type": "LabelView",
@@ -9993,9 +9993,9 @@
 									"fillColor": "#e4ffe4",
 									"fontColor": "#ff0000",
 									"font": "Arial;15;0",
-									"left": 511,
+									"left": 515,
 									"top": 589,
-									"width": 264.23828125,
+									"width": 283.427734375,
 									"height": 27,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF9ACvs3OwlU/k="
@@ -10107,7 +10107,7 @@
 							"containerChangeable": true,
 							"left": 456,
 							"top": 584,
-							"width": 373,
+							"width": 400,
 							"height": 38,
 							"nameCompartment": {
 								"$ref": "AAAAAAF9ACvs3OwkTPo="
@@ -13779,7 +13779,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8/zEu3GvkChc="
 					},
-					"name": "Afficher section diagramme tableau"
+					"name": "Afficher section diagramme calendrier"
 				},
 				{
 					"_type": "UMLUseCase",
