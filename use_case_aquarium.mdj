@@ -4333,8 +4333,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 375,
-									"top": 509,
+									"left": 393,
+									"top": 508,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -4354,8 +4354,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 379,
-									"top": 495,
+									"left": 397,
+									"top": 494,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -4375,8 +4375,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 366,
-									"top": 538,
+									"left": 384,
+									"top": 537,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -4397,7 +4397,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 231,
-									"top": 464,
+									"top": 462,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -4417,8 +4417,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 237,
-									"top": 452,
+									"left": 236,
+									"top": 450,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -4438,8 +4438,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 218,
-									"top": 489,
+									"left": 219,
+									"top": 487,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -4459,8 +4459,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 520,
-									"top": 554,
+									"left": 555,
+									"top": 555,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -4479,8 +4479,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 522,
-									"top": 541,
+									"left": 556,
+									"top": 542,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -4499,8 +4499,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 516,
-									"top": 582,
+									"left": 551,
+									"top": 583,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -4549,7 +4549,7 @@
 								"$ref": "AAAAAAF8/zbsUrmKhxc="
 							},
 							"lineStyle": 1,
-							"points": "202:477;541:583",
+							"points": "202:476;576:583",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF9ADhxawKJSto="
@@ -9735,7 +9735,7 @@
 											"top": 198,
 											"width": 213,
 											"height": 15,
-											"text": "afficher section afficheur"
+											"text": "afficher section insertion"
 										},
 										{
 											"_type": "LabelView",
@@ -9952,11 +9952,11 @@
 											"fillColor": "#e4ffe4",
 											"fontColor": "#ff0000",
 											"font": "Arial;15;1",
-											"left": 504,
+											"left": 516,
 											"top": 596,
-											"width": 197,
+											"width": 253,
 											"height": 15,
-											"text": "Afficher section diagramme"
+											"text": "Afficher section diagramme tableau"
 										},
 										{
 											"_type": "LabelView",
@@ -9993,9 +9993,9 @@
 									"fillColor": "#e4ffe4",
 									"fontColor": "#ff0000",
 									"font": "Arial;15;0",
-									"left": 499,
+									"left": 511,
 									"top": 589,
-									"width": 207.55615234375,
+									"width": 264.23828125,
 									"height": 27,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF9ACvs3OwlU/k="
@@ -10107,7 +10107,7 @@
 							"containerChangeable": true,
 							"left": 456,
 							"top": 584,
-							"width": 293,
+							"width": 373,
 							"height": 38,
 							"nameCompartment": {
 								"$ref": "AAAAAAF9ACvs3OwkTPo="
@@ -13779,7 +13779,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8/zEu3GvkChc="
 					},
-					"name": "Afficher section diagramme"
+					"name": "Afficher section diagramme tableau"
 				},
 				{
 					"_type": "UMLUseCase",
@@ -14015,7 +14015,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8/zEu3GvkChc="
 					},
-					"name": "afficher section afficheur"
+					"name": "afficher section insertion"
 				},
 				{
 					"_type": "UMLUseCase",
