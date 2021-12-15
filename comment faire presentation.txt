@@ -2,33 +2,42 @@ Objectif:montrer ses competences, pas presenter le projet
 
 PRESENTATION PERSONNELLE
 
-qui je suis, ce que je fais la
+	qui je suis, ce que je fais la
 
 CAHIER DES CHARGES
 
-contexte
-cible/utilisation
-swot
+	contexte
+	cible/utilisation
+	swot
 
 ANALYSE FONCTIONNELLE
 
-UML
-Maquettage
+	UML
+	Maquettage
 
 CONCEPTION
-MCD
-MLD
-(presenter requete de structure(creation table avec cle primaire, la cle etrangere sous format code)
+	MCD
+	MLD
+	(presenter requete de structure(creation table avec cle primaire, la cle etrangere sous format code)
 
-outil technique(html pour tel raison, css pour tel raison etc...)
 
-expliqué 1 ou 2 fonctionnalitées d'un point de vue code
+	outil technique(html pour tel raison, css pour tel raison etc...)
+
+	expliqué 1 ou 2 fonctionnalitées d'un point de vue code
 
 
 
 truc a savoir:
-une entité a un nom et des attribut
-suppression en cascade
-tuple= enregistrement(bdd)
-directed association==lien d heritage(utiliser ce mot)
-le diagramme d' activité est un processus algorithmique=permet de reflechir de manière algorithmiquement comment fonctionne ma fonctionnalité
+
+swot=weakness et pas weaknesses
+
+BDD=	une entité a un nom et des attributs
+	la cle primaire permet de faire le compte des différents enregistrements
+	suppression en cascade
+	tuple= enregistrement
+
+UML=	directed association==lien d heritage(utiliser ce mot)
+	le diagramme d' activité est un processus algorithmique=permet de reflechir de manière algorithmiquement comment fonctionne ma fonctionnalité
+	le diagramme de sequence est un processus qui permet de reflechir de maniere chronologique
+	etat initial, etat final
+
