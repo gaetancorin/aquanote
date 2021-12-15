@@ -40,4 +40,9 @@ UML=	directed association==lien d heritage(utiliser ce mot)
 	le diagramme d' activité est un processus algorithmique=permet de reflechir de manière algorithmiquement comment fonctionne ma fonctionnalité
 	le diagramme de sequence est un processus qui permet de reflechir de maniere chronologique
 	etat initial, etat final
+	cas nominal= le diagramme lorsque tout se passe bien
+
+
+SI= systeme d'information(pas SY)
+
 
