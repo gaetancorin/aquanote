@@ -134,7 +134,7 @@ a{
 }
 
 
-/* ////// RESPONSIVE ASIDE //// */
+/* ////// RESPONSIVE FLEXBOX ASIDE //// */
 #section_grid_responsive{
     display: grid;
     grid-template-columns: 1fr;
@@ -195,11 +195,31 @@ aside{
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-.a_aside_hamb:hover{
-    background-color: #deefff;
-    border: 2px solid #2c82d2;
+.img_fish_hamb{
+    display: none;
+    padding-right: 8px;
 }
 
+.a_aside_hamb:hover{
+    background-color: #deefff;
+    outline: solid 2px #2c82d2;
+    outline-offset: -2px;
+    position: relative;
+}
+
+/*  aside hamburger gauche responsive */
+
+@media screen and (min-width: 1200px){
+    .img_fish_hamb{
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 1650px){
+    .img_fish_hamb{
+        padding-left: 2vw;
+    }
+}
 
 
 /* /////// CONTENU AFFICHEUR \\\\\\\\ */
