@@ -1,5 +1,5 @@
 
-/* --- retirer css par default navigateur --*/
+/* --- RETIRER CSS PAR DEFAUT NAVIGATEUR --*/
 
 body{
     background-color: #f6f6f6;
@@ -21,10 +21,10 @@ a{
 }
 
 
-/* ///////////-- HEADER --\\\\\\\\\\ */
+/* ///////////-- HEADER TOP--\\\\\\\\\\ */
 
 
-/* --------header_top------ */
+/* --------header top------ */
 
 .header_top{
     width: 100vw;
@@ -58,71 +58,9 @@ a{
     justify-self: end;
 }
 
-
-/* ----- header_bottom ----*/
-
-
-.header_bottom{
-    padding: 0px;
-    margin: 0px;
-    display: flex;
-    flex-direction: row;
-    border-collapse: collapse;  
-
-}
-
-.navigation{
-    padding: 0px;
-    flex-grow: 1;
-    list-style-type: none;
-    background-color: rgba(222, 239, 255, 0.5); 
-    box-shadow: inset 0px 0px 15px rgba(0, 32, 138, 0.1); 
-}
-
-.navigation:first-of-type{
-    background-color: rgba(222, 239, 255, 0);
-    border: none;
-    box-shadow: none;
-}
-
-.navigation:nth-of-type(2){
-    border-left: solid 2px black;
-    border-right: solid 2px black;
-    border-bottom: solid 2px black;
-    transition: 0.4s;
-    box-shadow: none;
-
-}
-
-
-.navigation:nth-of-type(3) {
-    border-right: solid 2px black;
-    border-bottom: solid 2px black;
-    transition: 0.4s;
-    box-shadow: none;
-
-}
-
-.navigation:nth-of-type(2):hover,
-.navigation:nth-of-type(3):hover{
-    transition: 0.4s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 12px 16px 0px;
-}
-
-.navigation a img{
-    width: 6vw;
-    max-width: 40px;
-    display: block;
-    padding: 2.5vw 0px;
-    margin: 0 auto;
-
-}
-
-/*////////--  HEADER RESPONSIVE --\\\\\\\\ */
+/* --------header top responsive------ */
 
 @media screen and (min-width: 600px){
-
-    /* header_top /// responsive */
 
     .header_top{
         height: 60px;
@@ -135,20 +73,12 @@ a{
     .aquarium_name{
         font-size: 1.3em;  
     }
-
-    /* header_bottom /// responsive */
-
-    .navigation a img{
-        max-width: 32px;
-        padding: 12px 0px;
-    
-    }
-
 }
 
 
-/* ////// RESPONSIVE FLEXBOX ASIDE //// */
-#section_grid_responsive{
+/* ////// RESPONSIVE DES ASIDE PAR GRID //// */
+/* ------tous les asides none---- */
+#responsive_des_aside{
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -157,48 +87,49 @@ aside{
     display: none;
 }
 
-
+/* ------aside_gauche_hbg actif---- */
 @media screen and (min-width: 1000px){
-    #section_grid_responsive{
+    #responsive_des_aside{
         grid-template-columns: 1fr 3fr;
     }
     
-    #aside_hamburger_g{
+    #aside_gauche_hamb{
         display: block;
         order: 1;
         box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
         min-height: calc(100vh - 62px)
     }
 
-    .section_center{
+    .section_centrale{
         order: 2;
     }
 }
 
+/* aside_gauche_hbg / aside_droite_pub actif-- */
 @media screen and (min-width: 1500px){
-    #section_grid_responsive{
+    #responsive_des_aside{
         grid-template-columns: 1fr 3fr 1fr;
     }
     
-    #aside_hamburger_g{
+    #aside_gauche_hamb{
         display: block;
         order: 1;
         box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
         min-height: calc(100vh - 62px)
     }
 
-    #aside_publicite{
+    #aside_droite_pub{
         order: 3;
         display: block;
         min-height: calc(100vh - 62px)
     }
 
-    .section_center{
+    .section_centrale{
         order: 2;
     }
 }
 
-/* //////// ASIDE HAMBURGER GAUCHE\\\\\\ */
+/* //////// ASIDE GAUCHE HAMBURGER\\\\\\ */
 
 .ul_aside_hamb{
     list-style-type: none;
@@ -211,7 +142,6 @@ aside{
     display: block;
     border: 1px solid #ddd;
     margin-top: -1px;
-    background-color: #f6f6f6;
     padding: 17px 5px 17px 12px;
     cursor: pointer;
     font-size: 18px;
@@ -228,7 +158,6 @@ aside{
     background-color: #deefff;
     outline: solid 2px #2c82d2;
     outline-offset: -2px;
-    position: relative;
 }
 
 /*  aside hamburger gauche responsive */
@@ -245,7 +174,7 @@ aside{
     }
 }
 
-/* //////// ASIDE PUBLICITE DROITE \\\\\\ */
+/* //////// ASIDE DROITE PUBLICITE \\\\\\ */
 
 .box_publicite{
     width: 290px;
@@ -258,14 +187,14 @@ aside{
     flex-direction: column;
 }
 
-.titre_box_pub{
+.zone_titre_top_pub{
     width: 290px;
     height:40px;
     background-color: #deefff;
     border-radius: 17px;
 }
 
-.text_titre_box_pub{
+.text_titre_top_pub{
     text-align: center;
     padding-top: 10px;
     font-size: 18px;
@@ -297,8 +226,75 @@ aside{
     
 }
 
-/* /////// CONTENU AFFICHEUR \\\\\\\\ */
+/* /////// SECTION CENTRALE \\\\\\\\ */
+/* ///////  AFFICHEUR \\\\\\\\ */
 
+/* /////// HEADER TOP AFFICHEUR \\\\\\\\ */
+
+.header_top_afficheur{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    border-collapse: collapse;  
+}
+
+.navigation{
+    padding: 0px;
+    flex-grow: 1;
+    list-style-type: none;
+    background-color: rgba(222, 239, 255, 0.5); 
+    box-shadow: inset 0px 0px 15px rgba(0, 32, 138, 0.1); 
+}
+
+.navigation:first-of-type{
+    background-color: rgba(222, 239, 255, 0);
+    border: none;
+    box-shadow: none;
+}
+
+.navigation:nth-of-type(2){
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    transition: 0.4s;
+    box-shadow: none;
+}
+
+
+.navigation:nth-of-type(3) {
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    transition: 0.4s;
+    box-shadow: none;
+}
+
+.navigation:nth-of-type(2):hover,
+.navigation:nth-of-type(3):hover{
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 12px 16px 0px;
+}
+
+.navigation a img{
+    width: 6vw;
+    max-width: 40px;
+    display: block;
+    padding: 2.5vw 0px;
+    margin: 0 auto;
+
+}
+
+/*  header top afficheur RESPONSIVE*/
+
+@media screen and (min-width: 600px){
+    .navigation a img{
+        max-width: 32px;
+        padding: 12px 0px; 
+    }
+}
+
+
+/* /////// FORMULAIRE AFFICHEUR \\\\\\\\ */
 form{
     margin: calc(25px + 2vw) auto 0 auto;
     text-align: center;
@@ -410,7 +406,6 @@ input[type="date"]{
 
     input[type="date"]{
         font-size: 20px;
-        border-bottom: solid 1px black;  
     }
 /* -----bouton explication responsive----- */
     .explain_checkbox{
@@ -572,7 +567,7 @@ form > div:nth-child(3){
     flex-direction: row;
     width: calc(210px + 30vw);
     min-width: 330px;
-    margin: 5px auto 50px auto;
+    margin: 5px auto 0 auto;
 }
 
 .label_notation{
@@ -598,7 +593,7 @@ input[id="notation"]{
     form > div:nth-child(3){
         width: calc(320px + 45vw);
         max-width: 650px;
-        margin: 15px auto 50px auto;
+        margin: 15px auto 0 auto;
     }
 
     .label_notation{
