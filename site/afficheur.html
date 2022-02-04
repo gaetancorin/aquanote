@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <!------ CONTENU HEADER--->
+<!------ CONTENU HEADER--->
 
     <header>
         <div class="header_top">
@@ -21,115 +21,178 @@
             <p class="logo">logo</p>
             <img class="hamburger_header" src="./image_site/parametre_header.svg">
         </div>
-
-
-        <nav>
-            <ul  class="header_bottom">
-                <li class="navigation">
-                    <a href="https://www.google.com/">
-                    <img src="./image_site/icone_afficheur.svg">
-                    </a>
-                </li>
-                <li class="navigation">
-                    <a href="https://www.google.com/">
-                    <img src="./image_site/icone_diagramme.svg">
-                    </a>
-                </li>
-                <li class="navigation">
-                    <a href="https://www.google.com/">
-                    <img src="./image_site/icone_tableau.svg">
-                    </a>
-                </li>
-            </ul>
-        </nav>    
     </header>
 
-    <!-- CONTENU AFFICHEUR-->
 
+    <section id="section_grid_responsive">
 
-    <!-- Date et checkbox -->
-    <section>
-    <form method="get">
-        <div class="date_and_checkbox">
-            <div>
-                <label for="date">Date :</label>
-                <input type="date" id="date" name="date_afficheur">
-            </div>
+<!-- ASIDE HAMBURGER GAUCHE-->
+        <aside id="aside_hamburger_g">
+            <ul class="ul_aside_hamb">
+                
+                <li>
+                    <a class="a_aside_hamb" href="https://www.google.com/">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_1.svg">
+                        Aquarium 1       
+                    </a>
+                </li>
+                <li>
+                    <a class="a_aside_hamb" href="https://www.google.com/">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_2.svg">
+                        Aquarium 2       
+                    </a>
+                </li>                <li>
+                    <a class="a_aside_hamb" href="https://www.google.com/">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_3.svg">
+                        Créer nouvel aquarium      
+                    </a>
+                </li>                <li>
+                    <a class="a_aside_hamb" href="https://www.google.com/">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_4.svg">
+                        Changer nom de l' aquarium       
+                    </a>
+                </li>                <li>
+                    <a class="a_aside_hamb" href="https://www.google.com/">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_5.svg">
+                        Supprimer un aquarium       
+                    </a>
+                </li>                <li>
+                    <a class="a_aside_hamb" href="https://www.google.com/">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_6.svg">
+                        Déconnection       
+                    </a>
+                </li>
 
-            <div>
-                <p class="explain_checkbox">explication</p>              
-                <label class="label_click">
-                    <input type="checkbox" checked>
-                    <span class="fake_button"></span>
-                </label>
-            </div>
-        </div>
+            </ul>
+        </aside>
 
-        <!-- Contenu flex wrap data -->
-        
-        <div>
-            <div class="wrap_data">
-                <span class="trait_noir"></span>
-                <input type="text" id="data_temperature" >
-                <label for="data_temperature" class="label_wrap_data">°C
-                </label>
+<!-- ASIDE PUBLICITE DROITE-->
+        <aside id="aside_publicite">
+            <div class="box_publicite">
+                
+                <div class="titre_box_pub">
+                    <p class="text_titre_box_pub">Liens pratiques</p>
+                </div>
+
+                <a class="lien_pub" href="https://www.amazon.fr/">
+                    <img class="img_1_aside_pub" src="./image_site/image_malette_1_transparent.png" alt="mallette de test a goutte JBl lien Amazon">
+                </a>
+                <a  class="lien_pub" href="https://www.amazon.fr/">
+                    <img class="img_2_aside_pub" src="./image_site/image_malette_2_transparent.png" alt="mallette de test a goutte JBl lien Amazon">
+                </a>
+
                 
             </div>
-            <div class="wrap_data">
-                <span class="trait_noir"></span>
-                <input type="text" id="data_ph" >
-                <label for="data_ph" class="label_wrap_data">PH
-                </label>
-            </div>
-            <div class="wrap_data">
-                <span class="trait_noir"></span>
-                <input type="text" id="temperature" >
-                <label for="temperature" class="label_wrap_data">GH
-                </label>
-            </div>
-            <div class="wrap_data">
-                <span class="trait_noir"></span>
-                <input type="text" id="temperature" >
-                <label for="temperature" class="label_wrap_data">KH
-                </label>
-            </div>
-            <div class="wrap_data">
-                <span class="trait_noir"></span>
-                <input type="text" id="temperature" >
-                <label for="temperature" class="label_wrap_data">NO2
-                </label>
-            </div>
-            <div class="wrap_data">
-                <span class="trait_noir"></span>
-                <input type="text" id="temperature" >
-                <label for="temperature" class="label_wrap_data">NO3
-                </label>
-            </div>
-            <div class="wrap_data">
-                <span class="trait_noir"></span>
-                <div class="pourcentage">
-                    <p>%</p>
-                </div>           
-                <input type="text" id="temperature" >
-                <label for="temperature" class="label_wrap_data">chang.eau
-                </label>
-            </div>
+        </aside>
 
-            <div class="wrap_data_button">
-                <input type="submit" value="Enregistrer">
-            </div>
 
-        </div>
-        
-        <div>
-            <label for="notation" class="label_notation">Note :</label>
-            <input type="text" id="notation">
-        </div>
-        
+<!--  SECTION CONTENU CENTRALE  -->
+        <section class="section_center">
 
-    </form>
+            <nav>
+                <ul  class="header_bottom">
+                    <li class="navigation">
+                        <a href="https://www.google.com/">
+                        <img src="./image_site/icone_afficheur.svg">
+                        </a>
+                    </li>
+                    <li class="navigation">
+                        <a href="https://www.google.com/">
+                        <img src="./image_site/icone_diagramme.svg">
+                        </a>
+                    </li>
+                    <li class="navigation">
+                        <a href="https://www.google.com/">
+                        <img src="./image_site/icone_tableau.svg">
+                        </a>
+                    </li>
+                </ul>
+            </nav>    
+
+            <!-- CONTENU AFFICHEUR-->
+            <form method="get">
+
+                 <!-- Date et checkbox --> 
+                <div class="date_and_checkbox">
+                    <div>
+                        <label for="date">Date :</label>
+                        <input type="date" id="date" name="date_afficheur">
+                    </div>
+
+                    <div>
+                        <p class="explain_checkbox">explication</p>              
+                        <label class="label_click">
+                            <input type="checkbox" checked>
+                            <span class="fake_button"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Contenu flex wrap data -->
+                
+                <div>
+                    <div class="wrap_data">
+                        <span class="trait_noir"></span>
+                        <input type="text" id="data_temperature" >
+                        <label for="data_temperature" class="label_wrap_data">°C
+                        </label>
+                        
+                    </div>
+                    <div class="wrap_data">
+                        <span class="trait_noir"></span>
+                        <input type="text" id="data_ph" >
+                        <label for="data_ph" class="label_wrap_data">PH
+                        </label>
+                    </div>
+                    <div class="wrap_data">
+                        <span class="trait_noir"></span>
+                        <input type="text" id="temperature" >
+                        <label for="temperature" class="label_wrap_data">GH
+                        </label>
+                    </div>
+                    <div class="wrap_data">
+                        <span class="trait_noir"></span>
+                        <input type="text" id="temperature" >
+                        <label for="temperature" class="label_wrap_data">KH
+                        </label>
+                    </div>
+                    <div class="wrap_data">
+                        <span class="trait_noir"></span>
+                        <input type="text" id="temperature" >
+                        <label for="temperature" class="label_wrap_data">NO2
+                        </label>
+                    </div>
+                    <div class="wrap_data">
+                        <span class="trait_noir"></span>
+                        <input type="text" id="temperature" >
+                        <label for="temperature" class="label_wrap_data">NO3
+                        </label>
+                    </div>
+                    <div class="wrap_data">
+                        <span class="trait_noir"></span>
+                        <div class="pourcentage">
+                            <p>%</p>
+                        </div>           
+                        <input type="text" id="temperature" >
+                        <label for="temperature" class="label_wrap_data">chang.eau
+                        </label>
+                    </div>
+
+                    <div class="wrap_data_button">
+                        <input type="submit" value="Enregistrer">
+                    </div>
+
+                </div>
+                
+                <div>
+                    <label for="notation" class="label_notation">Note :</label>
+                    <input type="text" id="notation">
+                </div>
+                
+
+            </form>
+        </section>
     </section>
-
 
 
 

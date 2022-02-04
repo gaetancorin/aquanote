@@ -15,6 +15,11 @@ p{
     margin: 0px;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 
 /* ///////////-- HEADER --\\\\\\\\\\ */
 
@@ -83,15 +88,28 @@ p{
 .navigation:nth-of-type(2){
     border-left: solid 2px black;
     border-right: solid 2px black;
-    border-bottom: solid 2px black; 
+    border-bottom: solid 2px black;
+    transition: 0.4s;
+    box-shadow: none;
+
 }
 
-.navigation:nth-of-type(3){
+
+.navigation:nth-of-type(3) {
     border-right: solid 2px black;
-    border-bottom: solid 2px black; 
+    border-bottom: solid 2px black;
+    transition: 0.4s;
+    box-shadow: none;
+
 }
 
-.navigation  a img{
+.navigation:nth-of-type(2):hover,
+.navigation:nth-of-type(3):hover{
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 12px 16px 0px;
+}
+
+.navigation a img{
     width: 6vw;
     max-width: 40px;
     display: block;
@@ -129,12 +147,159 @@ p{
 }
 
 
+/* ////// RESPONSIVE FLEXBOX ASIDE //// */
+#section_grid_responsive{
+    display: grid;
+    grid-template-columns: 1fr;
+}
 
+aside{
+    display: none;
+}
+
+
+@media screen and (min-width: 1000px){
+    #section_grid_responsive{
+        grid-template-columns: 1fr 3fr;
+    }
+    
+    #aside_hamburger_g{
+        display: block;
+        order: 1;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+        min-height: calc(100vh - 62px)
+    }
+
+    .section_center{
+        order: 2;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    #section_grid_responsive{
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    
+    #aside_hamburger_g{
+        display: block;
+        order: 1;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+        min-height: calc(100vh - 62px)
+    }
+
+    #aside_publicite{
+        order: 3;
+        display: block;
+        min-height: calc(100vh - 62px)
+    }
+
+    .section_center{
+        order: 2;
+    }
+}
+
+/* //////// ASIDE HAMBURGER GAUCHE\\\\\\ */
+
+.ul_aside_hamb{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 56px;
+}
+
+.a_aside_hamb {
+    display: block;
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    background-color: #f6f6f6;
+    padding: 17px 5px 17px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.img_fish_hamb{
+    display: none;
+    padding-right: 8px;
+}
+
+.a_aside_hamb:hover{
+    background-color: #deefff;
+    outline: solid 2px #2c82d2;
+    outline-offset: -2px;
+    position: relative;
+}
+
+/*  aside hamburger gauche responsive */
+
+@media screen and (min-width: 1200px){
+    .img_fish_hamb{
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 1650px){
+    .img_fish_hamb{
+        padding-left: 2vw;
+    }
+}
+
+/* //////// ASIDE PUBLICITE DROITE \\\\\\ */
+
+.box_publicite{
+    width: 290px;
+    background-color: white;
+    border: 2px solid #7a84d8;
+    border-radius: 20px;
+    margin: 30px auto 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.titre_box_pub{
+    width: 290px;
+    height:40px;
+    background-color: #deefff;
+    border-radius: 17px;
+}
+
+.text_titre_box_pub{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.lien_pub{
+    display: block;
+    flex-grow: 1;
+    background: none;
+    transition: 0.5s;
+    
+}
+
+.lien_pub:hover{
+    background: radial-gradient( #ffdb83, rgba(255,255,255,1)100%);
+}
+
+.img_1_aside_pub{
+    display: block;
+    width: 182px;
+    margin: 25px auto 12px auto;
+}
+
+.img_2_aside_pub{
+    display: block;
+    width: 182px;
+    margin: 12px auto 25px auto;
+    
+}
 
 /* /////// CONTENU AFFICHEUR \\\\\\\\ */
 
 form{
-     /* border: 1px solid black; */
     margin: calc(25px + 2vw) auto 0 auto;
     text-align: center;
     width: 90%;
@@ -386,6 +551,17 @@ div input[type="submit"]{
         font-size: 30px; 
         font-weight: 400;     
     }   
+}
+
+@media screen and (min-width: 1000px){
+
+    .label_wrap_data{      
+        font-size: 21px;
+    }
+
+    div input[type="submit"]{
+        font-size: 20px;
+    }
 }
 
 
