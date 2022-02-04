@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset=" utf-8">
-    <link rel="stylesheet" href="./afficheur.css" type="text/css">
     <link rel="stylesheet" href="./only_header.css" type="text/css">
+    <link rel="stylesheet" href="./diagramme.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>afficheur</title>
 
@@ -94,110 +94,30 @@
             <nav>
                 <ul  class="header_top_afficheur">
                     <li class="navigation">
-                        <a href="#">
+                        <a href="./afficheur.html">
                         <img src="./image_site/icone_afficheur.svg">
                         </a>
                     </li>
                     <li class="navigation">
-                        <a href="./diagramme.html">
+                        <a href="#">
                         <img src="./image_site/icone_diagramme.svg">
                         </a>
                     </li>
                     <li class="navigation">
-                        <a href="./tableau.css">
+                        <a href="./tableau.html">
                         <img src="./image_site/icone_tableau.svg">
                         </a>
                     </li>
                 </ul>
-            </nav>    
+            </nav>   
+            
+            
 
-            <!-- FORMULAIRE AFFICHEUR-->
-            <form method="get">
 
-                 <!-- Date et checkbox --> 
-                <div class="date_and_checkbox">
-                    <div>
-                        <label for="date">Date :</label>
-                        <input type="date" id="date" name="date_afficheur">
-                    </div>
 
-                    <div>
-                        <p class="explain_checkbox">explication</p>              
-                        <label class="label_click">
-                            <input type="checkbox" checked>
-                            <span class="fake_button"></span>
-                        </label>
-                    </div>
-                </div>
 
-                <!-- Contenu flex wrap data -->
-                
-                <div>
-                    <div class="wrap_data">
-                        <span class="trait_noir"></span>
-                        <input type="text" id="data_temperature" >
-                        <label for="data_temperature" class="label_wrap_data">°C
-                        </label>
-                        
-                    </div>
-                    <div class="wrap_data">
-                        <span class="trait_noir"></span>
-                        <input type="text" id="data_ph" >
-                        <label for="data_ph" class="label_wrap_data">PH
-                        </label>
-                    </div>
-                    <div class="wrap_data">
-                        <span class="trait_noir"></span>
-                        <input type="text" id="temperature" >
-                        <label for="temperature" class="label_wrap_data">GH
-                        </label>
-                    </div>
-                    <div class="wrap_data">
-                        <span class="trait_noir"></span>
-                        <input type="text" id="temperature" >
-                        <label for="temperature" class="label_wrap_data">KH
-                        </label>
-                    </div>
-                    <div class="wrap_data">
-                        <span class="trait_noir"></span>
-                        <input type="text" id="temperature" >
-                        <label for="temperature" class="label_wrap_data">NO2
-                        </label>
-                    </div>
-                    <div class="wrap_data">
-                        <span class="trait_noir"></span>
-                        <input type="text" id="temperature" >
-                        <label for="temperature" class="label_wrap_data">NO3
-                        </label>
-                    </div>
-                    <div class="wrap_data">
-                        <span class="trait_noir"></span>
-                        <div class="pourcentage">
-                            <p>%</p>
-                        </div>           
-                        <input type="text" id="temperature" >
-                        <label for="temperature" class="label_wrap_data">chang.eau
-                        </label>
-                    </div>
-
-                    <div class="wrap_data_button">
-                        <input type="submit" value="Enregistrer">
-                    </div>
-
-                </div>
-                
-                <!-- notation  data -->
-                <div>
-                    <label for="notation" class="label_notation">Note :</label>
-                    <input type="text" id="notation">
-                </div>
-                
-
-            </form>
         </section>
     </section>
-
-
 
 </body>
 </html>

@@ -1,3 +1,231 @@
+
+/* --- RETIRER CSS PAR DEFAUT NAVIGATEUR --*/
+
+body{
+    background-color: #f6f6f6;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400;    
+}
+h2{
+    margin: 0px;
+}
+
+p{
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* ///////////-- HEADER TOP--\\\\\\\\\\ */
+
+
+/* --------header top------ */
+
+.header_top{
+    width: 100vw;
+    height: 55px;
+    background-color: #deefff;
+    border-bottom: solid 2px black;
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    
+}
+
+.aquarium_name{
+    margin-left: 8vw;
+    font-weight: 400;
+    align-self: center;
+    justify-self: start;
+    font-size: 1.1em;  
+}
+
+.logo{
+    align-self: center;
+    justify-self: center;
+}
+
+.hamburger_header{
+    width: 34px;
+    display: block;
+    margin-right: 5vw;
+    align-self: center;
+    justify-self: end;
+}
+
+/* --------header top responsive------ */
+
+@media screen and (min-width: 600px){
+
+    .header_top{
+        height: 60px;
+    }
+
+    .hamburger_header{
+        width: 38px;
+    }
+
+    .aquarium_name{
+        font-size: 1.3em;  
+    }
+}
+
+
+/* ////// RESPONSIVE DES ASIDE PAR GRID //// */
+/* ------tous les asides none---- */
+#responsive_des_aside{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+aside{
+    display: none;
+}
+
+/* ------aside_gauche_hbg actif---- */
+@media screen and (min-width: 1000px){
+    #responsive_des_aside{
+        grid-template-columns: 1fr 3fr;
+    }
+    
+    #aside_gauche_hamb{
+        display: block;
+        order: 1;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+        min-height: calc(100vh - 62px)
+    }
+
+    .section_centrale{
+        order: 2;
+    }
+}
+
+/* aside_gauche_hbg / aside_droite_pub actif-- */
+@media screen and (min-width: 1500px){
+    #responsive_des_aside{
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    
+    #aside_gauche_hamb{
+        display: block;
+        order: 1;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+        min-height: calc(100vh - 62px)
+    }
+
+    #aside_droite_pub{
+        order: 3;
+        display: block;
+        min-height: calc(100vh - 62px)
+    }
+
+    .section_centrale{
+        order: 2;
+    }
+}
+
+/* //////// ASIDE GAUCHE HAMBURGER\\\\\\ */
+
+.ul_aside_hamb{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 56px;
+}
+
+.a_aside_hamb {
+    display: block;
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    padding: 17px 5px 17px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.img_fish_hamb{
+    display: none;
+    padding-right: 8px;
+}
+
+.a_aside_hamb:hover{
+    background-color: #deefff;
+    outline: solid 2px #2c82d2;
+    outline-offset: -2px;
+}
+
+/*  aside hamburger gauche responsive */
+
+@media screen and (min-width: 1200px){
+    .img_fish_hamb{
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 1650px){
+    .img_fish_hamb{
+        padding-left: 2vw;
+    }
+}
+
+/* //////// ASIDE DROITE PUBLICITE \\\\\\ */
+
+.box_publicite{
+    width: 290px;
+    background-color: white;
+    border: 2px solid #7a84d8;
+    border-radius: 20px;
+    margin: 30px auto 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.zone_titre_top_pub{
+    width: 290px;
+    height:40px;
+    background-color: #deefff;
+    border-radius: 17px;
+}
+
+.text_titre_top_pub{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.lien_pub{
+    display: block;
+    flex-grow: 1;
+    background: none;
+    transition: 0.5s;
+    
+}
+
+.lien_pub:hover{
+    background: radial-gradient( #ffdb83, rgba(255,255,255,1)100%);
+}
+
+.img_1_aside_pub{
+    display: block;
+    width: 182px;
+    margin: 25px auto 12px auto;
+}
+
+.img_2_aside_pub{
+    display: block;
+    width: 182px;
+    margin: 12px auto 25px auto;
+    
+}
+
 /* /////// SECTION CENTRALE \\\\\\\\ */
 /* ///////  AFFICHEUR \\\\\\\\ */
 
@@ -19,7 +247,7 @@
     box-shadow: inset 0px 0px 15px rgba(0, 32, 138, 0.1); 
 }
 
-.navigation:nth-of-type(1){
+.navigation:first-of-type{
     background-color: rgba(222, 239, 255, 0);
     border: none;
     box-shadow: none;
