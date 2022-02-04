@@ -98,17 +98,18 @@ a{
 .navigation:nth-of-type(3) {
     border-right: solid 2px black;
     border-bottom: solid 2px black;
-    transition: 0.25s;
+    transition: 0.4s;
     box-shadow: none;
 
 }
 
 .navigation:nth-of-type(2):hover,
 .navigation:nth-of-type(3):hover{
+    transition: 0.4s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 12px 16px 0px;
 }
 
-.navigation  a img{
+.navigation a img{
     width: 6vw;
     max-width: 40px;
     display: block;
@@ -280,7 +281,6 @@ aside{
 }
 
 .lien_pub:hover{
-    /* background-color: #ffdb83; */
     background: radial-gradient( #ffdb83, rgba(255,255,255,1)100%);
 }
 
@@ -300,7 +300,6 @@ aside{
 /* /////// CONTENU AFFICHEUR \\\\\\\\ */
 
 form{
-     /* border: 1px solid black; */
     margin: calc(25px + 2vw) auto 0 auto;
     text-align: center;
     width: 90%;
