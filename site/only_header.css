@@ -30,8 +30,7 @@ a{
     width: 100vw;
     height: 55px;
     background-color: #deefff;
-    border-bottom: solid 2px black;
-    
+    border-bottom: solid 2px black;    
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     
@@ -50,13 +49,58 @@ a{
     justify-self: center;
 }
 
-.hamburger_header{
-    width: 34px;
-    display: block;
-    margin-right: 5vw;
-    align-self: center;
+.hamburger_conteneur{
     justify-self: end;
+    display: flex;
 }
+
+.header_top input[type="checkbox"]{
+    display: block;
+    align-self: center;
+    position: absolute;
+    z-index: 5;
+    height: 32px;
+    width: 30px;    
+    opacity: 0;
+}
+
+.hamburger_header{
+    display: block;
+    z-index: 4;
+    align-self: center;
+    width: 34px;
+    margin-right: 25px;
+}
+
+.conteneur_aside_hamb{
+    display: block;
+    position: absolute;
+    background-color: #eaf3fb;
+    z-index: 3;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0px;
+    margin-left: -600px;
+    min-width: 300px;
+    /* height: 100vh; */
+    padding-top: 56px;
+    box-shadow: -5px 0px 10px 0px #aaa;
+    transform: translate(150%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.conteneur_aside_hamb .img_fish_hamb{
+    display: inline-block;
+}
+
+.conteneur_aside_hamb .a_aside_hamb{
+    font-size: 19px;
+}
+
+.header_top input[type="checkbox"]:checked ~ .conteneur_aside_hamb {
+    transform: translateX(0);
+  }
+
 
 /* --------header top responsive------ */
 
@@ -72,6 +116,20 @@ a{
 
     .aquarium_name{
         font-size: 1.3em;  
+    }
+
+    .hamburger_header{
+        margin-right: 50px;
+    }
+
+    .conteneur_aside_hamb{
+        margin-left: -210px;
+    }
+}
+@media screen and (min-width: 1000px){
+
+    .hamburger_conteneur{
+        display: none;;
     }
 }
 
