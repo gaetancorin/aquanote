@@ -5,7 +5,8 @@ body{
     background-color: #f6f6f6;
     margin: 0px;
     font-family: 'Roboto', sans-serif; 
-    font-weight: 400;    
+    font-weight: 400;   
+    overflow-x: hidden; 
 }
 h2{
     margin: 0px;
@@ -62,6 +63,7 @@ a{
     height: 32px;
     width: 30px;    
     opacity: 0;
+    cursor: pointer;
 }
 
 .hamburger_header{
@@ -80,10 +82,10 @@ a{
     list-style-type: none;
     padding: 0;
     margin-top: 0px;
-    margin-left: -600px;
-    min-width: 300px;
-    /* height: 100vh; */
-    padding-top: 56px;
+    right: 0px;
+    width: 280px;
+    height: calc(100vh - 55px);
+    padding-top: 55px;
     box-shadow: -5px 0px 10px 0px #aaa;
     transform: translate(150%);
     transition: transform 0.5s ease-in-out;
@@ -94,7 +96,8 @@ a{
 }
 
 .conteneur_aside_hamb .a_aside_hamb{
-    font-size: 19px;
+    font-size: 17px;
+    padding: 17px 5px 17px 12px;
 }
 
 .header_top input[type="checkbox"]:checked ~ .conteneur_aside_hamb {
@@ -123,13 +126,20 @@ a{
     }
 
     .conteneur_aside_hamb{
-        margin-left: -210px;
+        height: calc(100vh - 60px);
+        padding-top: 60px;
+        width: 300px;
+    }
+
+    .conteneur_aside_hamb .a_aside_hamb{
+        font-size: 19px;
+        padding: 22px 5px 22px 12px;
     }
 }
 @media screen and (min-width: 1000px){
 
     .hamburger_conteneur{
-        display: none;;
+        display: none;
     }
 }
 
