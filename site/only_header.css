@@ -76,7 +76,8 @@ a{
 
 .conteneur_aside_hamb{
     display: block;
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     background-color: #eaf3fb;
     z-index: 3;
     list-style-type: none;
@@ -278,7 +279,7 @@ aside{
 }
 
 .lien_pub:hover{
-    background: radial-gradient( #ffdb83, rgba(255,255,255,1)100%);
+    background: radial-gradient( #ffdb83, rgba(255,255,255,1));
 }
 
 .img_1_aside_pub{
