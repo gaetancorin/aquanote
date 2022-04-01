@@ -17,7 +17,7 @@ class Donnee_date(models.Model):
     aquarium = models.ForeignKey(Aquarium, on_delete=models.CASCADE)
 
     def __str__(self):
-        return donnee_date
+        return self.donnee_date
 
 class Donnee_releve(models.Model):
     nom_donnee_releve = models.CharField(max_length=15)
@@ -25,11 +25,11 @@ class Donnee_releve(models.Model):
     donnee_date = models.ForeignKey(Donnee_date, on_delete=models.CASCADE)
 
     def __str__(self):
-        return nom_donnee_releve
+        return self.nom_donnee_releve
 
 class Donnee_note(models.Model):
     donnee_note = models.CharField(max_length=200)
     donnee_date = models.ForeignKey(Donnee_date, on_delete=models.CASCADE)
 
     def __str__(self):
-        return donnee_note
+        return self.donnee_note
