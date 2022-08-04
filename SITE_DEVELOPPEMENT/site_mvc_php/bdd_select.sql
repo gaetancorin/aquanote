@@ -2,12 +2,15 @@ use bdd_fil_rouge;
 
 select * from utilisateur;
 select * from utilisateur inner join aquarium on utilisateur.id_utilisateur = aquarium.id_utilisateur;
-select * from aquarium inner join donnee_nom on aquarium.id_aquarium = donnee_nom.id_aquarium;
-select * from donnee_releve;
-select * from donnee_note;
-select donnee_note.donnee_note, donnee_date.donnee_date from donnee_note inner join donnee_date on donnee_note.id_donnee_date = donnee_date.id_donnee_date;
-select donnee_note.donnee_note, donnee_date.donnee_date, donnee_releve.donnee_releve from donnee_note inner join donnee_date on donnee_note.id_donnee_date = donnee_date.id_donnee_date 
-inner join donnee_releve on donnee_releve.id_donnee_date = donnee_date.id_donnee_date;
+
+
+
+-- select * from aquarium inner join donnee_nom on aquarium.id_aquarium = donnee_nom.id_aquarium;
+-- select * from donnee_releve;
+-- select * from donnee_note;
+-- select donnee_note.donnee_note, donnee_date.donnee_date from donnee_note inner join donnee_date on donnee_note.id_donnee_date = donnee_date.id_donnee_date;
+-- select donnee_note.donnee_note, donnee_date.donnee_date, donnee_releve.donnee_releve from donnee_note inner join donnee_date on donnee_note.id_donnee_date = donnee_date.id_donnee_date 
+-- inner join donnee_releve on donnee_releve.id_donnee_date = donnee_date.id_donnee_date;
 
 
 -- select * from ceinture;
