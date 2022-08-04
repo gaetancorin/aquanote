@@ -1,5 +1,5 @@
-#base de donnee fu fil rouge vide
-drop database bdd_fil_rouge;
+-- base de donnee du fil rouge vide
+-- drop database bdd_fil_rouge;
 create database bdd_fil_rouge;
 use bdd_fil_rouge;
 
