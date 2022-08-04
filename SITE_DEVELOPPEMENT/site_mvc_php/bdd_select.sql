@@ -1,18 +1,23 @@
 use bdd_fil_rouge;
+-- TABLE UTILISATEuR
+-- select * from utilisateur;
+-- TABLE UTILISATEUR AQUARIUM
+-- select * from utilisateur inner join aquarium on utilisateur.id_utilisateur = aquarium.id_utilisateur;
+-- TABLE UTILISATEUR AQUARIUM COMMENTAIRE-ANALYSES DATE-ANALYSE
+-- select * from utilisateur inner join aquarium on utilisateur.id_utilisateur = aquarium.id_utilisateur 
+-- inner join commentaire_analyses on commentaire_analyses.id_aquarium = aquarium.id_aquarium
+-- inner join date_analyse on date_analyse.id_date_analyse = commentaire_analyses.id_date_analyse; 
+-- TABLE UTILISATEUR AQUARIUM COMMENTAIRE-ANALYSE DATE-ANALYSE TYPE-ANALYSE VALEUR_ANALYSE
+select * from utilisateur inner join aquarium on utilisateur.id_utilisateur = aquarium.id_utilisateur 
+inner join commentaire_analyses on commentaire_analyses.id_aquarium = aquarium.id_aquarium
+inner join date_analyse on date_analyse.id_date_analyse = commentaire_analyses.id_date_analyse
+inner join type_analyse on type_analyse.id_aquarium = aquarium.id_aquarium
+inner join valeur_analyse on valeur_analyse.id_type_analyse = type_analyse.id_type_analyse
+						and valeur_analyse.id_date_analyse = date_analyse.id_date_analyse;
 
-select * from utilisateur;
-select * from utilisateur inner join aquarium on utilisateur.id_utilisateur = aquarium.id_utilisateur;
 
 
-
--- select * from aquarium inner join donnee_nom on aquarium.id_aquarium = donnee_nom.id_aquarium;
--- select * from donnee_releve;
--- select * from donnee_note;
--- select donnee_note.donnee_note, donnee_date.donnee_date from donnee_note inner join donnee_date on donnee_note.id_donnee_date = donnee_date.id_donnee_date;
--- select donnee_note.donnee_note, donnee_date.donnee_date, donnee_releve.donnee_releve from donnee_note inner join donnee_date on donnee_note.id_donnee_date = donnee_date.id_donnee_date 
--- inner join donnee_releve on donnee_releve.id_donnee_date = donnee_date.id_donnee_date;
-
-
+-- AUTRES EXEMPLES
 -- select * from ceinture;
 -- select nom_judoka, prenom_judoka from judoka;
 -- select * from judoka where sexe_judoka = 2;

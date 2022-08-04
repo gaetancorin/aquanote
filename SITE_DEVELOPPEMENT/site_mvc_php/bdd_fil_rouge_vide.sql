@@ -17,14 +17,15 @@ add constraint foreign key (id_utilisateur) references utilisateur (id_utilisate
 
 CREATE TABLE type_analyse (
     id_type_analyse INT(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    type_analyse VARCHAR(15) NOT NULL);
+    type_analyse VARCHAR(15) NOT NULL,
+    explication_type_analyse VARCHAR(500) );
 alter table type_analyse
 add column id_aquarium INT(20) not null,
 add constraint foreign key (id_aquarium) references aquarium (id_aquarium);
 
 CREATE TABLE date_analyse (
     id_date_analyse INT(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    data_analyse DATE NOT NULL);
+    date_analyse DATE NOT NULL);
 
 CREATE TABLE commentaire_analyses (
     id_commentaire_analyses BIGINT(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
