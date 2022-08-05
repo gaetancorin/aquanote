@@ -1,15 +1,13 @@
 <?php
-include('../models/utilisateur.php');
-include('../models/bdd.php');
+include('../models/user.php');
+include('../config/ConfigDB.php');
 
-$utilisateur = new utilisateur();
+$user = new user();
 
-$allutilisateur = $utilisateur->readAll();
+$allusers = $user->readAll();
 
-while($donnees = $allutilisateur->fetch()){
-
-    echo "<h4>   ".$donnees["id_utilisateur"].", ".$donnees["email_utilisateur"].", ".$donnees["mdp_utilisateur"]."</h4>";
-    // echo gettype($donnees["id_utilisateur"]);
+while($donnees = $allusers->fetch()){
+    echo "<h4>   ".$donnees["email_user"].", ".$donnees["password_user"]."</h4>";
 }
 
 

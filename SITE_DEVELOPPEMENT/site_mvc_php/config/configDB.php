@@ -1,9 +1,9 @@
 <?php
-class configBDD
+class ConfigDB
 {
     //attributs de la BDD
-    private $host = '127.0.0.1';
-    private $database_name = 'bdd_fil_rouge';
+    private $host = 'localhost';
+    private $database_name = 'aquarium_data';
     private $username = 'root';
     private $password = '';
 
@@ -15,7 +15,8 @@ class configBDD
         $this->connect = null;
         try {
             $this->connect = new PDO(
-                'mysql:host=' . $this->host . ';dbname=' . $this->database_name,
+                'mysql:host=' . $this->host . 
+                ';dbname=' . $this->database_name,
                 $this->username,
                 $this->password,
                 array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
@@ -27,4 +28,3 @@ class configBDD
         return $this->connect;
     }
 }
-?>
