@@ -39,7 +39,7 @@ class User{
     }
 
     // méthode CRUD
-    public function create_user(){
+    public function create_one_user(){
         try {
             $new_req = "INSERT INTO 
                                 user 
@@ -52,7 +52,8 @@ class User{
             return $req->execute();
         } 
         catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
+            return throw new Exception('fail_db_create_one_user');
+            // die('Erreur dans la bdd: ' . $e->getMessage());
         }
     }
 
@@ -74,13 +75,31 @@ class User{
             return $req;
         } 
         catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
+            // return 'fail_db_read_one_user';
+            die('Erreur dans read_one_user: ' . $e->getMessage());
+        }
+    }
+
+    public function delete_one_user(){
+        try {
+            $new_req =  'DELETE FROM 
+                                user
+                            WHERE
+                            email_user = :email_user';
+            $req = $this->connect->prepare($new_req);
+            $req->bindParam(':email_user', $this->email_user);
+            return $req->execute();
+
+        } 
+        catch (Exception $e) {
+            return throw new Exception('fail_db_delete_one_user');
+            // die('Erreur dans la bdd: ' . $e->getMessage());
         }
     }
 
     
 
-    
+
     //Sert pas mais est là
     public function readAll(){
         $req = $this->connect->prepare(

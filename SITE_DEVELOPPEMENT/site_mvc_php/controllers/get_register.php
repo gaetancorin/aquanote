@@ -24,16 +24,25 @@ if (
         $my_user = $user->read_one_user();
         $nbrLignesRetournees = $my_user->rowCount();
         if ($nbrLignesRetournees != 0) {
-            throw new Exception('Email déjà utilisé sur un autre compte');
+            throw new Exception('email_already_in_db');
         }
         //Si personne ne l'utilise, on crée le nouvel user
-        $user->create_user();
+        $user->create_one_user();
     } 
     catch (Exception $e){
-        die('Erreur : ' . $e->getMessage());
+        // die('Erreur : ' . $e->getMessage());
+        $error = $e->getMessage();
+        if ($error == 'email_already_in_db'){
+            echo 'c\'est l\'email bro';
+        }
+        else{
+            die('Erreur : '.$error);
+        }
+
     }
 
-// On essaye de créer l'aquarium relié au User
+
+    // On essaye de créer l'aquarium relié au User
     try{
         // on récupère l'enregistrement de l'utilisateur par son email
         $my_user = $user->read_one_user();
@@ -45,12 +54,15 @@ if (
         $aquarium = new Aquarium();
         $aquarium->set_name_aquarium($name_aquarium);
         $aquarium->set_id_user($id_my_user);
-        $aquarium->create_aquarium();
+        $aquarium->create_one_aquarium();
 
 
     } 
     catch (Exception $e){
-        die('Erreur : ' . $e->getMessage());
+        // Si il y a un problème avec la création de l'aquarium, il faut supprimer l'enregistrement de l'user.
+        //Il faut au minimum un aquarium pour accéder à l'application
+        $user->delete_one_user();
+        die($e->getMessage());
     }
 }
 

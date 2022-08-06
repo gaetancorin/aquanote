@@ -39,7 +39,7 @@ class Aquarium{
     }
 
     // méthode CRUD
-    public function create_aquarium(){
+    public function create_one_aquarium(){
         try {
             //
             $new_req = "INSERT INTO 
@@ -54,7 +54,8 @@ class Aquarium{
             return $req->execute();
         } 
         catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
+            return throw new Exception('fail_db_create_one_aquarium');
+            // die('Erreur dans la bdd: ' . $e->getMessage());
         }
     }
   
