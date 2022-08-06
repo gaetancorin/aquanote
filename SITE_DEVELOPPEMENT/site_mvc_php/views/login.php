@@ -36,12 +36,12 @@
 
                     <div class="register_login_input">
                         <label for="email">Email</label>
-                        <input maxlength="50" minlength="6" type="email" id="email" required>
+                        <input maxlength="50" minlength="8" type="email" id="email" name='email' required>
                     </div>
 
                     <div class="register_login_input">
                         <label for="password">Mot de Passe</label>
-                        <input maxlength="50" minlength="8" type="password" id="password" required>
+                        <input maxlength="50" minlength="8" type="password" id="password" name='password' required>
                     </div>
 
                 </div>

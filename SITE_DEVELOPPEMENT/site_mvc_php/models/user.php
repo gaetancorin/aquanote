@@ -1,5 +1,5 @@
 <?php
-class user{
+class User{
 
     //attributs
     public $id_user;
@@ -20,11 +20,9 @@ class user{
     public function get_id_user(){
         return $this->id_user;
     }
-
     public function get_email_user(){
         return $this->email_user;
     }
-
     public function get_password_user(){
         return $this->password_user;
     }
@@ -33,16 +31,57 @@ class user{
     public function set_id_user($id_user){
         $this->id_user = $id_user;
     }
-
     public function set_email_user($email_user){
         $this->email_user = $email_user;
     }
-
     public function set_password_user($password_user){
         $this->password_user = $password_user;
     }
 
     // méthode CRUD
+    public function create_user(){
+        try {
+            $new_req = "INSERT INTO 
+                                user 
+                            SET 
+                                email_user = :email_user,
+                                password_user = :password_user";
+            $req = $this->connect->prepare($new_req);
+            $req->bindParam(':email_user', $this->email_user);
+            $req->bindParam(':password_user', $this->password_user);
+            return $req->execute();
+        } 
+        catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
+    public function read_one_user(){
+        try {
+            $req = $this->connect->prepare(
+                'SELECT
+                        *
+                    FROM 
+                        user
+                    WHERE 
+                        email_user = :email_user'
+            );
+            $req->execute(
+                array(
+                    ':email_user' => $this->email_user
+                )
+            );
+            return $req;
+        } 
+        catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+
+    
+
+    
+    //Sert pas mais est là
     public function readAll(){
         $req = $this->connect->prepare(
             'SELECT
@@ -54,22 +93,7 @@ class user{
         return $req;
     }
 
-    public function readOne(){
-        $req = $this->connect->prepare(
-            'SELECT
-                    *
-                FROM 
-                    user
-                WHERE
-                    email_user = :email_user'
-        );
-        $req->execute(
-            array(
-                ':email_user' => $this->email_user
-            )
-        );
-        return $req;
-    }
+
   
 }
 ?>

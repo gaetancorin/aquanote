@@ -31,22 +31,22 @@
                 <p>Inscription</p>
             </div>
 
-            <form id="register_login_form" action="">
+            <form id="register_login_form" action="../controllers/get_register.php" method="POST">
                 <div id="register_login_inputs">
 
                     <div class="register_login_input">
                         <label for="email">Email</label>
-                        <input maxlength="50" minlength="6" type="email" id="email" required>
+                        <input maxlength="50" minlength="8" type="email" id="email" name='email' required>
                     </div>
 
                     <div class="register_login_input">
                         <label for="password">Mot de Passe</label>
-                        <input maxlength="50" minlength="8" type="password" id="password" required>
+                        <input maxlength="50" minlength="8" type="password" id="password" name='password' required>
                     </div>
 
                     <div class="register_login_input">
                         <label for="name_aquarium">Nom de l'Aquarium</label>
-                        <input maxlength="25" minlength="1" type="text" id="name_aquarium" required>
+                        <input maxlength="25" minlength="1" type="text" id="name_aquarium" name='name_aquarium' required>
                     </div>
                 </div>
                 <button id="button_create_aqua" type="submit" value="Valider">Créer votre Aquarium</button>

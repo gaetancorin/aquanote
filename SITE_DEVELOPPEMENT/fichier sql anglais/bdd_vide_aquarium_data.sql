@@ -13,7 +13,7 @@ CREATE TABLE aquarium (
     name_aquarium VARCHAR(25) NOT NULL);
 alter table aquarium 
 add column id_user INT(20) not null,
-add constraint foreign key (id_user) references user (id_user);
+add constraint foreign key (id_user) references user (id_user) ON DELETE CASCADE;
 
 CREATE TABLE date_analysis (
     id_date_analysis INT(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -24,9 +24,9 @@ CREATE TABLE comment_analysis (
     comment_analysis VARCHAR(200) NOT NULL);
 alter table comment_analysis
 add column id_aquarium INT(20) not null,
-add constraint foreign key (id_aquarium) references aquarium (id_aquarium),
+add constraint foreign key (id_aquarium) references aquarium (id_aquarium) ON DELETE CASCADE,
 add column id_date_analysis INT(20) not null,
-add constraint foreign key (id_date_analysis) references date_analysis (id_date_analysis);
+add constraint foreign key (id_date_analysis) references date_analysis (id_date_analysis) ON DELETE CASCADE;
 
 CREATE TABLE type_analysis (
     id_type_analysis INT(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -34,13 +34,13 @@ CREATE TABLE type_analysis (
     explain_type_analysis VARCHAR(500) );
 alter table type_analysis
 add column id_aquarium INT(20) not null,
-add constraint foreign key (id_aquarium) references aquarium (id_aquarium);
+add constraint foreign key (id_aquarium) references aquarium (id_aquarium) ON DELETE CASCADE;
 
 CREATE TABLE value_type_analysis (
     id_value_type_analysis BIGINT(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     value_type_analysis DECIMAL(4,1) NOT NULL);
 alter table value_type_analysis
 add column id_type_analysis INT(20) not null,
-add constraint foreign key (id_type_analysis) references type_analysis (id_type_analysis),
+add constraint foreign key (id_type_analysis) references type_analysis (id_type_analysis) ON DELETE CASCADE,
 add column id_date_analysis INT(20) not null,
-add constraint foreign key (id_date_analysis) references date_analysis (id_date_analysis);
+add constraint foreign key (id_date_analysis) references date_analysis (id_date_analysis) ON DELETE CASCADE;
