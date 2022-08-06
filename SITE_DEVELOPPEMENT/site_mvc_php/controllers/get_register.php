@@ -1,4 +1,5 @@
-<?php echo "page 'get_register' <br>";
+<?php 
+// echo "CONTROLLER GET_REGISTER <br>";
 
 include('../models/user.php');
 include('../models/aquarium.php');
@@ -33,7 +34,9 @@ if (
         // die('Erreur : ' . $e->getMessage());
         $error = $e->getMessage();
         if ($error == 'email_already_in_db'){
-            echo 'c\'est l\'email bro';
+            $visible_error = 'Cet email est déjà utilisé';
+            include('../views/register.php');
+
         }
         else{
             die('Erreur : '.$error);

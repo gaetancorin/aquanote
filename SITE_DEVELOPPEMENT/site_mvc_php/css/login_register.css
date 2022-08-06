@@ -17,6 +17,7 @@ section{
 }
 /* -------------- partie droite ----------- */
 #content_right_register_login{
+    overflow-x: auto;
     display: block;
     flex: 0 0 50%;
     max-width: 50%;
@@ -98,6 +99,10 @@ section{
 }
 .register_login_input:nth-child(3){
     margin-top: 50px;
+}
+.error_text{
+    color: red;
+    align-self: flex-start;
 }
 
 /* --- Bouton validation formulaire dans register(bytton_crate_aqu et login(access_aqua)--- */

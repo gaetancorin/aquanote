@@ -1,10 +1,9 @@
-<?php $page = 'login' ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset=" utf-8">
-    <link rel="stylesheet" href="./css/header_login_register.css" type="text/css">
-    <link rel="stylesheet" href="./css/login_register.css" type="text/css">
+    <link rel="stylesheet" href="../css/header_login_register.css" type="text/css">
+    <link rel="stylesheet" href="../css/login_register.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
 
@@ -14,7 +13,7 @@
 </head>
 <body>
     <!------ HEADER LOGIN REGISTER--->
-    <?php include('./header_login_register.php'); ?>
+    <?php include('../views/header_login_register.php'); ?>
     <section>
 
     <div id="content_left_poissonBallon">
