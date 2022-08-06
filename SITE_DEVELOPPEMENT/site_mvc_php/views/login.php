@@ -1,4 +1,4 @@
-<?php $page = 'register' ?>
+<?php $page = 'login' ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/header_login_register.css" type="text/css">
     <link rel="stylesheet" href="./css/login_register.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <title>Connexion</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
                 <a id="button_back" href="../index.php">
                     <img id="arrow_button_back" src="../img/fleche_bouton_retour.svg" alt="bouton retour">
                 </a>
-                <p>Inscription</p>
+                <p>Connexion</p>
             </div>
 
             <form id="register_login_form" action="">
@@ -44,12 +44,8 @@
                         <input maxlength="50" minlength="8" type="password" id="password" required>
                     </div>
 
-                    <div class="register_login_input">
-                        <label for="name_aquarium">Nom de l'Aquarium</label>
-                        <input maxlength="25" minlength="1" type="text" id="name_aquarium" required>
-                    </div>
                 </div>
-                <button id="button_create_aqua" type="submit" value="Valider">Créer votre Aquarium</button>
+                <button id="access_aqua" type="submit" value="Valider">Accéder à votre Aquarium</button>
             </form>
 
         </div>

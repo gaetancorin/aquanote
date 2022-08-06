@@ -1,10 +1,10 @@
-<?php $page = 'login_register' ?>
+<?php $page = 'choice_login_register' ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset=" utf-8">
     <link rel="stylesheet" href="./views/css/header_login_register.css" type="text/css">
-    <link rel="stylesheet" href="./views/css/login_register.css" type="text/css">
+    <link rel="stylesheet" href="./views/css/choice_login_register.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Inscription</title>
 
@@ -15,7 +15,7 @@
 <body>
     <!------ HEADER LOGIN REGISTER--->
     <?php include('./views/header_login_register.php'); ?>
-    <?php include('./views/login_register.php'); ?>
+    <?php include('./views/choice_login_register.php'); ?>
 
 </body>
 </html>
