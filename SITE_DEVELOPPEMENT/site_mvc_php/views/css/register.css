@@ -1,7 +1,7 @@
 section{
     display: flex;
 }
-/* --  image gauche -- */
+/* ------- partie gauche image gauche --------- */
 #content_left_poissonBallon{
     display: block;
     flex: 0 0 50%;
@@ -15,7 +15,7 @@ section{
     max-height: calc(100vh - 80px);
 
 }
-/* -- partie droite -- */
+/* -------------- partie droite ----------- */
 #content_right_register{
     display: block;
     flex: 0 0 50%;
@@ -29,7 +29,6 @@ section{
     width: 85%;
     margin: auto;
     margin-top: 80px;
-    /* background-color: aqua; */
 }
 
 /* ---  Header formulaire --- */
@@ -40,26 +39,37 @@ section{
     align-items: center;
     height: 50px;
     width: 80%;
-    /* border: 1px solid blue; */
+}
+#header_form a{
+    background-color: white;
+    padding: 4px 6px 1px 6px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    border: 1px solid #d4d4d4;
+}
+#header_form a:hover{
+    background-color: #efefef;
+}
+#header_form a:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.35);
 }
 #header_form p{
     margin: 0 0 5px 10px;
     font-size: 22px;
 }
 
-/* ---  formulaire d'inscription--- */
+/* --- le formulaire d'inscription--- */
 #register_form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* height: 150px; */
-    width: 100%;
+    width: 80%;
     margin-top: 10px;
-    /* background-color: green; */
 }
 #register_inputs{
-    width: 80%;
-    /* height: 50px; */
+    width: 100%;
     background-color: #ffffff;
     border: 1px solid black;
     border-radius: 8px;
@@ -72,7 +82,6 @@ section{
 .register_input label{
     margin-top: 15px;
     font-size: 18px;
-    /* font-weight: 500; */
 }
 .register_input input{
     border: none;
@@ -90,11 +99,11 @@ section{
     margin: 50px 0px 30px 0px;
 }
 
-/* --- Bouton créer un aquarium --- */
+/* --- Bouton créer un aquarium dans le formulaire--- */
 #button_create_aqua{
     margin-top: 30px;
     height: 60px;
-    width: 80%;
+    width: 100%;
     font-weight: 500;
     color: #f6f6f6;
     font-size: 20px;
@@ -108,4 +117,36 @@ section{
 }
 #button_create_aqua:active {
     box-shadow: inset 2px -2px 5px rgb(0 0 0 / 25%);
+}
+
+/* limite la taille du formulaire au dessus de 1200px */
+@media screen and  (min-width: 1200px) {
+    #section_register{
+        max-width: 1000px;
+    }
+}
+/* diminue le margin entre le header et le formulaire de droite  */
+@media screen and  (max-width: 1199px) {
+    #section_register{
+        margin-top: 50px;
+    }
+}
+/* diminue le margin et augmente la largeur du formulaire et du bouton*/
+@media screen and  (max-width: 991px) {
+    #section_register{
+        margin-top: 35px;
+    }
+    #register_form{
+        width: 100%;
+    }
+}
+/* Fais disparaitre l'image sous 575px et adapte les éléments en fonction */
+@media screen and (max-width: 575px) {
+    #content_left_poissonBallon{
+        display: none;
+    }
+    #content_right_register{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }

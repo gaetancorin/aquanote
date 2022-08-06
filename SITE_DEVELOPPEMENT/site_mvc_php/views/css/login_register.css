@@ -62,7 +62,7 @@ section{
     background-color: #9b0000;
 }
 
-/* Fais disparaitre l'image sous 400px et adapte les éléments en fonction */
+/* Fais disparaitre l'image sous 575px et adapte les éléments en fonction */
 @media screen and (max-width: 575px) {
     #content_left_poissonBallon{
         display: none;

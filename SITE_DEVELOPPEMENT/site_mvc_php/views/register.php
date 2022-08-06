@@ -26,7 +26,7 @@
 
             <div id="header_form">
                 <a id="button_back" href="../index.php">
-                    <img id="picture_button_back" src="../img/bouton_retour.svg" alt="bouton retour">
+                    <img id="arrow_button_back" src="../img/fleche_bouton_retour.svg" alt="bouton retour">
                 </a>
                 <p>Inscription</p>
             </div>
