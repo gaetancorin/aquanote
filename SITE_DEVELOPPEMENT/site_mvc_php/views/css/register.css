@@ -1,0 +1,111 @@
+section{
+    display: flex;
+}
+/* --  image gauche -- */
+#content_left_poissonBallon{
+    display: block;
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: calc(100vh - 60px);
+    border-right: 2px solid black;
+    background-color: #deefff;
+}
+#poissonBallon{
+    width: 100%;
+    max-height: calc(100vh - 80px);
+
+}
+/* -- partie droite -- */
+#content_right_register{
+    display: block;
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: calc(100vh - 60px);    
+}
+#section_register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+    margin-top: 80px;
+    /* background-color: aqua; */
+}
+
+/* ---  Header formulaire --- */
+#header_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 80%;
+    /* border: 1px solid blue; */
+}
+#header_form p{
+    margin: 0 0 5px 10px;
+    font-size: 22px;
+}
+
+/* ---  formulaire d'inscription--- */
+#register_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 150px; */
+    width: 100%;
+    margin-top: 10px;
+    /* background-color: green; */
+}
+#register_inputs{
+    width: 80%;
+    /* height: 50px; */
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.register_input{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+.register_input label{
+    margin-top: 15px;
+    font-size: 18px;
+    /* font-weight: 500; */
+}
+.register_input input{
+    border: none;
+    border-bottom: 2px solid #B8B8B8;
+    height: 25px;
+    padding: 0px 20px;
+    font-size: 20px;
+}
+.register_input input:focus{
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+}
+.register_input:nth-child(3){
+    margin: 50px 0px 30px 0px;
+}
+
+/* --- Bouton créer un aquarium --- */
+#button_create_aqua{
+    margin-top: 30px;
+    height: 60px;
+    width: 80%;
+    font-weight: 500;
+    color: #f6f6f6;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #2c82d2; 
+    box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+#button_create_aqua:hover{
+    background-color: #624cd1;
+}
+#button_create_aqua:active {
+    box-shadow: inset 2px -2px 5px rgb(0 0 0 / 25%);
+}

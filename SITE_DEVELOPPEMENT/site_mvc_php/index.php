@@ -1,3 +1,4 @@
+<?php $page = 'login_register' ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +6,7 @@
     <link rel="stylesheet" href="./views/css/header_login_register.css" type="text/css">
     <link rel="stylesheet" href="./views/css/login_register.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil</title>
+    <title>Connexion Inscription</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

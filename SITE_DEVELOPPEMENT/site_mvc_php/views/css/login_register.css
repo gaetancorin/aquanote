@@ -2,7 +2,7 @@ section{
     display: flex;
 }
 /* --  image gauche -- */
-#div_poissonBallon{
+#content_left_poissonBallon{
     display: block;
     flex: 0 0 50%;
     max-width: 50%;
@@ -18,23 +18,22 @@ section{
 
 }
 /* -- boutons droite -- */
-#div_register_login{
+#content_right_register_login{
     display: block;
     flex: 0 0 50%;
     max-width: 50%;
     height: calc(100vh - 60px);    
 }
 
-#center_bouton{
+#center_button{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
     margin: auto;
     margin-top: 100px;
-
 }
-.bouton_login_register{
+.button_login_register{
     display: block;
     line-height: 70px;
     width: 100%;
@@ -46,7 +45,7 @@ section{
     margin-bottom: 25px;
     font-size: 22px;
 }
-.bouton_login_register:active {
+.button_login_register:active {
     box-shadow: inset 2px -2px 5px rgb(0 0 0 / 25%);
 }
 
@@ -65,25 +64,25 @@ section{
 
 /* Fais disparaitre l'image sous 400px et adapte les éléments en fonction */
 @media screen and (max-width: 575px) {
-    #div_poissonBallon{
+    #content_left_poissonBallon{
         display: none;
     }
-    #div_register_login{
+    #content_right_register_login{
         flex: 0 0 100%;
         max-width: 100%;
     }
-    #center_bouton{
+    #center_button{
         width: 90%;
     }
 }
 /* Augmente la hauteur des boutons et réduit la largeur au dessus de 1200 pxs */
 @media screen and (min-width: 1200px) {
-    #center_bouton{
+    #center_button{
         margin-top: 150px;
         width: 70%;
     
     }
-    .bouton_login_register{
+    .button_login_register{
         line-height: 80px;
     }
 }
