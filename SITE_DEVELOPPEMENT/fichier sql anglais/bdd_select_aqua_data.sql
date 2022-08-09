@@ -1,20 +1,18 @@
 use aquarium_data;
 
--- TABLE UTILISATEUR AQUARIUM COMMENTAIRE-ANALYSES DATE-ANALYSE
-select * from user 
-inner join aquarium on user.id_user = aquarium.id_user 
-inner join comment_analysis on comment_analysis.id_aquarium = aquarium.id_aquarium
-inner join date_analysis on date_analysis.id_date_analysis = comment_analysis.id_date_analysis; 
+-- TABLE UTILISATEUR AQUARIUM COMMENTAIRE
+select * from users
+inner join aquariums on users.id_user = aquariums.id_user 
+inner join analysis_comments on aquariums.id_aquarium = analysis_comments.id_aquarium;
 
--- TABLE UTILISATEUR AQUARIUM TYPE-ANALYSE VALEUR_ANALYSE  DATE-ANALYSE
-select * from user
-inner join aquarium on user.id_user = aquarium.id_user 
-inner join type_analysis on type_analysis.id_aquarium = aquarium.id_aquarium
-inner join value_type_analysis on value_type_analysis.id_type_analysis = type_analysis.id_type_analysis
-inner join date_analysis on date_analysis.id_date_analysis = value_type_analysis.id_date_analysis;
+-- TABLE UTILISATEUR AQUARIUM TYPE VALEUR
+select * from users
+inner join aquariums on users.id_user = aquariums.id_user 
+inner join analysis_types on aquariums.id_aquarium = analysis_types.id_aquarium 
+inner join analysis_types_values on analysis_types.id_analysis_type = analysis_types_values.id_analysis_type;
 
 
--- EXEMPLE DE REQUETE SUR LA BDD
+-- EXEMPLE DE REQUETE SUR LA BDD(périmé)
 
 -- TABLE UTILISATEuR
 -- select * from utilisateur;
