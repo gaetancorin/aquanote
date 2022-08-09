@@ -1,3 +1,37 @@
+Architecture sur le projet :
+• index (le routeur)
+• template (template html), 
+• src = 
+    - models (les modèles) 
+    - controllers (controllers)
+    - lib =
+        * img (images)
+        * les fonction techniques(database)
+
+Si plusieurs controllers utilise le même modèle, on peut les ranger dans un dossier
+(ex: dossier 'comment' contient fichier add et update)
+
+Convention typographique sur le projet :
+
+• dossier (snake_case)
+• nom_de_fichier (snakecase)
+
+• bdd
+- table (snake_case) écrit au pluriel
+- champ_de_table (snake_case)
+
+• modèle
+- LaClass (PascalCase) écrit au singulier
+- laFonction (camelCase)
+
+• controller
+- LaClass (PascalCase) écrit au singulier
+- laFonction (camelCase)
+
+• routeur
+- uneAction (camelCase)
+
+
 /* Breakpoint de bootstrap utilisé sur maquette take : */
 
 /* @media screen and (max-width: 575px) {

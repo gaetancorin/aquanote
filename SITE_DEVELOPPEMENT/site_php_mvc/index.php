@@ -1,13 +1,21 @@
 <?php
+// Routeur
+
+require_once('src/controllers/register.php');
+require_once('src/controllers/login.php');
+require_once('src/controllers/create_user.php');
 
 try {
 	if (isset($_GET['action']) && $_GET['action'] !== '') {
 
     	if ($_GET['action'] === 'register') {
-            require('templates/register.php');
+			register();
     	}
 		if ($_GET['action'] === 'login') {
-            require('templates/login.php');
+			login();
+    	}
+		if ($_GET['action'] === 'createUser') {
+			createUser($_POST);
     	}
         
         else {

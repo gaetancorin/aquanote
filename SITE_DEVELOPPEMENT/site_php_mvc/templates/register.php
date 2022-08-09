@@ -23,7 +23,7 @@
             <p>Inscription</p>
         </div>
 
-        <form id="register_login_form" action="./get_register.php" method="POST">
+        <form id="register_login_form" action="index.php?action=createUser" method="POST">
             <div id="register_login_inputs">
 
                 <div class="register_login_input">
