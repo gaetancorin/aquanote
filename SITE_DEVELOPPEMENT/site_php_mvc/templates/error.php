@@ -1,0 +1,1 @@
+<p>PAGE D ERREUR =  <?= $errorMessage ?></p>
