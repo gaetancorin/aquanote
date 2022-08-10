@@ -25,7 +25,7 @@
             <p>Connexion</p>
         </div>
 
-        <form id="register_login_form" action="">
+        <form id="register_login_form" action="index.php?action=connectUser" method="POST">
             <div id="register_login_inputs">
 
                 <div class="register_login_input">

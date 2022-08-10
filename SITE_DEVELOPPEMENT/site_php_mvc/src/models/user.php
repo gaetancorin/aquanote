@@ -23,7 +23,7 @@ class UserRepository{
 		$statement->execute([$email_user, $password_user]);
 	}
 
-	public function readUserById(string $id): ?User
+	public function getUserById(string $id): ?User
 	{
         $statement = $this->connection->getConnection()->prepare(
             "SELECT 
@@ -46,7 +46,7 @@ class UserRepository{
         return $user;
     }
 
-	public function readUserByEmail(string $email): ?User
+	public function getUserByEmail(string $email): ?User
 	{
         $statement = $this->connection->getConnection()->prepare(
             "SELECT 
@@ -73,7 +73,7 @@ class UserRepository{
 	{
 		//La requête delete retournera toujours 1 même si il n'a rien supprimé.
 		//On doit donc vérifier l'Id avant.
-		$user = $this->readUserById($id_user);
+		$user = $this->getUserById($id_user);
 		if ($user === null) {
             return new Exception('L\id de l\'user a supprimer n\'existe pas');
         }

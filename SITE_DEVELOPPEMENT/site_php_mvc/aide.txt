@@ -14,7 +14,7 @@ Si plusieurs controllers utilise le même modèle, on peut les ranger dans un do
 Convention typographique sur le projet :
 
 • dossier (snake_case)
-• nom_de_fichier (snakecase)
+• nom_de_fichier (snake_case)
 
 • bdd
 - table (snake_case) écrit au pluriel
@@ -23,13 +23,20 @@ Convention typographique sur le projet :
 • modèle
 - LaClass (PascalCase) écrit au singulier
 - laFonction (camelCase)
+- laVariable (camelCase)
+- variable_contenant_attribut_objet (snake_case)
+- attribut_objet (snake_case)
 
 • controller
 - LaClass (PascalCase) écrit au singulier
 - laFonction (camelCase)
+- laVariable (camelCase)
 
 • routeur
 - uneAction (camelCase)
+
+• template
+- name_formulaire (snake_case)
 
 
 /* Breakpoint de bootstrap utilisé sur maquette take : */

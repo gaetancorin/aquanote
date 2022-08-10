@@ -1,5 +1,5 @@
 <?php
-// controllers/createUser.php
+// controllers/create_user.php
 
 require_once('src/lib/database.php');
 require_once('src/models/user.php');
@@ -12,7 +12,7 @@ function createUser(array $input){
 	$name_aquarium = null;
 
 	if (empty($input['email']) || empty($input['password']) || empty($input['name_aquarium'])) {
-		throw new Exception('Un ou plusieurs données du formulaire d\'inscription sont vide !');
+		throw new Exception('Une ou plusieurs données du formulaire d\'inscription sont vides !');
 	}
 	$email_user = $input['email'];
     $password_user = $input['password'];
@@ -28,15 +28,17 @@ function createUser(array $input){
 		throw new Exception('le nom de l\'aquarium est trop court');
 	}
 
+	//Hash du mot de passe avec bcrypt
+	$password_user_hash = password_hash( $password_user, PASSWORD_DEFAULT);
 
     // vérifier que l'email n'est pas déjà utilisé
 	$DatabaseConnection = new DatabaseConnection();
     $userRepository = new UserRepository();
 	$userRepository->connection = $DatabaseConnection;
 	try{
-		$emailExist = $userRepository->readUserByEmail($email_user);
+		$emailExist = $userRepository->getUserByEmail($email_user);
 	} catch (Exception $e) {
-		throw new Exception('Impossible chercher l\'utilisateur par l\'email!');
+		throw new Exception('Impossible de chercher l\'utilisateur par l\'email!');
 	}
 	if ($emailExist !== null) {
 		throw new Exception('Cet Email est déjà utilisé !');
@@ -44,14 +46,14 @@ function createUser(array $input){
 
     // créer l'utilisateur
 	try{
-		$userRepository->createUser($email_user, $password_user);
+		$userRepository->createUser($email_user, $password_user_hash);
 	} catch (Exception) {
 		throw new Exception('Impossible d\'ajouter l\'utilisateur !');
 	}
 
     // créer l'aquarium associé avec l'id de l'user
 	try{
-		$user = $userRepository->readUserByEmail($email_user);
+		$user = $userRepository->getUserByEmail($email_user);
 		$id_user = $user->id_user;
 	} catch (Exception) {
 		throw new Exception('Impossible de récupérer l\'id de l\'utilisateur par l\'email!');
