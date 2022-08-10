@@ -12,7 +12,7 @@ class AquariumRepository{
 
 	public DatabaseConnection $connection;
 	
-	public function createAquarium(string $name_aquarium, string $id_user) :Bool
+	public function createAquarium(string $name_aquarium, string $id_user) 
 	{
 		$statement = $this->connection->getConnection()->prepare(
 			'INSERT INTO 
@@ -20,9 +20,7 @@ class AquariumRepository{
 			VALUES
 				(?, ?)'
 		);
-		$affectedLines = $statement->execute([$name_aquarium, $id_user]);
-	
-		return ($affectedLines > 0);
+		$statement->execute([$name_aquarium, $id_user]);
 	}
 	
 }

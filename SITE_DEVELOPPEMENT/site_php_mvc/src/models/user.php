@@ -12,7 +12,7 @@ class UserRepository{
 
 	public DatabaseConnection $connection;
 	
-	public function createUser(string $email_user, string $password_user) :Bool
+	public function createUser(string $email_user, string $password_user)
 	{
 		$statement = $this->connection->getConnection()->prepare(
 			'INSERT INTO 
@@ -20,10 +20,31 @@ class UserRepository{
 			VALUES
 				(?, ?)'
 		);
-		$affectedLines = $statement->execute([$email_user, $password_user]);
-	
-		return ($affectedLines > 0);
+		$statement->execute([$email_user, $password_user]);
 	}
+
+	public function readUserById(string $id): ?User
+	{
+        $statement = $this->connection->getConnection()->prepare(
+            "SELECT 
+				id_user, email_user, password_user 
+			FROM users 
+			WHERE id_user = ?"
+        );
+        $statement->execute([$id]);
+
+        $row = $statement->fetch();
+        if ($row === false) {
+            return null;
+        }
+
+        $user = new User();
+        $user->id_user = $row['id_user'];
+        $user->email_user = $row['email_user'];
+        $user->password_user = $row['password_user'];
+
+        return $user;
+    }
 
 	public function readUserByEmail(string $email): ?User
 	{
@@ -48,17 +69,22 @@ class UserRepository{
         return $user;
     }
 
-	public function deleteUserById(string $id_user) :Bool
+	public function deleteUserById(string $id_user)
 	{
+		//La requête delete retournera toujours 1 même si il n'a rien supprimé.
+		//On doit donc vérifier l'Id avant.
+		$user = $this->readUserById($id_user);
+		if ($user === null) {
+            return new Exception('L\id de l\'user a supprimer n\'existe pas');
+        }
+
 		$statement = $this->connection->getConnection()->prepare(
 			'DELETE FROM 
 				users
 			WHERE
 				id_user = ?'
 		);
-		$affectedLines = $statement->execute([$id_user]);
-	
-		return ($affectedLines > 0);
+		$statement->execute([$id_user]);
 	}
 	
 }

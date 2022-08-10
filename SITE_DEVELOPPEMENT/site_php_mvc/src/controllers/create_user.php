@@ -9,45 +9,68 @@ function createUser(array $input){
 	
     $email_user = null;
     $password_user = null;
-    if (!empty($input['email']) && !empty($input['password']) && !empty($input['name_aquarium'])) {
-    	$email_user = $input['email'];
-    	$password_user = $input['password'];
-		$name_aquarium = $input['name_aquarium'];
+	$name_aquarium = null;
 
-	} else {
-    	throw new Exception('Les données du formulaire sont invalides.');
+	if (empty($input['email']) || empty($input['password']) || empty($input['name_aquarium'])) {
+		throw new Exception('Un ou plusieurs données du formulaire d\'inscription sont vide !');
+	}
+	$email_user = $input['email'];
+    $password_user = $input['password'];
+	$name_aquarium = $input['name_aquarium'];
+
+	if (filter_var($email_user, FILTER_VALIDATE_EMAIL) === FALSE) {
+		throw new Exception('l\'email est invalide');
+	}
+	elseif ( strlen($password_user) < 8 ) {
+		throw new Exception('le password est trop court');
+	}
+	elseif ( strlen($name_aquarium) < 0 ) {
+		throw new Exception('le nom de l\'aquarium est trop court');
 	}
 
-    $DatabaseConnection = new DatabaseConnection();
 
+    // vérifier que l'email n'est pas déjà utilisé
+	$DatabaseConnection = new DatabaseConnection();
     $userRepository = new UserRepository();
 	$userRepository->connection = $DatabaseConnection;
+	try{
+		$emailExist = $userRepository->readUserByEmail($email_user);
+	} catch (Exception $e) {
+		throw new Exception('Impossible chercher l\'utilisateur par l\'email!');
+	}
+	if ($emailExist !== null) {
+		throw new Exception('Cet Email est déjà utilisé !');
+	}
 
-    //vérifier que l'email n'est pas déjà utilisé
-    $user = $userRepository->readUserByEmail($email_user);
-    if (!empty($user)) {
-    	throw new Exception('Cet Email est déjà utilisé !');
-	} 
     // créer l'utilisateur
-    $success = $userRepository->createUser($email_user, $password_user);
-    if (!$success) {
-    	throw new Exception('Impossible d\'ajouter l\'utilisateur !');
-	} 
+	try{
+		$userRepository->createUser($email_user, $password_user);
+	} catch (Exception) {
+		throw new Exception('Impossible d\'ajouter l\'utilisateur !');
+	}
 
     // créer l'aquarium associé avec l'id de l'user
-	$user = $userRepository->readUserByEmail($email_user);
-	$id_user = $user->id_user;
+	try{
+		$user = $userRepository->readUserByEmail($email_user);
+		$id_user = $user->id_user;
+	} catch (Exception) {
+		throw new Exception('Impossible de récupérer l\'id de l\'utilisateur par l\'email!');
+	}
 
 	$aquariumRepository = new AquariumRepository();
 	$aquariumRepository->connection = $DatabaseConnection;
 	try{
 		$aquariumRepository->createAquarium($name_aquarium, $id_user);
-	}
-	catch (Exception $e) {
-		//Nécessite d'utiliser un try catch ici pour capturer les exceptions de clé étrangère
-		//Suppression de l'user si l'aquarium associé ne peut pas être créé
-		$userRepository->deleteUserById($id_user);
-		throw new Exception('Impossible d\'ajouter l\'utilisateur à cause de l\'aquarium !');
+	} catch (Exception) {
+		//L'user doit avoir un aquarium pour créer un compte.
+		//On supprime donc l'user pour qu'il puisse se réinscrire correctement.
+		try{
+			$userRepository->deleteUserById($id_user);
+		} catch (Exception) {
+			throw new Exception('Impossible de supprimer l\'utilisateur après ne pas avoir réussi à créer son aquarium.');
+		}
+		
+		throw new Exception('Impossible d\'ajouter l\'utilisateur car son aquarium n\'a pas pu être créer!');
 	}
 	
 
