@@ -22,5 +22,28 @@ class AquariumRepository{
 		);
 		$statement->execute([$name_aquarium, $id_user]);
 	}
+
+	public function getAquariumByIdUser(string $id_user): ?Aquarium
+	{
+        $statement = $this->connection->getConnection()->prepare(
+            "SELECT 
+				id_aquarium, name_aquarium, id_user 
+			FROM aquariums 
+			WHERE id_user = ?"
+        );
+        $statement->execute([$id_user]);
+
+        $row = $statement->fetch();
+        if ($row === false) {
+            return null;
+        }
+
+        $aquarium = new Aquarium();
+        $aquarium->id_aquarium = $row['id_aquarium'];
+        $aquarium->name_aquarium = $row['name_aquarium'];
+        $aquarium->id_user = $row['id_user'];
+
+        return $aquarium;
+    }
 	
 }

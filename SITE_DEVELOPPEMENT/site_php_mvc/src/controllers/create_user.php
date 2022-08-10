@@ -4,6 +4,7 @@
 require_once('src/lib/database.php');
 require_once('src/models/user.php');
 require_once('src/models/aquarium.php');
+require_once('src/models/type_analysis.php');
 
 function createUser(array $input){
 	
@@ -35,11 +36,8 @@ function createUser(array $input){
 	$DatabaseConnection = new DatabaseConnection();
     $userRepository = new UserRepository();
 	$userRepository->connection = $DatabaseConnection;
-	try{
-		$emailExist = $userRepository->getUserByEmail($email_user);
-	} catch (Exception $e) {
-		throw new Exception('Impossible de chercher l\'utilisateur par l\'email!');
-	}
+
+	$emailExist = $userRepository->getUserByEmail($email_user);
 	if ($emailExist !== null) {
 		throw new Exception('Cet Email est déjà utilisé !');
 	}
@@ -53,26 +51,40 @@ function createUser(array $input){
 
     // créer l'aquarium associé avec l'id de l'user
 	try{
+
 		$user = $userRepository->getUserByEmail($email_user);
 		$id_user = $user->id_user;
-	} catch (Exception) {
-		throw new Exception('Impossible de récupérer l\'id de l\'utilisateur par l\'email!');
-	}
+	
+		$aquariumRepository = new AquariumRepository();
+		$aquariumRepository->connection = $DatabaseConnection;
+		try{
+			$aquariumRepository->createAquarium($name_aquarium, $id_user);
+		} catch (Exception) {
+			throw new Exception('Impossible de créer le compte. Il y a une erreur sur la création de l\'aquarium!');
+		}
+	
+		// créer les types d'analyses par défault associé avec l'id de l'aquarium de l'utilisateur
 
-	$aquariumRepository = new AquariumRepository();
-	$aquariumRepository->connection = $DatabaseConnection;
-	try{
-		$aquariumRepository->createAquarium($name_aquarium, $id_user);
-	} catch (Exception) {
-		//L'user doit avoir un aquarium pour créer un compte.
-		//On supprime donc l'user pour qu'il puisse se réinscrire correctement.
+		$aquarium = $aquariumRepository->getAquariumByIdUser($id_user);
+		$id_aquarium = $aquarium->id_aquarium;
+	
+		$typeAnalysisRepository = new TypeAnalysisRepository();
+		$typeAnalysisRepository->connection = $DatabaseConnection;
+		try{
+			$typeAnalysisRepository->createDefaultTypesAnalysis($id_aquarium);
+		} catch (Exception) {
+			throw new Exception('Impossible de créer le compte. Il y a une erreur sur la création des types d\'analyses par défault pour l\'aquarium.');
+		}
+		
+	} catch (Exception $exception) {
+		echo 'cccccccc';
+		// Si on ne peut pas créer correctement l'aquarium(et ses types d'analyses) de l'user,  alors on supprime le user pour qu'il puisse s'inscrire à nouveau.
 		try{
 			$userRepository->deleteUserById($id_user);
 		} catch (Exception) {
-			throw new Exception('Impossible de supprimer l\'utilisateur après ne pas avoir réussi à créer son aquarium.');
+			throw new Exception('Impossible de supprimer l\'utilisateur après l\'échec de la création de son aquarium.');
 		}
-		
-		throw new Exception('Impossible d\'ajouter l\'utilisateur car son aquarium n\'a pas pu être créer!');
+		throw new Exception($exception);
 	}
 	
 

@@ -19,11 +19,8 @@ function connectUser(array $input){
     $DatabaseConnection = new DatabaseConnection();
     $userRepository = new UserRepository();
 	$userRepository->connection = $DatabaseConnection;
-	try{
-        $user = $userRepository->getUserByEmail($email_user);
-	} catch (Exception $e) {
-		throw new Exception('Impossible de chercher l\'utilisateur par l\'email!');
-	}
+
+    $user = $userRepository->getUserByEmail($email_user);
     if ($user === null) {
 		throw new Exception('Identifiants invalides !');
 	}

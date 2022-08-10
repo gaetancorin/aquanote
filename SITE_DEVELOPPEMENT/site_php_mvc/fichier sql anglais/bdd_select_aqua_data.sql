@@ -3,45 +3,16 @@ use aquarium_data;
 -- TABLE UTILISATEUR AQUARIUM COMMENTAIRE
 select * from users
 inner join aquariums on users.id_user = aquariums.id_user 
-inner join analysis_comments on aquariums.id_aquarium = analysis_comments.id_aquarium;
+inner join comments_analysis on aquariums.id_aquarium = comments_analysis.id_aquarium;
 
 -- TABLE UTILISATEUR AQUARIUM TYPE VALEUR
 select * from users
 inner join aquariums on users.id_user = aquariums.id_user 
-inner join analysis_types on aquariums.id_aquarium = analysis_types.id_aquarium 
-inner join analysis_types_values on analysis_types.id_analysis_type = analysis_types_values.id_analysis_type;
+inner join types_analysis on aquariums.id_aquarium = types_analysis.id_aquarium 
+inner join values_types_analysis on types_analysis.id_type_analysis = values_types_analysis.id_type_analysis;
 
-
--- EXEMPLE DE REQUETE SUR LA BDD(périmé)
-
--- TABLE UTILISATEuR
--- select * from utilisateur;
--- TABLE UTILISATEUR AQUARIUM
--- select * from utilisateur inner join aquarium on utilisateur.id_utilisateur = aquarium.id_utilisateur;
-
--- TABLE UTILISATEUR AQUARIUM COMMENTAIRE-ANALYSES DATE-ANALYSE
--- select * from utilisateur 
--- inner join aquarium on utilisateur.id_utilisateur = aquarium.id_utilisateur 
--- inner join commentaire_analyses on commentaire_analyses.id_aquarium = aquarium.id_aquarium
--- inner join date_analyse on date_analyse.id_date_analyse = commentaire_analyses.id_date_analyse; 
-
--- TABLE UTILISATEUR AQUARIUM TYPE-ANALYSE VALEUR_ANALYSE DATE-ANALYSE
--- select * from utilisateur 
--- inner join aquarium on aquarium.id_utilisateur = utilisateur.id_utilisateur
--- inner join type_analyse on type_analyse.id_aquarium = aquarium.id_aquarium
--- inner join valeur_analyse on valeur_analyse.id_type_analyse = type_analyse.id_type_analyse
--- inner join date_analyse on date_analyse.id_date_analyse = valeur_analyse.id_date_analyse
-
--- TABLE UTILISATEUR AQUARIUM COMMENTAIRE-ANALYSE DATE-ANALYSE TYPE-ANALYSE VALEUR_ANALYSE
--- PROBLEME NE PREND QUE LORSQUE DATE DE VALEUR ANALYSE ET DATE DE COMMENTAIRE ANALYSE SONT LES MEMES, OUBLIE LES AUTRES
--- select * from utilisateur 
--- inner join aquarium on utilisateur.id_utilisateur = aquarium.id_utilisateur 
--- inner join commentaire_analyses on commentaire_analyses.id_aquarium = aquarium.id_aquarium
--- inner join date_analyse on date_analyse.id_date_analyse = commentaire_analyses.id_date_analyse
--- inner join type_analyse on type_analyse.id_aquarium = aquarium.id_aquarium
--- inner join valeur_analyse on valeur_analyse.id_type_analyse = type_analyse.id_type_analyse
--- and valeur_analyse.id_date_analyse = date_analyse.id_date_analyse;
-
+-- TABLE DEFAULTTYPESANALYSIS
+select * from default_types_analysis;
 
 
 -- D AUTRES EXEMPLES SUR DES EXERCICES

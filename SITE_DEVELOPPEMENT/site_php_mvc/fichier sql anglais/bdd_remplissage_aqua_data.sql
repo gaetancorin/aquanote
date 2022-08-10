@@ -11,12 +11,12 @@ insert into aquariums (name_aquarium, id_user) values
 ('aquaexemple2', '1'),
 ('aquagaetan1', '2');
 
-insert into analysis_comments (analysis_comment, date_analysis_comment, id_aquarium) values
+insert into comments_analysis (comment_analysis, date_analysis, id_aquarium) values
 ('Voici le premier commentaire de aquaexemple1', '2022-08-04', '1'),
 ('Voici le deuxième commentaire de aquaexemple1', '2022-08-05', '2'),
 ('Voici le troisième commentaire de aquaexemple1', '2022-08-06', '3');
 
-insert into analysis_types (analysis_type, explain_analysis_type, id_aquarium) values
+insert into types_analysis (name_type_analysis, tutorial_how_testing_type_analysis, id_aquarium) values
 ('°C', 'Ceci est la température', '1'),
 ('K', 'Ceci est le potassium', '1'),
 ('NO3', 'Ceci est le nitrate', '1'),
@@ -33,7 +33,7 @@ insert into analysis_types (analysis_type, explain_analysis_type, id_aquarium) v
 ('NO2', 'Ceci est le nitrite', '2'),
 ('Chang eau', 'Ceci est le changement d\'eau', '2');
 
-insert into analysis_types_values (analysis_type_value, date_analysis_type_value, id_analysis_type) values
+insert into values_types_analysis (value_type_analysis, date_analysis, id_type_analysis) values
 ('25', '2022-08-04', '1'),
 ('15', '2022-08-04', '2'),
 ('5', '2022-08-04', '3'),
@@ -45,3 +45,13 @@ insert into analysis_types_values (analysis_type_value, date_analysis_type_value
 ('23', '2022-08-07', '1'),
 ('22', '2022-08-08', '1');
 
+-- TABLE DE DONNEE POUR REMPLIR LES TYPES_ANALYSIS PAR DEFAULT A LA CREATION D'UN AQUARIUM
+
+insert into default_types_analysis (name_type_analysis, tutorial_how_testing_type_analysis) values
+('°C', 'Ceci est la température'),
+('K', 'Ceci est le potassium'),
+('NO3', 'Ceci est le nitrate'),
+('PO4', 'Ceci est le phosphate'),
+('Fe', 'Ceci est le Fer'),
+('NO2', 'Ceci est le nitrite'),
+('Chang eau', '');

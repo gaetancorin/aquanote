@@ -24,8 +24,8 @@ Convention typographique sur le projet :
 - LaClass (PascalCase) écrit au singulier
 - laFonction (camelCase)
 - laVariable (camelCase)
-- variable_contenant_attribut_objet (snake_case)
-- attribut_objet (snake_case)
+- variable_contenant_attribut_objet (snake_case)(adéquation avec bdd)
+- attribut_objet (snake_case)(adéquation avec bdd)
 
 • controller
 - LaClass (PascalCase) écrit au singulier
@@ -36,6 +36,7 @@ Convention typographique sur le projet :
 - uneAction (camelCase)
 
 • template
+- mon_attribut (snake_case)
 - name_formulaire (snake_case)
 
 
@@ -46,4 +47,6 @@ Convention typographique sur le projet :
 @media screen and (min-width: 768px) and (max-width: 991px) {
 @media screen and (min-width: 992px) and (max-width: 1199px) {
 @media screen and (min-width: 1200px) { */
+
+\r\n pour faire un retour à la ligne dans la bdd
 
