@@ -54,4 +54,4 @@ insert into default_types_analysis (name_type_analysis, tutorial_how_testing_typ
 ('PO4', 'Ceci est le phosphate'),
 ('Fe', 'Ceci est le Fer'),
 ('NO2', 'Ceci est le nitrite'),
-('Chang eau', '');
+('chang eau %', '');

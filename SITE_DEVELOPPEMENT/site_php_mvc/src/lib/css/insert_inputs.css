@@ -221,17 +221,17 @@ form > div:nth-child(2){
 }
 
 .trait_noir{
-    width: calc(100px + 15vw);
+    width: calc(82px + 15vw);
     height: calc(30px + 5vw);
-    min-width: 160px;
-    max-width: 210px;
+    min-width: 142px;
+    max-width: 192px;
     min-height: 50px;
     max-height: 68px;
 
     position: absolute;
-    border-bottom: solid 10px #b8b8b8;
-    outline: 9px solid white;
-    outline-offset: -9px;
+    border-bottom: solid 1.5px #b8b8b8;
+    margin: 0px 9px;
+
 }
 
 
@@ -256,8 +256,6 @@ form > div:nth-child(2){
 
 .label_wrap_data{
     display: block;
-    position: relative;
-    width: min-content;
     padding: 3%;
     font-size: calc(10px + 1.1vw);
     color: rgb(49, 49, 49);

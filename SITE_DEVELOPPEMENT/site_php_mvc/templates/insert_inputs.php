@@ -3,6 +3,7 @@
 <?php 
     $title = "Insertion des données"; 
     $stylesheets[] = 'src/lib/css/insert_inputs.css';
+    // variable pour layout header_app_asides
     $aquariums = $aquariums;
     $aquarium_connected =  $aquarium_connected;
     
@@ -41,7 +42,8 @@
     <div class="date_and_checkbox">
         <div>
             <label for="date">Date :</label>
-            <input type="date" id="date" name="date_afficheur">
+            <input type="date" id="date" name="date_afficheur" 
+            value="<?= $dateToday ?>">
         </div>
 
         <div>
@@ -55,52 +57,23 @@
 
     <!-- Contenu flex wrap data -->   
     <div>
-        <div class="wrap_data">
-            <span class="trait_noir"></span>
-            <input type="text" id="data_temperature" >
-            <label for="data_temperature" class="label_wrap_data">°C
-            </label>
-            
-        </div>
-        <div class="wrap_data">
-            <span class="trait_noir"></span>
-            <input type="text" id="data_ph" >
-            <label for="data_ph" class="label_wrap_data">PH
-            </label>
-        </div>
-        <div class="wrap_data">
-            <span class="trait_noir"></span>
-            <input type="text" id="temperature" >
-            <label for="temperature" class="label_wrap_data">GH
-            </label>
-        </div>
-        <div class="wrap_data">
-            <span class="trait_noir"></span>
-            <input type="text" id="temperature" >
-            <label for="temperature" class="label_wrap_data">KH
-            </label>
-        </div>
-        <div class="wrap_data">
-            <span class="trait_noir"></span>
-            <input type="text" id="temperature" >
-            <label for="temperature" class="label_wrap_data">NO2
-            </label>
-        </div>
-        <div class="wrap_data">
-            <span class="trait_noir"></span>
-            <input type="text" id="temperature" >
-            <label for="temperature" class="label_wrap_data">NO3
-            </label>
-        </div>
-        <div class="wrap_data">
-            <span class="trait_noir"></span>
-            <div class="pourcentage">
-                <p>%</p>
-            </div>           
-            <input type="text" id="temperature" >
-            <label for="temperature" class="label_wrap_data">chang.eau
-            </label>
-        </div>
+        <?php foreach ($types_analysis as $type_analysis) { ?>
+ 
+            <div class="wrap_data">
+                <span class="trait_noir"></span>
+
+                <input type="text" 
+                id="type_analysis_<?php echo htmlspecialchars($type_analysis->id_type_analysis);?>"
+                name="type_analysis_<?php echo htmlspecialchars($type_analysis->id_type_analysis);?>" value="">
+
+                <label class="label_wrap_data" 
+                for="type_analysis_<?php echo htmlspecialchars($type_analysis->id_type_analysis);?>">
+                
+                    <?= htmlspecialchars($type_analysis->name_type_analysis);?>
+                </label>           
+            </div>
+                     
+        <?php } ?>  
 
         <div class="wrap_data_button">
             <input type="submit" value="Enregistrer">
@@ -111,7 +84,7 @@
     <!-- notation  data -->
     <div>
         <label for="notation" class="label_notation">Note :</label>
-        <input type="text" id="notation">
+        <input type="text" id="notation" value="">
     </div>
     
 </form>
