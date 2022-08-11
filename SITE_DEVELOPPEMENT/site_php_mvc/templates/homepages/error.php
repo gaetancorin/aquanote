@@ -2,7 +2,7 @@
 
 <?php 
     $title = "Erreur"; 
-    $stylesheets[] = 'src/lib/css/login_register.css';
+    $stylesheets[] = 'src/lib/css/homepages/login_register.css';
 ?>
 
 
@@ -12,7 +12,7 @@
 <section>
 
 <div id="content_left_poissonBallon">
-    <img id="poissonBallon" src="src/lib/img/poissonballon.png" alt="Aqua Data logo" >
+    <img id="poissonBallon" src="src/lib/img/poisson_ballons.png" alt="Aqua Data logo" >
 </div>
 
 <div id="content_right_register_login">
@@ -42,4 +42,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('templates/layout/header_homepages.php'); ?>
+<?php require('templates/homepages/layout/header_homepages.php'); ?>

@@ -2,5 +2,5 @@
 // controllers/homepage.php
 
 function homepage(){
-    require('templates/homepage.php');
+    require('templates/homepages/homepage.php');
 }

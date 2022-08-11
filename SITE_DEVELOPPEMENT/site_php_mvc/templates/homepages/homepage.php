@@ -2,7 +2,7 @@
 
 <?php 
     $title = "Page d'accueil"; 
-    $stylesheets[] = 'src/lib/css/homepage.css';
+    $stylesheets[] = 'src/lib/css/homepages/homepage.css';
 ?>
 
 <?php ob_start(); ?>
@@ -10,7 +10,7 @@
 <section>
 
     <div id="content_left_poissonBallon">
-        <img id="poissonBallon" src="src/lib/img/poissonballon.png" alt="Aqua Data logo" >
+        <img id="poissonBallon" src="src/lib/img/poisson_ballons.png" alt="Aqua Data logo" >
     </div>
 
     <div id="content_right_register_login">
@@ -24,5 +24,5 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('templates/layout/header_homepages.php'); ?>
+<?php require('templates/homepages/layout/header_homepages.php'); ?>
 

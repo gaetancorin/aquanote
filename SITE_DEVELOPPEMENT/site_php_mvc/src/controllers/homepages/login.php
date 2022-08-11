@@ -3,5 +3,5 @@
 
 function login($errorMessage = null){
 
-	require('templates/login.php');
+	require('templates/homepages/login.php');
 }

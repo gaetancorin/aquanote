@@ -3,5 +3,5 @@
 
 function error($errorMessage){
     $errorMessage = $errorMessage;
-	require('templates/error.php');
+	require('templates/homepages/error.php');
 }

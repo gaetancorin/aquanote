@@ -1,12 +1,13 @@
 <?php
 // Routeur
 
-require_once('src/controllers/error.php');
-require_once('src/controllers/homepage.php');
-require_once('src/controllers/register.php');
-require_once('src/controllers/login.php');
-require_once('src/controllers/create_user.php');
-require_once('src/controllers/connect_user.php');
+require_once('src/controllers/homepages/error.php');
+require_once('src/controllers/homepages/homepage.php');
+require_once('src/controllers/homepages/register.php');
+require_once('src/controllers/homepages/login.php');
+require_once('src/controllers/homepages/create_user.php');
+require_once('src/controllers/homepages/connect_user.php');
+
 require_once('src/controllers/insert_inputs.php');
 
 try {
@@ -50,10 +51,10 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 	$UrlAfterControllers = substr($cutUrlBeforeControllers, 12);
 
 	//Renvois le massage d'erreur sur le controller approprié en fonction du nom du controller qui à créer l'exception
-	if (strpos($UrlAfterControllers, 'create_user') !== false){
+	if (strpos($UrlAfterControllers, 'homepages\create_user') !== false){
 		register($errorMessage);
 	}
-	if (strpos($UrlAfterControllers, 'connect_user') !== false){
+	if (strpos($UrlAfterControllers, 'homepages\connect_user') !== false){
 		login($errorMessage);
 	}
 	

@@ -3,5 +3,5 @@
 
 function register($errorMessage = null){
 
-	require('templates/register.php');
+	require('templates/homepages/register.php');
 }
