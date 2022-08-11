@@ -1,6 +1,8 @@
 <?php
 // Routeur
 
+require_once('src/controllers/error.php');
+require_once('src/controllers/homepage.php');
 require_once('src/controllers/register.php');
 require_once('src/controllers/login.php');
 require_once('src/controllers/create_user.php');
@@ -27,11 +29,32 @@ try {
     	}
 	} 
     else { // Si aucune variable 'action'
-        require('templates/homepage.php');
+		homepage();
 	}
 } 
-catch (Exception $e) { // Catch toutes les exceptions...
-	$errorMessage = $e->getMessage();
+catch (Exception $exception) { // Catch toutes les exceptions...
+	$errorMessage = $exception->getMessage();
 
-	require('templates/error.php');
+	if ($errorMessage === "La page que vous recherchez n'existe pas."){
+		error($errorMessage);
+	}
+	
+	//récupère l'url ou est déclenché l'exception
+	//Puis récupère le nom du controller
+	$getUrlError = $exception->getFile();
+	$cutUrlBeforeControllers = strstr($getUrlError, 'controllers');
+	$UrlAfterControllers = substr($cutUrlBeforeControllers, 12);
+
+	//Renvois le massage d'erreur sur le controller approprié en fonction du nom du controller qui à créer l'exception
+	if (strpos($UrlAfterControllers, 'create_user') !== false){
+		register($errorMessage);
+	}
+	if (strpos($UrlAfterControllers, 'connect_user') !== false){
+		login($errorMessage);
+	}
+	
+
+
+	//Si aucun ne correspond, on renvois sur la page error
+	error($errorMessage);
 }

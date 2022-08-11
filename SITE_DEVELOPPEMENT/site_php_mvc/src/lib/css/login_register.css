@@ -60,7 +60,11 @@ section{
     margin: 0 0 5px 10px;
     font-size: 22px;
 }
-
+/* --- page error--- */
+#error_page_error{
+    margin-top: 30px;
+    font-size: 18px;
+}
 /* --- le formulaire d'inscription--- */
 #register_login_form{
     display: flex;

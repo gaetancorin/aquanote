@@ -1,9 +1,6 @@
 <?php
+// controllers/homepage.php
 
-class Homepage
-{
-    public function execute()
-    {
-        require('templates/homepage.php');
-    }
+function homepage(){
+    require('templates/homepage.php');
 }

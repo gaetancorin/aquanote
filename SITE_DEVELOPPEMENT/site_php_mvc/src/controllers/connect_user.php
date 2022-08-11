@@ -30,5 +30,5 @@ function connectUser(array $input){
         throw new Exception('Identifiants invalides !');
     }
 
-    require('templates/homepage.php');
+	header('Location: index.php');
 }

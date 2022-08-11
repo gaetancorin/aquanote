@@ -39,6 +39,10 @@
                 </div>
 
             </div>
+            <div class="error_text">
+                <?php if (isset($errorMessage)){
+                        echo $errorMessage;} ?>
+            </div>
             <button id="access_aqua" type="submit" value="Valider">Accéder à votre Aquarium</button>
         </form>
 

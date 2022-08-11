@@ -13,20 +13,20 @@ function createUser(array $input){
 	$name_aquarium = null;
 
 	if (empty($input['email']) || empty($input['password']) || empty($input['name_aquarium'])) {
-		throw new Exception('Une ou plusieurs données du formulaire d\'inscription sont vides !');
+		throw new Exception('Une ou plusieurs données du formulaire d\'inscription sont vides');
 	}
 	$email_user = $input['email'];
     $password_user = $input['password'];
 	$name_aquarium = $input['name_aquarium'];
 
 	if (filter_var($email_user, FILTER_VALIDATE_EMAIL) === FALSE) {
-		throw new Exception('l\'email est invalide');
+		throw new Exception('l\'Email est invalide');
 	}
 	elseif ( strlen($password_user) < 8 ) {
-		throw new Exception('le password est trop court');
+		throw new Exception('le Mot de Passe est trop court');
 	}
 	elseif ( strlen($name_aquarium) < 0 ) {
-		throw new Exception('le nom de l\'aquarium est trop court');
+		throw new Exception('le Nom de l\'Aquarium est trop court');
 	}
 
 	//Hash du mot de passe avec bcrypt
@@ -46,7 +46,7 @@ function createUser(array $input){
 	try{
 		$userRepository->createUser($email_user, $password_user_hash);
 	} catch (Exception) {
-		throw new Exception('Impossible d\'ajouter l\'utilisateur !');
+		throw new Exception('Impossible de créer le compte !');
 	}
 
     // créer l'aquarium associé avec l'id de l'user
@@ -77,16 +77,15 @@ function createUser(array $input){
 		}
 		
 	} catch (Exception $exception) {
-		echo 'cccccccc';
 		// Si on ne peut pas créer correctement l'aquarium(et ses types d'analyses) de l'user,  alors on supprime le user pour qu'il puisse s'inscrire à nouveau.
 		try{
 			$userRepository->deleteUserById($id_user);
 		} catch (Exception) {
-			throw new Exception('Impossible de supprimer l\'utilisateur après l\'échec de la création de son aquarium.');
+			throw new Exception('Impossible de réinitialiser le compte après l\'échec de la création de l\'aquarium. Vous pouvez vous connecter mais l\'expérience utilisateur sera déterioré');
 		}
 		throw new Exception($exception);
 	}
 	
 
-	require('templates/homepage.php');
+	header('Location: index.php');
 }

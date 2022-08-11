@@ -42,8 +42,8 @@
                 </div>
             </div>
             <div class="error_text">
-                <?php if (isset($visible_error)){
-                        echo $visible_error;} ?>
+                <?php if (isset($errorMessage)){
+                        echo $errorMessage;} ?>
             </div>
             <button id="button_create_aqua" type="submit" value="Valider">Créer votre Aquarium</button>
         </form>

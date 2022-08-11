@@ -1,7 +1,7 @@
 <?php
 // controllers/login.php
 
-function login(){
+function login($errorMessage = null){
 
 	require('templates/login.php');
 }
