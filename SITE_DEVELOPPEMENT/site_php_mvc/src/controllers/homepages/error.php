@@ -1,7 +1,7 @@
 <?php
 // controllers/error.php
 
-function error($errorMessage){
+function error( string $errorMessage){
     $errorMessage = $errorMessage;
 	require('templates/homepages/error.php');
 }

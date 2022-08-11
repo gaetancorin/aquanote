@@ -23,15 +23,15 @@ class AquariumRepository{
 		$statement->execute([$name_aquarium, $id_user]);
 	}
 
-	public function getAquariumByIdUser(string $id_user): ?Aquarium
+	public function getAquariumById(string $id_aquarium): ?Aquarium
 	{
         $statement = $this->connection->getConnection()->prepare(
             "SELECT 
 				id_aquarium, name_aquarium, id_user 
 			FROM aquariums 
-			WHERE id_user = ?"
+			WHERE id_aquarium = ?"
         );
-        $statement->execute([$id_user]);
+        $statement->execute([$id_aquarium]);
 
         $row = $statement->fetch();
         if ($row === false) {
@@ -44,6 +44,28 @@ class AquariumRepository{
         $aquarium->id_user = $row['id_user'];
 
         return $aquarium;
+    }
+	
+	public function getAquariumsByIdUser(string $id_user): array
+	{
+        $statement = $this->connection->getConnection()->prepare(
+            "SELECT 
+				id_aquarium, name_aquarium, id_user 
+			FROM aquariums 
+			WHERE id_user = ?"
+        );
+        $statement->execute([$id_user]);
+
+		$aquariums = [];
+		while (($row = $statement->fetch())){
+			$aquarium = new Aquarium();
+			$aquarium->id_aquarium = $row['id_aquarium'];
+			$aquarium->name_aquarium = $row['name_aquarium'];
+			$aquarium->id_user = $row['id_user'];
+			$aquariums[] = $aquarium;
+		}
+
+        return $aquariums;
     }
 	
 }

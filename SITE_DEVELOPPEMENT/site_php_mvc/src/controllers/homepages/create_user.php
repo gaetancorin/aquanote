@@ -65,7 +65,8 @@ function createUser(array $input){
 	
 		// créer les types d'analyses par défault associé avec l'id de l'aquarium de l'utilisateur
 
-		$aquarium = $aquariumRepository->getAquariumByIdUser($id_user);
+		$aquariums = $aquariumRepository->getAquariumsByIdUser($id_user);
+		$aquarium = $aquariums[0];
 		$id_aquarium = $aquarium->id_aquarium;
 	
 		$typeAnalysisRepository = new TypeAnalysisRepository();

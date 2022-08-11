@@ -3,6 +3,9 @@
 <?php 
     $title = "Insertion des données"; 
     $stylesheets[] = 'src/lib/css/insert_inputs.css';
+    $aquariums = $aquariums;
+    $aquarium_connected =  $aquarium_connected;
+    
 ?>
 
 <?php ob_start(); ?>

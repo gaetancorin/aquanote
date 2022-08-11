@@ -1,13 +1,14 @@
 <?php
 // Routeur
 
+//homepage
 require_once('src/controllers/homepages/error.php');
 require_once('src/controllers/homepages/homepage.php');
 require_once('src/controllers/homepages/register.php');
 require_once('src/controllers/homepages/login.php');
 require_once('src/controllers/homepages/create_user.php');
 require_once('src/controllers/homepages/connect_user.php');
-
+//app
 require_once('src/controllers/insert_inputs.php');
 require_once('src/controllers/values_charts.php');
 require_once('src/controllers/values_table.php');
@@ -66,6 +67,9 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 	}
 	if (strpos($UrlAfterControllers, 'homepages\connect_user') !== false){
 		login($errorMessage);
+	}
+	if (strpos($UrlAfterControllers, 'insert_inputs') !== false){
+		error($errorMessage);
 	}
 	
 

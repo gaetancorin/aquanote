@@ -39,6 +39,10 @@ Convention typographique sur le projet :
 - mon_attribut (snake_case)
 - name_formulaire (snake_case)
 
+• $_SESSION
+- ma_donnee_bdd (snake_case)
+- monAutreDonnee (camelCase)
+
 
 /* Breakpoint de bootstrap utilisé sur maquette take : */
 
@@ -49,4 +53,6 @@ Convention typographique sur le projet :
 @media screen and (min-width: 1200px) { */
 
 \r\n pour faire un retour à la ligne dans la bdd
+
+session_start(); = demarre ou continue session
 
