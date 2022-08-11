@@ -8,7 +8,10 @@
     <header>
         <div class="header_top">
             <h2 class="aquarium_name">Aquarium 1</h2>
-            <p class="logo">logo</p>
+            <div id="div_logo">
+                <img id="logoAquaData" src="src/lib/img/logo_aqua_data.png" alt="Aqua Data logo">
+                <p id="title_logo">AquaData</p>
+            </div>
             <div class="hamburger_conteneur">
                 <input type="checkbox" name="" id="">
                 <ul class="conteneur_aside_hamb">                

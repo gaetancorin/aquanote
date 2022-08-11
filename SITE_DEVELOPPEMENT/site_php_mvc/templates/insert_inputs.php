@@ -9,12 +9,12 @@
 
 <!----  INSERT_INPUTS  ---->
 
-<!--  header top afficheur  -->
+<!--  header top INSERT_INPUTS afficheur -->
 <nav>
     <ul  class="header_top_afficheur">
         <li class="navigation">
             <a href="">
-            <img src="src/lib/img/icone_afficheur.svg">
+            <img src="src/lib/img/icone_insertion_donnees.svg">
             </a>
         </li>
         <li class="navigation">
