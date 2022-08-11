@@ -1,5 +1,3 @@
-<p>PAGE D ERREUR =  <?= $errorMessage ?></p>
-
 <!-- PAGE ERROR -->
 
 <?php 

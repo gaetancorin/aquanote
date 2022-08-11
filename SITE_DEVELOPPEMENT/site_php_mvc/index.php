@@ -7,6 +7,7 @@ require_once('src/controllers/register.php');
 require_once('src/controllers/login.php');
 require_once('src/controllers/create_user.php');
 require_once('src/controllers/connect_user.php');
+require_once('src/controllers/insert_inputs.php');
 
 try {
 	if (isset($_GET['action']) && $_GET['action'] !== '') {
@@ -22,6 +23,9 @@ try {
     	}
 		if ($_GET['action'] === 'connectUser') {
 			connectUser($_POST);
+    	}
+		if ($_GET['action'] === 'insertInputs') {
+			insertInputs();
     	}
        
         else {
