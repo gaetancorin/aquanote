@@ -1,43 +1,32 @@
 <?php
 // Routeur
 
-require_once('src/controllers/homepages/error.php');
-require_once('src/controllers/homepages/homepage.php');
-require_once('src/controllers/homepages/register.php');
-require_once('src/controllers/homepages/login.php');
-require_once('src/controllers/homepages/create_user.php');
-require_once('src/controllers/homepages/connect_user.php');
-
+require_once('src/controllers/error.php');
+require_once('src/controllers/homepage.php');
+require_once('src/controllers/register.php');
+require_once('src/controllers/login.php');
+require_once('src/controllers/create_user.php');
+require_once('src/controllers/connect_user.php');
 require_once('src/controllers/insert_inputs.php');
-require_once('src/controllers/values_charts.php');
-require_once('src/controllers/values_table.php');
 
 try {
 	if (isset($_GET['action']) && $_GET['action'] !== '') {
-		// homepages
+
     	if ($_GET['action'] === 'register') {
 			register();
     	}
-		elseif ($_GET['action'] === 'createUser') {
+		if ($_GET['action'] === 'createUser') {
 			createUser($_POST);
     	}
-		elseif ($_GET['action'] === 'login') {
+		if ($_GET['action'] === 'login') {
 			login();
     	}
-		elseif ($_GET['action'] === 'connectUser') {
+		if ($_GET['action'] === 'connectUser') {
 			connectUser($_POST);
     	}
-		// app
-		elseif ($_GET['action'] === 'insertInputs') {
+		if ($_GET['action'] === 'insertInputs') {
 			insertInputs();
     	}
-		elseif ($_GET['action'] === 'valuesCharts') {
-			valuesCharts();
-    	}
-		elseif ($_GET['action'] === 'valuesTable') {
-			valuesTable();
-    	}
-
        
         else {
         	throw new Exception("La page que vous recherchez n'existe pas.");
@@ -61,15 +50,15 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 	$UrlAfterControllers = substr($cutUrlBeforeControllers, 12);
 
 	//Renvois le massage d'erreur sur le controller approprié en fonction du nom du controller qui à créer l'exception
-	if (strpos($UrlAfterControllers, 'homepages\create_user') !== false){
+	if (strpos($UrlAfterControllers, 'create_user') !== false){
 		register($errorMessage);
 	}
-	if (strpos($UrlAfterControllers, 'homepages\connect_user') !== false){
+	if (strpos($UrlAfterControllers, 'connect_user') !== false){
 		login($errorMessage);
 	}
 	
 
 
 	//Si aucun ne correspond, on renvois sur la page error
-	// error($errorMessage);
+	error($errorMessage);
 }

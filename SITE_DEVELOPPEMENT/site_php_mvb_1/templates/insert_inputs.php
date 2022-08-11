@@ -13,18 +13,18 @@
 <nav>
     <ul  class="header_top_afficheur">
         <li class="navigation">
-            <a href="">
-            <img src="src/lib/img/icone_afficheur.svg">
+            <a href="#">
+            <img src="./image_site/icone_afficheur.svg">
             </a>
         </li>
         <li class="navigation">
-            <a href="index.php?action=valuesCharts">
-            <img src="src/lib/img/icone_diagramme.svg">
+            <a href="./diagramme.html">
+            <img src="./image_site/icone_diagramme.svg">
             </a>
         </li>
         <li class="navigation">
-            <a href="index.php?action=valuesTable">
-            <img src="src/lib/img/icone_tableau.svg">
+            <a href="./tableau.css">
+            <img src="./image_site/icone_tableau.svg">
             </a>
         </li>
     </ul>

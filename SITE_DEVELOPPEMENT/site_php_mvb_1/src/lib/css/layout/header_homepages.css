@@ -1,0 +1,45 @@
+/* --- RETIRER CSS PAR DEFAUT NAVIGATEUR --*/
+body{
+    background-color: #f6f6f6;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400;   
+    overflow-x: hidden;
+    overflow-y: hidden; 
+    height: 100vh;
+}
+h2{
+    margin: 0px;
+}
+p{
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* --  HEADER --  */
+
+#header_login_register{
+    width: 100vw;
+    height: 55px;
+    background-color: #deefff;
+    border-bottom: solid 2px black; 
+}
+header #div_logo{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#logoAquaData{
+    width: 40px;
+    padding-right:8px;
+}
+#title_logo{
+    font-size: 25px;
+    font-weight: 500;
+    padding-right: 48px;
+}

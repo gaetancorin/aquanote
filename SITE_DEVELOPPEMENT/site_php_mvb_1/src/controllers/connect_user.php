@@ -30,5 +30,5 @@ function connectUser(array $input){
         throw new Exception('Identifiants invalides !');
     }
 
-	header('Location: index.php?action=insertInputs');
+	header('Location: index.php');
 }

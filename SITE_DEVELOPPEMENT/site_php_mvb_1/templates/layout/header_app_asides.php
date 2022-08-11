@@ -13,31 +13,31 @@
                 <input type="checkbox" name="" id="">
                 <ul class="conteneur_aside_hamb">                
                     <li><a class="a_aside_hamb" href="https://www.google.com/">
-                            <img class="img_fish_hamb" src="src/lib/img/poisson_burger_1.svg">
+                            <img class="img_fish_hamb" src="./image_site/poisson_burger_1.svg">
                             Aquarium 1       
                         </a></li>
                     <li><a class="a_aside_hamb" href="https://www.google.com/">
-                            <img class="img_fish_hamb" src="src/lib/img/poisson_burger_2.svg">
+                            <img class="img_fish_hamb" src="./image_site/poisson_burger_2.svg">
                             Aquarium 2       
                         </a></li>                
                     <li><a class="a_aside_hamb" href="https://www.google.com/">
-                            <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
+                            <img class="img_fish_hamb" src="./image_site/poisson_burger_3.svg">
                             Créer nouvel aquarium      
                         </a></li>                
                     <li><a class="a_aside_hamb" href="https://www.google.com/">
-                            <img class="img_fish_hamb" src="src/lib/img/poisson_burger_4.svg">
+                            <img class="img_fish_hamb" src="./image_site/poisson_burger_4.svg">
                             Changer nom de l' aquarium       
                         </a></li>                
                     <li><a class="a_aside_hamb" href="https://www.google.com/">
-                            <img class="img_fish_hamb" src="src/lib/img/poisson_burger_5.svg">
+                            <img class="img_fish_hamb" src="./image_site/poisson_burger_5.svg">
                             Supprimer un aquarium       
                         </a></li>                
                     <li><a class="a_aside_hamb" href="https://www.google.com/">
-                            <img class="img_fish_hamb" src="src/lib/img/poisson_burger_6.svg">
+                            <img class="img_fish_hamb" src="./image_site/poisson_burger_6.svg">
                             Déconnection       
                         </a></li>   
                 </ul>
-                <img class="hamburger_header" src="src/lib/img/parametre_header.svg">
+                <img class="hamburger_header" src="./image_site/parametre_header.svg">
             </div>
         </div>
     </header>
@@ -51,33 +51,33 @@
                 
                 <li>
                     <a class="a_aside_hamb" href="https://www.google.com/">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_1.svg">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_1.svg">
                         Aquarium 1       
                     </a>
                 </li>
                 <li>
                     <a class="a_aside_hamb" href="https://www.google.com/">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_2.svg">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_2.svg">
                         Aquarium 2       
                     </a>
                 </li>                <li>
                     <a class="a_aside_hamb" href="https://www.google.com/">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_3.svg">
                         Créer nouvel aquarium      
                     </a>
                 </li>                <li>
                     <a class="a_aside_hamb" href="https://www.google.com/">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_4.svg">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_4.svg">
                         Changer nom de l' aquarium       
                     </a>
                 </li>                <li>
                     <a class="a_aside_hamb" href="https://www.google.com/">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_5.svg">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_5.svg">
                         Supprimer un aquarium       
                     </a>
                 </li>                <li>
                     <a class="a_aside_hamb" href="https://www.google.com/">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_6.svg">
+                        <img class="img_fish_hamb" src="./image_site/poisson_burger_6.svg">
                         Déconnection       
                     </a>
                 </li>
@@ -94,11 +94,11 @@
                 </div>
 
                 <a class="lien_pub" href="https://www.amazon.fr/">
-                    <img class="img_1_aside_pub" src="src/lib/img/image_malette_1_transparent.png" alt="mallette de test a goutte JBl lien Amazon">
+                    <img class="img_1_aside_pub" src="./image_site/image_malette_1_transparent.png" alt="mallette de test a goutte JBl lien Amazon">
                 </a>
 
                 <a  class="lien_pub" href="https://www.amazon.fr/">
-                    <img class="img_2_aside_pub" src="src/lib/img/image_malette_2_transparent.png" alt="mallette de test a goutte JBl lien Amazon">
+                    <img class="img_2_aside_pub" src="./image_site/image_malette_2_transparent.png" alt="mallette de test a goutte JBl lien Amazon">
                 </a>
   
             </div>
