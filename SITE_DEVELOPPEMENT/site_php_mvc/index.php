@@ -12,6 +12,7 @@ require_once('src/controllers/homepages/connect_user.php');
 require_once('src/controllers/insert_inputs.php');
 require_once('src/controllers/values_charts.php');
 require_once('src/controllers/values_table.php');
+require_once('src/controllers/get_inputs.php');
 
 try {
 	if (isset($_GET['action']) && $_GET['action'] !== '') {
@@ -37,6 +38,10 @@ try {
     	}
 		elseif ($_GET['action'] === 'valuesTable') {
 			valuesTable();
+    	}
+
+		elseif ($_GET['action'] === 'getInputs') {
+			getInputs();
     	}
 
        
@@ -70,6 +75,9 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 	}
 	if (strpos($UrlAfterControllers, 'insert_inputs') !== false){
 		error($errorMessage);
+	}
+	if (strpos($UrlAfterControllers, 'get_inputs') !== false){
+		insertInputs($errorMessage);
 	}
 	
 

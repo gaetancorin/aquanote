@@ -23,6 +23,7 @@ class AquariumRepository{
 		$statement->execute([$name_aquarium, $id_user]);
 	}
 
+
 	public function getAquariumById(string $id_aquarium): ?Aquarium
 	{
         $statement = $this->connection->getConnection()->prepare(
@@ -45,6 +46,7 @@ class AquariumRepository{
 
         return $aquarium;
     }
+	
 	
 	public function getAquariumsByIdUser(string $id_user): array
 	{

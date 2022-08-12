@@ -235,7 +235,7 @@ form > div:nth-child(2){
 }
 
 
-.wrap_data input[type="text"]{
+.wrap_data input[type="number"]{
     width: calc(100px + 15vw);
     height: calc(40px + 5vw);
     min-width: 160px;
@@ -389,4 +389,16 @@ input[id="notation"]{
         font-size: 18px;
     }
     
+}
+
+/* ------- Erreut text ------- */
+.error_text{
+    color: red;
+    font-size: 18px;
+    margin-top: 6px;
+}
+@media screen and (max-width: 750px){
+    .error_text{
+        font-size: 15px;
+    }
 }

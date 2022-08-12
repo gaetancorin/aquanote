@@ -36,13 +36,13 @@
 
 
 <!-- FORMULAIRE INSERT_INPUTS-->
-<form method="get">
+<form method="post" action="index.php?action=getInputs">
 
     <!-- Date et checkbox --> 
     <div class="date_and_checkbox">
         <div>
             <label for="date">Date :</label>
-            <input type="date" id="date" name="date_afficheur" 
+            <input type="date" id="date" name="date_analysis" 
             value="<?= $dateToday ?>">
         </div>
 
@@ -62,7 +62,7 @@
             <div class="wrap_data">
                 <span class="trait_noir"></span>
 
-                <input type="text" 
+                <input type="number" max="999" min="0.1" step="0.1"
                 id="type_analysis_<?php echo htmlspecialchars($type_analysis->id_type_analysis);?>"
                 name="type_analysis_<?php echo htmlspecialchars($type_analysis->id_type_analysis);?>" value="">
 
@@ -84,10 +84,16 @@
     <!-- notation  data -->
     <div>
         <label for="notation" class="label_notation">Note :</label>
-        <input type="text" id="notation" value="">
+        <input type="text" id="notation" name='comment_analysis' value="">
+    </div>
+
+    <div class="error_text">
+        <?php if (isset($errorMessage)){
+            echo $errorMessage;} ?>
     </div>
     
 </form>
+
 
 
 <?php $content = ob_get_clean(); ?>

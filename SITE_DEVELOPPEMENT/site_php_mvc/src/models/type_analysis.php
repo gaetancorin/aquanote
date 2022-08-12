@@ -23,6 +23,7 @@ class TypeAnalysisRepository{
 		$statement->execute([$name_type_analysis, $tutorial_how_testing_type_analysis, $id_aquarium]);
 	}
 
+	
 	public function createDefaultTypesAnalysis(string $id_aquarium) 
 	{
 		// récupérer les types d'analyses par défaut 
@@ -41,6 +42,7 @@ class TypeAnalysisRepository{
 			$this->createTypeAnalysis( $name_type_analysis, $tutorial_how_testing_type_analysis, $id_aquarium);
         }
 	}
+
 
 	public function getTypesAnalisysByIdAquarium(string $id_aquarium): array
 	{
@@ -63,6 +65,30 @@ class TypeAnalysisRepository{
 		}
 
         return $types_analysis;
+    }
+
+	public function getTypeAnalisysById(string $id_type_analysis): ?TypeAnalysis
+	{
+        $statement = $this->connection->getConnection()->prepare(
+            "SELECT 
+				id_type_analysis, name_type_analysis, tutorial_how_testing_type_analysis, id_aquarium 
+			FROM types_analysis 
+			WHERE id_type_analysis = ?"
+        );
+        $statement->execute([$id_type_analysis]);
+
+		$row = $statement->fetch();
+        if ($row === false) {
+            return null;
+        }
+
+		$type_analysis = new TypeAnalysis();
+		$type_analysis->id_type_analysis = $row['id_type_analysis'];
+		$type_analysis->name_type_analysis = $row['name_type_analysis'];
+		$type_analysis->tutorial_how_testing_type_analysis = $row['tutorial_how_testing_type_analysis'];
+		$type_analysis->id_aquarium = $row['id_aquarium'];
+
+        return $type_analysis;
     }
 
 	

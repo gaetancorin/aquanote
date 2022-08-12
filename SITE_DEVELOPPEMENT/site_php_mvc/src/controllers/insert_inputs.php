@@ -7,7 +7,10 @@ require_once('src/models/type_analysis.php');
 
 function insertInputs($errorMessage = null){
 
-    session_start();
+    if (!isset($_SESSION)){
+        session_start();
+    };
+    
     // test des informations de session
     if(!isset($_SESSION['id_user']) || $_SESSION['id_user'] === '' || !isset($_SESSION['id_aquarium_connected']) || $_SESSION['id_aquarium_connected'] === ''){
         throw new Exception('Votre session de connexion est introuvable');
@@ -37,6 +40,7 @@ function insertInputs($errorMessage = null){
     $types_analysis = $typeAnalysisRepository->getTypesAnalisysByIdAquarium($id_aquarium_connected);
     // récupération de la date actuel // variable template insert_inputs
     $dateToday = date('Y-m-d');
+
 
 
     require('templates/insert_inputs.php');

@@ -23,6 +23,7 @@ class UserRepository{
 		$statement->execute([$email_user, $password_user]);
 	}
 
+
 	public function getUserById(string $id): ?User
 	{
         $statement = $this->connection->getConnection()->prepare(
@@ -45,6 +46,7 @@ class UserRepository{
 
         return $user;
     }
+
 
 	public function getUserByEmail(string $email): ?User
 	{
@@ -69,6 +71,7 @@ class UserRepository{
         return $user;
     }
 
+	
 	public function deleteUserById(string $id_user)
 	{
 		//La requête delete retournera toujours 1 même si il n'a rien supprimé.
