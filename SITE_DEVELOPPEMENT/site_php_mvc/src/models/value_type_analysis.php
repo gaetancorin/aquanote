@@ -48,7 +48,7 @@ class ValueTypeAnalysisRepository{
     }
 
 
-	public function updateValueTypeAnalysisByDateAnalysisAndIdTypeAnalysis( string $value_type_analysis, string $date_analysis, string $id_type_analysis): bool
+	public function updateValueTypeAnalysisByDateAnalysisAndIdTypeAnalysis( string $value_type_analysis, string $date_analysis, string $id_type_analysis)
     {
         $statement = $this->connection->getConnection()->prepare(
             'UPDATE 
@@ -58,9 +58,7 @@ class ValueTypeAnalysisRepository{
 			WHERE 
 				date_analysis = ? AND id_type_analysis = ?'
         );
-        $affectedLines = $statement->execute([$value_type_analysis, $date_analysis, $id_type_analysis]);
-
-        return ($affectedLines > 0);
+        $statement->execute([$value_type_analysis, $date_analysis, $id_type_analysis]);
     }
 
 	public function deleteValueTypeAnalysisByDateAnalysisAndIdTypeAnalysis(string $date_analysis, string $id_type_analysis)

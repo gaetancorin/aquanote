@@ -4,6 +4,8 @@
 require_once('src/lib/database.php');
 require_once('src/models/aquarium.php');
 require_once('src/models/type_analysis.php');
+require_once('src/models/value_type_analysis.php');
+require_once('src/models/comment_analysis.php');
 
 function insertInputs($errorMessage = null){
 
@@ -34,12 +36,36 @@ function insertInputs($errorMessage = null){
 
 
     //////////////////////////////////////////////////////////////:
-    // récupération de tous les types d'analyses de l'aquarium connecté // variable template insert_inputs
+    // pour template insert_inputs // 
+
+    // récupération de la date dans l'url et sa vérification
+    //si aucune fournis récupérer la date du jour
+    if (isset($_GET['date'])){
+        $date_inputs = $_GET['date'];
+        try{
+            list($year, $month, $day) = explode("-", $date_inputs);
+            if (checkdate($month, $day, $year) === false){
+                throw new Exception();
+            }           
+        } catch(Exception){
+            throw new Exception('La date que vous avez inséré est invalide');
+        }
+    }
+    else{ // date du jour
+        $date_inputs = date('Y-m-d');
+    }
+
+    //récupération de tous les types d'analyses de l'aquarium connecté
     $typeAnalysisRepository = new TypeAnalysisRepository();
     $typeAnalysisRepository->connection = $DatabaseConnection;
     $types_analysis = $typeAnalysisRepository->getTypesAnalisysByIdAquarium($id_aquarium_connected);
-    // récupération de la date actuel // variable template insert_inputs
-    $dateToday = date('Y-m-d');
+
+    //récupération de tous les valeurs de types d'analyses de l'aquarium connecté à la date choisi
+    // $valueTypeAnalysisRepository = new ValueTypeAnalysisRepository();
+    // $valueTypeAnalysisRepository->connection = $DatabaseConnection;
+    // $values_types_analysis = $valueTypeAnalysisRepository->
+
+    
 
 
 

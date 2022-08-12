@@ -43,7 +43,7 @@
         <div>
             <label for="date">Date :</label>
             <input type="date" id="date" name="date_analysis" 
-            value="<?= $dateToday ?>">
+            value="<?= $date_inputs ?>" required>
         </div>
 
         <div>

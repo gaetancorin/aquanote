@@ -33,15 +33,15 @@ try {
 		elseif ($_GET['action'] === 'insertInputs') {
 			insertInputs();
     	}
+		elseif ($_GET['action'] === 'getInputs') {
+			getInputs();
+    	}
+
 		elseif ($_GET['action'] === 'valuesCharts') {
 			valuesCharts();
     	}
 		elseif ($_GET['action'] === 'valuesTable') {
 			valuesTable();
-    	}
-
-		elseif ($_GET['action'] === 'getInputs') {
-			getInputs();
     	}
 
        

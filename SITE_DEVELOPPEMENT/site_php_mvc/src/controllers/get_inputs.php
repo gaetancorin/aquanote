@@ -4,6 +4,7 @@
 require_once('src/lib/database.php');
 require_once('src/models/type_analysis.php');
 require_once('src/models/value_type_analysis.php');
+require_once('src/models/comment_analysis.php');
 
 function getInputs($errorMessage = null){
 
@@ -18,15 +19,17 @@ function getInputs($errorMessage = null){
     $id_aquarium_connected = $_SESSION['id_aquarium_connected'];
 
 
-    // récupération des inputs du formulaire get_inputs
+    // récupération des inputs du formulaire insert_inputs
     $inputs = $_POST;
 
-    // connection à la bdd
+    // connection à la bdd des modèles
     $DatabaseConnection = new DatabaseConnection();
     $typeAnalysisRepository = new TypeAnalysisRepository();
 	$typeAnalysisRepository->connection = $DatabaseConnection;
     $valueTypeAnalysisRepository = new ValueTypeAnalysisRepository();
     $valueTypeAnalysisRepository->connection = $DatabaseConnection;
+    $commentAnalysisRepository = new CommentAnalysisRepository();
+    $commentAnalysisRepository->connection = $DatabaseConnection;
 
     // Vérification et Récupération date
     foreach($inputs as $key => $value){
@@ -51,7 +54,7 @@ function getInputs($errorMessage = null){
     }
 
 
-    // modification des inputs avec des types d'analyses
+    // modification de la valeur des types d'analyses
     if($date){
 
     foreach($inputs as $key => $value){
@@ -61,7 +64,7 @@ function getInputs($errorMessage = null){
         if( (strpos($key, 'type_analysis_')) !== false ){
             //retire 'type_analysis_' pour récupérer l'id du type d'analyse
             $id_type_analysis = substr($key, 14);
-            // vérifie que l'id récupéré existe
+            // vérifie que l'id récupéré du type_analyse existe
             $type_analysis = $typeAnalysisRepository->getTypeAnalisysById($id_type_analysis);
             if ($type_analysis === null){
                 throw new Exception('Erreur d\'enregistrement, Un des types d\'analyses est introuvable en base de donnée');
@@ -72,22 +75,22 @@ function getInputs($errorMessage = null){
                 throw new Exception('Le champ "'.$type_analysis->name_type_analysis.'" n\'appartient pas à votre aquarium');
             }
             
-            // Si vide, supprime la valeur du type d'analyses à la date
+            // Si type_analysis est vide, supprime la valeur du type d'analyses à la date
             if($value === ''){
                 $valueTypeAnalysisRepository->deleteValueTypeAnalysisByDateAnalysisAndIdTypeAnalysis($date, $id_type_analysis);
-                echo 'c\'est supprimer.';
+                echo 'valeur analyse supprimer.';
             }
-            // Si plein, update ou crée valeur du type d'analyses à la date
+            // Si type_analysis est plein, update ou crée la valeur du type d'analyses en fonction de son existance à la date 
             if($value !== ''){
 
                 $exist = $valueTypeAnalysisRepository->getValueTypeAnalysisByDateAnalysisAndIdTypeAnalysis($date, $id_type_analysis);
 
                 if($exist !== null){ $valueTypeAnalysisRepository->updateValueTypeAnalysisByDateAnalysisAndIdTypeAnalysis($value, $date, $id_type_analysis);
-                echo 'c\'est update';
+                echo 'valeur analyse update';
                 }
                 else{
                     $valueTypeAnalysisRepository->createValueTypeAnalysis($value, $date, $id_type_analysis);
-                    echo 'c\'est créer';
+                    echo 'valeur analyse créer';
                 }
             }
                             
@@ -95,23 +98,41 @@ function getInputs($errorMessage = null){
     }
     }
 
+    // modification des commentaires d'analyses
     if($date){
 
     foreach($inputs as $key => $value){
 
     if($key === 'comment_analysis'){
+        // Si comment_analysis est vide, je supprime la valeur du commentaire à la date
         if ($value == ''){
-            echo "commentaire plein";
+            $commentAnalysisRepository->deleteCommentAnalysisByDateAnalysisAndIdAquarium($date, $id_aquarium_connected);
+
+            echo "commentaire supprimer";
         }
-        else{
-            echo "commentaire vide";
+        // Si commentaire_analysis est plein, update ou crée la valeur du commentaire en fonction de son existance à la date
+        elseif($value !== ''){
+
+            $exist = $commentAnalysisRepository->getCommentAnalysisByDateAnalysisAndIdAquarium($date, $id_aquarium_connected); 
+
+            if($exist !== null){ 
+                
+                $commentAnalysisRepository->updateCommentAnalysisByDateAnalysisAndIdAquarium($value, $date, $id_aquarium_connected);
+
+                echo 'commentaire modifier';
+            }
+            else{
+                $commentAnalysisRepository->createCommentAnalysis($value, $date, $id_aquarium_connected);
+
+                echo 'commentaire créer';
+            }
         } 
     }
     }
     }
 
-
-
+    // Renvois sur le formulaire à la date d'insertion
+    header('Location: index.php?action=insertInputs&date='.$date);
 
 
 }

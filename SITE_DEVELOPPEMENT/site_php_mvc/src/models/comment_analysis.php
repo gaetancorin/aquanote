@@ -12,7 +12,7 @@ class CommentAnalysisRepository{
 
 	public DatabaseConnection $connection;
 	
-	public function createTypeAnalysis(string $comment_analysis, string $date_analysis, string $id_aquarium) 
+	public function createCommentAnalysis(string $comment_analysis, string $date_analysis, string $id_aquarium) 
 	{
 		$statement = $this->connection->getConnection()->prepare(
 			'INSERT INTO 
@@ -47,6 +47,34 @@ class CommentAnalysisRepository{
 
         return $comment_analysis;
     }
+
+
+    public function updateCommentAnalysisByDateAnalysisAndIdAquarium( string $comment_analysis, string $date_analysis, string $id_aquarium)
+    {
+        
+        $statement = $this->connection->getConnection()->prepare(
+            'UPDATE 
+				comments_analysis 
+			SET 
+                comment_analysis = ? 
+			WHERE 
+				date_analysis = ? AND id_aquarium = ?'
+        );
+        
+        $statement->execute([$comment_analysis, $date_analysis, $id_aquarium]);
+    }
+
+    public function deleteCommentAnalysisByDateAnalysisAndIdAquarium(string $date_analysis, string $id_aquarium)
+	{
+
+		$statement = $this->connection->getConnection()->prepare(
+			'DELETE FROM 
+				comments_analysis
+			WHERE
+				date_analysis = ? AND id_aquarium = ?'
+		);
+		$statement->execute([$date_analysis, $id_aquarium]);
+	}
 
 	
 }
