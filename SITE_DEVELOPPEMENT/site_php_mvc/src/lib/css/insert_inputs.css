@@ -7,7 +7,7 @@
     margin: 0px;
     display: flex;
     flex-direction: row;
-    border-collapse: collapse;  
+    border-collapse: collapse; 
 }
 
 .navigation{
@@ -250,8 +250,19 @@ form > div:nth-child(2){
     text-align: center;
     font-size: 22px;
     font-weight: 700;
-    color: #373737;
-    
+    color: #373737;  
+}
+
+/* Retire les fleches du type number 
+pour Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .label_wrap_data{
@@ -314,6 +325,7 @@ div input[type="submit"]{
     background-color: #2c82d2; 
     box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    border: 2px solid black;
 }
 div input[type="submit"]:hover{
     background-color: #624cd1;

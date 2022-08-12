@@ -63,11 +63,23 @@
                 <span class="trait_noir"></span>
 
                 <input type="number" max="999" min="0.1" step="0.1"
-                id="type_analysis_<?php echo htmlspecialchars($type_analysis->id_type_analysis);?>"
-                name="type_analysis_<?php echo htmlspecialchars($type_analysis->id_type_analysis);?>" value="">
 
+                <?php echo htmlspecialchars('id=type_analysis_'.$type_analysis->id_type_analysis);?>
+
+                <?php echo htmlspecialchars('name=type_analysis_'.$type_analysis->id_type_analysis);?>
+                
+                <?php if($type_analysis->value_type_analysis === null){ 
+                    echo 'value=""';
+                 } elseif($type_analysis->value_type_analysis !== null){ 
+                    
+                     echo htmlspecialchars('value='.$type_analysis->value_type_analysis->value_type_analysis);
+                    //Va chercher l'objet ValueTypeAnalysis assigné un attribut
+                    //d'objet TypeAnalysis
+                    }  ?>
+
+                readChangement>
                 <label class="label_wrap_data" 
-                for="type_analysis_<?php echo htmlspecialchars($type_analysis->id_type_analysis);?>">
+                <?php echo htmlspecialchars('for=type_analysis_'.$type_analysis->id_type_analysis);?>>
                 
                     <?= htmlspecialchars($type_analysis->name_type_analysis);?>
                 </label>           
@@ -84,7 +96,14 @@
     <!-- notation  data -->
     <div>
         <label for="notation" class="label_notation">Note :</label>
-        <input type="text" id="notation" name='comment_analysis' value="">
+        <input type="text" id="notation" name='comment_analysis' 
+        <?php if($comment_analysis === null){ 
+                    echo 'value=""';
+                 } elseif($comment_analysis !== null){                     
+                     echo htmlspecialchars('value='.$comment_analysis->comment_analysis);
+                    }  ?>
+        
+        readChangement>
     </div>
 
     <div class="error_text">
@@ -93,8 +112,7 @@
     </div>
     
 </form>
-
-
+<script src="src/lib/inserts_inputs_refresh.js"></script>
 
 <?php $content = ob_get_clean(); ?>
 

@@ -176,6 +176,10 @@ header #div_logo{
 aside{
     display: none;
 }
+.section_centrale{
+    zoom: 1;
+}
+
 
 /* ------aside_gauche_hbg actif---- */
 @media screen and (min-width: 1000px){
@@ -192,6 +196,12 @@ aside{
 
     .section_centrale{
         order: 2;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .section_centrale{
+        zoom: 1.1;
     }
 }
 

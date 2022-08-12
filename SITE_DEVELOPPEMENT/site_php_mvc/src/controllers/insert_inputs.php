@@ -55,18 +55,17 @@ function insertInputs($errorMessage = null){
         $date_inputs = date('Y-m-d');
     }
 
+    //récupération du commentaire de l'aquarium connecté à la date choisi
+    $commentAnalysisRepository = new CommentAnalysisRepository();
+    $commentAnalysisRepository->connection = $DatabaseConnection;
+    $comment_analysis = $commentAnalysisRepository->getCommentAnalysisByDateAnalysisAndIdAquarium($date_inputs, $id_aquarium_connected);
+
+
     //récupération de tous les types d'analyses de l'aquarium connecté
+    //avec dans l'attribut de ses objets TypeAnalyses un objet ValueTypeAnalysis correspondant à la date choisi
     $typeAnalysisRepository = new TypeAnalysisRepository();
     $typeAnalysisRepository->connection = $DatabaseConnection;
-    $types_analysis = $typeAnalysisRepository->getTypesAnalisysByIdAquarium($id_aquarium_connected);
-
-    //récupération de tous les valeurs de types d'analyses de l'aquarium connecté à la date choisi
-    // $valueTypeAnalysisRepository = new ValueTypeAnalysisRepository();
-    // $valueTypeAnalysisRepository->connection = $DatabaseConnection;
-    // $values_types_analysis = $valueTypeAnalysisRepository->
-
-    
-
+    $types_analysis = $typeAnalysisRepository->getTypesAnalisysByIdAquariumWithObjectValue($id_aquarium_connected, $date_inputs);
 
 
     require('templates/insert_inputs.php');

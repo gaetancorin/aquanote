@@ -22,7 +22,8 @@ section{
     display: block;
     flex: 0 0 50%;
     max-width: 50%;
-    height: calc(100vh - 60px);    
+    height: calc(100vh - 60px);
+    zoom: 1.1;    
 }
 
 #center_button{

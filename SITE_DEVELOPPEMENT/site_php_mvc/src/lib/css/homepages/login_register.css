@@ -21,8 +21,10 @@ section{
     display: block;
     flex: 0 0 50%;
     max-width: 50%;
-    height: calc(100vh - 60px);    
+    height: calc(100vh - 60px); 
+    zoom: 1.2;   
 }
+
 #section_register_login{
     display: flex;
     flex-direction: column;
@@ -150,6 +152,15 @@ section{
         width: 100%;
     }
 }
+/* zoom le formulaire du 10% en ecran plus grand */
+@media screen and  (max-width: 720px) {
+    #content_right_register_login{
+        zoom: 1;
+    }
+}
+
+
+
 /* Fais disparaitre l'image sous 575px et adapte les éléments en fonction */
 @media screen and (max-width: 575px) {
     #content_left_poissonBallon{
