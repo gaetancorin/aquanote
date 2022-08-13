@@ -65,4 +65,5 @@ function valuesTable($errorMessage = null){
 
 
     require('templates/values_table.php');
+    // require('templates/insert_inputs.php');
 }
