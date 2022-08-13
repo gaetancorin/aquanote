@@ -1,6 +1,12 @@
 <?php
 // controllers/values_table.php
 
+require_once('src/lib/database.php');
+require_once('src/models/aquarium.php');
+require_once('src/models/type_analysis.php');
+require_once('src/models/value_type_analysis.php');
+require_once('src/models/data_select_all.php');
+
 function valuesTable($errorMessage = null){
 
     session_start();
@@ -27,6 +33,36 @@ function valuesTable($errorMessage = null){
 
 
     //////////////////////////////////////////////////////////////:
+
+    $DatabaseConnection = new DatabaseConnection();
+    $dateValuesSelectorRepository = new DateValuesSelectorRepository();
+    $dateValuesSelectorRepository->connection = $DatabaseConnection;
+    // $dateValuesSelectorRepository->getAllTypesAnalysisByIdAquarium($id_aquarium_connected);
+    $dateValuesSelectorRepository->getAllDatesWhereAreValuesTypesAnalysisByIdAquarium($id_aquarium_connected);
+
+    $datesValuesSelector = $dateValuesSelectorRepository->DoListOfDatesContainsArrayTypesAnalysisObjectsWithValue($id_aquarium_connected);
+
+
+    // foreach($datesValuesSelector as $dateValuesSelector){
+
+    //     echo $dateValuesSelector->date_where_are_values." // ";
+
+    //     foreach($dateValuesSelector->all_types_analysis_with_value_if_exist as $type_analysis_with_value_if_exist){
+        
+    //         if($type_analysis_with_value_if_exist->value_type_analysis !== null){
+    //             echo "  ". $type_analysis_with_value_if_exist->value_type_analysis->value_type_analysis;
+    //         }
+    //         echo $type_analysis_with_value_if_exist->name_type_analysis." // ";
+    //     }  
+    //     echo '<br>';
+    // }
+
+
+
+
+
+
+
 
     require('templates/values_table.php');
 }

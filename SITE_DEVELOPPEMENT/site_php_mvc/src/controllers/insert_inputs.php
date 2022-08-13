@@ -65,7 +65,7 @@ function insertInputs($errorMessage = null){
     //avec dans l'attribut de ses objets TypeAnalyses un objet ValueTypeAnalysis correspondant à la date choisi
     $typeAnalysisRepository = new TypeAnalysisRepository();
     $typeAnalysisRepository->connection = $DatabaseConnection;
-    $types_analysis = $typeAnalysisRepository->getTypesAnalisysByIdAquariumWithObjectValue($id_aquarium_connected, $date_inputs);
+    $types_analysis = $typeAnalysisRepository->getTypesAnalisysWithObjectValueIfExistByIdAquariumAndDate($id_aquarium_connected, $date_inputs);
 
 
     require('templates/insert_inputs.php');

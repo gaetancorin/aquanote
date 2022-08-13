@@ -10,7 +10,7 @@ input_date.addEventListener('change', (event)=>{
 inputs = document.querySelectorAll('input[readchangement]');
 inputs.forEach( input => {;
     input.style.color = 'rgb(24 41 207)';
-    console.log(input.defaultValue);
+    // console.log(input.defaultValue);
     input.addEventListener('change', (event)=>{
         if (input.defaultValue !== input.value){
             input.style.color = 'black';

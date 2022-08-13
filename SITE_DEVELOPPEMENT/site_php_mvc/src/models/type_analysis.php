@@ -46,6 +46,30 @@ class TypeAnalysisRepository{
         }
 	}
 
+	public function getTypeAnalisysById(string $id_type_analysis): ?TypeAnalysis
+	{
+        $statement = $this->connection->getConnection()->prepare(
+            "SELECT 
+				id_type_analysis, name_type_analysis, tutorial_how_testing_type_analysis, id_aquarium 
+			FROM types_analysis 
+			WHERE id_type_analysis = ?"
+        );
+        $statement->execute([$id_type_analysis]);
+
+		$row = $statement->fetch();
+        if ($row === false) {
+            return null;
+        }
+
+		$type_analysis = new TypeAnalysis();
+		$type_analysis->id_type_analysis = $row['id_type_analysis'];
+		$type_analysis->name_type_analysis = $row['name_type_analysis'];
+		$type_analysis->tutorial_how_testing_type_analysis = $row['tutorial_how_testing_type_analysis'];
+		$type_analysis->id_aquarium = $row['id_aquarium'];
+
+        return $type_analysis;
+    }
+
 
 	public function getTypesAnalisysByIdAquarium(string $id_aquarium): array
 	{
@@ -70,7 +94,8 @@ class TypeAnalysisRepository{
         return $types_analysis;
     }
 
-	public function getTypesAnalisysByIdAquariumWithObjectValue(string $id_aquarium, $date_analysis): array
+	public function getTypesAnalisysWithObjectValueIfExistByIdAquariumAndDate(string $id_aquarium, $date_analysis): array
+	// récupère uniquement sur la date donnée les types d'analyses avec sa value_type_analysis en attribut
 	{
 		$valueTypeAnalysisRepository = new ValueTypeAnalysisRepository();
 		$valueTypeAnalysisRepository->connection = $this->connection;
@@ -99,31 +124,6 @@ class TypeAnalysisRepository{
 		}
 
         return $types_analysis;
-    }
-
-
-	public function getTypeAnalisysById(string $id_type_analysis): ?TypeAnalysis
-	{
-        $statement = $this->connection->getConnection()->prepare(
-            "SELECT 
-				id_type_analysis, name_type_analysis, tutorial_how_testing_type_analysis, id_aquarium 
-			FROM types_analysis 
-			WHERE id_type_analysis = ?"
-        );
-        $statement->execute([$id_type_analysis]);
-
-		$row = $statement->fetch();
-        if ($row === false) {
-            return null;
-        }
-
-		$type_analysis = new TypeAnalysis();
-		$type_analysis->id_type_analysis = $row['id_type_analysis'];
-		$type_analysis->name_type_analysis = $row['name_type_analysis'];
-		$type_analysis->tutorial_how_testing_type_analysis = $row['tutorial_how_testing_type_analysis'];
-		$type_analysis->id_aquarium = $row['id_aquarium'];
-
-        return $type_analysis;
     }
 	
 }
