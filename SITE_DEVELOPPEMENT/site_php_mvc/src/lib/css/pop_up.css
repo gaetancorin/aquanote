@@ -10,9 +10,9 @@ Au clique,
 ::-webkit-scrollbar {
     width: 10px;
   }
-#background_pop_up{
+.background_pop_up{
     display: flex;
-    display: none;
+    /* display: none; */
     background-color: rgba(30, 30, 30, 0.25);
     width: 100vw;
     height: 100vh;
@@ -23,11 +23,13 @@ Au clique,
     align-items: center;
 }
 /* création pop_up */
-#pop_up{
-    /* width: 90%; */
-    width: 35%;
+.pop_up{
+    width: 40%;
+    /* 1000 = 65 */
+    /* 650 = 80 */
+    /* 400 = 85 */
+    /* width: 35%; */
     max-width: 650px;
-    /* display: none; */
     
     max-height: 98vh;   
     position: relative;
@@ -37,7 +39,7 @@ Au clique,
     box-shadow: 3px -3px 8px rgba(0, 0, 0, 0.25);
 }
 
-#content_pop_up{
+.content_pop_up{
     max-height: 90vh;
     overflow-y: auto;
     display: flex;
@@ -50,7 +52,7 @@ Au clique,
 }
 
 /* ///// header ////// */
-#block_header_back{
+.block_header_back{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -59,13 +61,14 @@ Au clique,
     /* border: 1px solid rgb(170, 0, 0); */
 }
 
-#header_back{
+.header_back{
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 60px;
 }
-#header_back a{
+.header_back a{
+    zoom: 1.2;
     background-color: white;
     padding: 4px 6px 1px 6px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
@@ -74,13 +77,13 @@ Au clique,
     margin-right: 24px;
     border: 1px solid #d4d4d4;
 }
-#header_back a:hover{
+.header_back a:hover{
     background-color: #efefef;
 }
-#header_back a:active {
+.header_back a:active {
     box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.35);
 }
-#header_back p{
+.header_back p{
     margin: 0 0 5px 0px;
     font-size: 26px;
     font-weight: 500;
@@ -88,7 +91,7 @@ Au clique,
 
 /*////boby pop_up/////*/
 
-#body_pop_up{
+.body_pop_up{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -99,7 +102,7 @@ Au clique,
 }
 
 /*///// text_pop_up /////*/
-#texts_pop_up{
+.texts_pop_up{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -107,11 +110,11 @@ Au clique,
     font-size: 22px;
 
 }
-#texts_pop_up div{
+.texts_pop_up div{
     padding: 12px;
     margin-top: 48px;
 }
-#texts_pop_up div p{
+.texts_pop_up div p{
     margin-bottom: 13px;
 }
 .name_aquarium_pop_up{
@@ -119,12 +122,12 @@ Au clique,
 }
 
 /*///// formulaire /////*/
-#form_pop_up{
+.form_pop_up{
     width: 100%;
     /* border: 2px solid green; */
 }
 /* block input and error_message in form*/
-#input_and_error_message{
+.input_and_error_message{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,7 +138,7 @@ Au clique,
     /* border: 2px solid green; */
 }
 /* inputs */
-#inputs_form_pop_up{
+.inputs_form_pop_up{
     width: 100%;
     background-color: #ffffff;
     border: 1px solid black;
@@ -148,7 +151,8 @@ Au clique,
     padding: 0 18px;
 }
 .input_pop_up label{
-    margin-top: 18px;
+    padding-top: 18px;
+    padding-bottom: 5px;
     font-size: 21px;
 }
 .input_pop_up input{
@@ -156,6 +160,7 @@ Au clique,
     border-bottom: 2px solid #B8B8B8;
     height: 30px;
     padding: 0px 24px;
+    padding-top: 5px;
     font-size: 24px;
 }
 .input_pop_up input:focus{
@@ -171,7 +176,7 @@ Au clique,
 }
 
 /*//// button /////*/
-#button_submit_pop_up{
+.button_submit_pop_up{
     margin-top: 36px;
     height: 72px;
     width: 100%;
@@ -183,9 +188,61 @@ Au clique,
     box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 }
-#button_submit_pop_up:hover{
+.button_submit_pop_up:hover{
     background-color: #624cd1;
 }
-#button_submit_pop_up:active {
+.button_submit_pop_up:active {
+    box-shadow: inset 3px 3px 7px rgba(30, 23, 70, 0.75);
+}
+
+
+/* RESPONSIVE */
+
+    /* 1000 = 65 */
+    /* 650 = 80 */
+    /* 400 = 85 */
+    /* width: 35%; */
+@media screen and (min-width: 850px) and (max-width: 1000px){
+    .pop_up{
+        width:50%;
+    }
+}
+@media screen and (min-width: 650px) and (max-width: 850px){
+    .pop_up{
+        width:65%;
+        zoom: 0.9;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 649px){
+    .pop_up{
+        width:80%;
+        zoom: 0.9;
+    }
+}
+@media screen and (max-width: 399px){
+    .pop_up{
+        width:85%;
+        zoom: 0.8;
+    }
+}
+
+/* Modification supplémentaire */
+
+/* delete_aquarium */
+/* create_aquarium */
+/* change_name_aquarium */
+.name_aquarium_to_change{
+    font-weight: 600;
+}
+/* deconnect_aquarium */
+#button_deconnect{
+    background-color: #B92323;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#button_deconnect:hover{
+    background-color: #9b0000;
+}
+#button_deconnect:active {
     box-shadow: inset 3px 3px 7px rgba(30, 23, 70, 0.75);
 }

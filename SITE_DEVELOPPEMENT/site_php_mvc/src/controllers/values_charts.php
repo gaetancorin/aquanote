@@ -3,7 +3,9 @@
 
 function valuesCharts($errorMessage = null){
 
-    session_start();
+    if (!isset($_SESSION)){
+        session_start();
+    };
     // test des informations de session
     if(!isset($_SESSION['id_user']) || $_SESSION['id_user'] === '' || !isset($_SESSION['id_aquarium_connected']) || $_SESSION['id_aquarium_connected'] === ''){
         throw new Exception('Votre session de connexion est introuvable');

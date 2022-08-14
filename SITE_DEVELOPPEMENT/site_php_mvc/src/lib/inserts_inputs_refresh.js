@@ -1,8 +1,8 @@
 // Rfraichis l'url a chaque changement de date dans l'input url
-var input_date = document.getElementById('date');
+let input_date = document.getElementById('date');
 
 input_date.addEventListener('change', (event)=>{
-    newDate  = input_date.value;
+    let newDate  = input_date.value;
     window.location = 'index.php?action=insertInputs&date='+newDate;
 });
 
@@ -12,7 +12,7 @@ inputs.forEach( input => {
     input.style.color = 'rgb(24 41 207)';
 
     input.addEventListener('input', (event)=>{
-        console.log(event);
+        // console.log(event);
         if (input.defaultValue !== input.value){
             input.style.color = 'black';
         }

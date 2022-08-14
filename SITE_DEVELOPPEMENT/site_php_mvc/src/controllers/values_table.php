@@ -5,11 +5,13 @@ require_once('src/lib/database.php');
 require_once('src/models/aquarium.php');
 require_once('src/models/type_analysis.php');
 require_once('src/models/value_type_analysis.php');
-require_once('src/models/data_select_all.php');
+require_once('src/models/date_value_selector.php');
 
 function valuesTable($errorMessage = null){
 
-    session_start();
+    if (!isset($_SESSION)){
+        session_start();
+    };
     // test des informations de session
     if(!isset($_SESSION['id_user']) || $_SESSION['id_user'] === '' || !isset($_SESSION['id_aquarium_connected']) || $_SESSION['id_aquarium_connected'] === ''){
         throw new Exception('Votre session de connexion est introuvable');

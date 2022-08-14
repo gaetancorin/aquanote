@@ -3,7 +3,7 @@
 <?php 
     $title = "Tableau des données"; 
     $stylesheets[] = 'src/lib/css/values_table.css';
-    $stylesheets[] = 'src/lib/css/pop_up/create_new_aquarium.css';
+    $stylesheets[] = 'src/lib/css/pop_up.css';
 ?>
 
 <?php ob_start(); ?>
@@ -115,7 +115,8 @@ if($dateValuesSelectorRepository->dates_where_are_values === []) { ?>
 
 
 <!-- popup create_new_aquarium -->
-<?php require('templates/pop_up/create_new_aquarium.php'); ?>
+<?php require('templates/pop_up/delete_aquarium.php'); ?>
+<script src="src/lib/pop_up.js"></script>
 
 <?php $content = ob_get_clean(); ?>
 

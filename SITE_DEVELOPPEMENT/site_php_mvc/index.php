@@ -79,6 +79,9 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 	if (strpos($UrlAfterControllers, 'get_inputs') !== false){
 		insertInputs($errorMessage);
 	}
+	if (strpos($UrlAfterControllers, 'values_table') !== false){
+		error($errorMessage);
+	}
 	
 
 

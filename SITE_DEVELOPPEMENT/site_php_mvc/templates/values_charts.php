@@ -1,7 +1,7 @@
 <!-- PAGE VALUES_CHARTS -->
 
 <?php 
-    $title = "Graphiques de données"; 
+    $title = "Graphiques des données"; 
     $stylesheets[] = 'src/lib/css/values_charts.css';
 ?>
 
