@@ -37,7 +37,7 @@
                     </a></li>                
                 <li><a class="a_aside_hamb" href="https://www.google.com/">
                         <img class="img_fish_hamb" src="src/lib/img/poisson_burger_5.svg">
-                        Changer nom de l' aquarium       
+                        Changer nom de l'aquarium       
                     </a></li>                
                 <li><a class="a_aside_hamb" href="https://www.google.com/">
                         <img class="img_fish_hamb" src="src/lib/img/poisson_burger_4.svg">
@@ -81,7 +81,7 @@
             <li>
                 <a class="a_aside_hamb" href="https://www.google.com/">
                     <img class="img_fish_hamb" src="src/lib/img/poisson_burger_5.svg">
-                    Changer nom de l' aquarium       
+                    Changer nom de l'aquarium       
                 </a>
             </li>                
             <li>

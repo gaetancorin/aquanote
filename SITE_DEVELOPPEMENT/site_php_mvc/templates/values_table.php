@@ -33,10 +33,10 @@
 
 <div id="tableau">
 <table>
-    <!-- mais ou est tu? -->
 <?php
 $modulo = 0;
-//chaque objet 'dateValuesSelector'contient la date et une liste d'objet "type_analysis" contenant un objet "value_type_analysis" uniquement si il existe
+// premier tableau, actif si au minimum une donnée est enregistré
+// chaque objet 'dateValuesSelector'contient la date et une liste d'objet "type_analysis" contenant un objet "value_type_analysis" uniquement si il existe
 foreach($datesValuesSelector as $dateValuesSelector){ 
 
         //  tous les 10, on affiche l'intitulé date qui n'est pas un type d'analyse
@@ -88,6 +88,28 @@ foreach($datesValuesSelector as $dateValuesSelector){
     <?php }?>        
 <?php }?>
 
+
+
+
+<?php // Deuxième tableau, actif si aucune donnée n'est enregistré
+// Si l'utilisateusr n'as rentré aucune donné, on itère les types de valeurs de l'aquarium récupéré sur une autre variable-->
+
+if($dateValuesSelectorRepository->dates_where_are_values === []) { ?>
+<thead>
+<tr>
+<th>Date</th>
+    <?php
+    foreach($arrayTypesAnalysisObject as $type_analysis){ ?>
+<th>           
+        <?php echo htmlspecialchars($type_analysis->name_type_analysis);?>
+</th>
+    <?php } ?>
+</tr>
+</thead>
+<?php } ?>
+
+
+<?php //Puis on ferme un des deux tableaux qui a été exécuté?>
 </table>
 </div>
 

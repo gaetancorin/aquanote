@@ -33,14 +33,26 @@ function valuesTable($errorMessage = null){
 
 
     //////////////////////////////////////////////////////////////:
+        // pour template valeu_table // 
 
     $DatabaseConnection = new DatabaseConnection();
     $dateValuesSelectorRepository = new DateValuesSelectorRepository();
     $dateValuesSelectorRepository->connection = $DatabaseConnection;
-    // $dateValuesSelectorRepository->getAllTypesAnalysisByIdAquarium($id_aquarium_connected);
+        // récupère toutes les dates et les met dans l'attribut du répository.
     $dateValuesSelectorRepository->getAllDatesWhereAreValuesTypesAnalysisByIdAquarium($id_aquarium_connected);
 
+    //  Puis ce sert de ses dates pour, dans chacune d'elle, créer un objet 'dateValuesSelector'. Cette objet va récupérer la date ainsi que tous les objects type_analysis lié à l'aquarium. Si il y a une valeur à cette date, l'objet 'ty^pe_analysis' l' aura en attribut.(objet 'dateValuesSelector' qui contient une liste d'objet 'type_analysis' qui contient un objet 'value_type_analysis' si cette valeur existe) 
     $datesValuesSelector = $dateValuesSelectorRepository->DoListOfDatesContainsArrayTypesAnalysisObjectsWithValue($id_aquarium_connected);
+
+    // Si le user n'as encore rentré aucune donnée(et donc aucune date), on récupère les types d'analyse pour les itérer séparement
+    if($dateValuesSelectorRepository->dates_where_are_values === [])
+    {
+        $typeAnalysisRepository = new TypeAnalysisRepository();
+        $typeAnalysisRepository->connection = $DatabaseConnection;
+        $arrayTypesAnalysisObject = $typeAnalysisRepository->getTypesAnalisysByIdAquarium($id_aquarium_connected);
+    }
+
+
 
 
 // // Exemple pour comprendre le front

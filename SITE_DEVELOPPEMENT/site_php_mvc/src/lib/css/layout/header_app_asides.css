@@ -234,12 +234,15 @@ aside{
 }
 
 .a_aside_hamb {
-    display: block;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space:nowrap;
+    word-break: keep-all;
     border: 1px solid #ddd;
     margin-top: -1px;
     padding: 17px 5px 17px 12px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 }

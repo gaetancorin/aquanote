@@ -75,7 +75,7 @@
 /* //////////////\\\\\\\\\\\\\\\\ */
 /* //////////////\\\\\\\\\\\\\\\\ */
 /* /////// FORMULAIRE AFFICHEUR \\\\\\\\ */
-form{
+#form_insert_input{
     margin: calc(25px + 2vw) auto 0 auto;
     text-align: center;
     width: 90%;
@@ -84,8 +84,13 @@ form{
     zoom: 1.1;
 }
 
+@media screen and (max-width: 1200px){
+    #form_insert_input{
+        zoom: 1;
+    }
+}
 @media screen and (min-width: 750px){
-    form{
+    #form_insert_input{
         max-width: 750px;
     }
 }
@@ -199,7 +204,7 @@ input[type="date"]{
 
  /*/////////   WRAP DE DATA   \\\\\\\\\\*/
 
-form > div:nth-child(2){
+ #form_insert_input > div:nth-child(2){
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -359,7 +364,7 @@ div input[type="submit"]:active{
 
 /* ------- Notation data ------- */
 
-form > div:nth-child(3){
+#form_insert_input > div:nth-child(3){
     display: flex;
     flex-direction: row;
     width: calc(210px + 30vw);
@@ -387,7 +392,7 @@ input[id="notation"]{
 
 @media screen and (min-width: 750px){
 
-    form > div:nth-child(3){
+    #form_insert_input > div:nth-child(3){
         width: calc(320px + 45vw);
         max-width: 650px;
         margin: 15px auto 0 auto;

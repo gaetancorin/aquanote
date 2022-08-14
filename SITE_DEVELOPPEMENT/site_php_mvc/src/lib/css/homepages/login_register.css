@@ -111,7 +111,7 @@ section{
     align-self: flex-start;
 }
 
-/* --- Bouton validation formulaire dans register(bytton_crate_aqu et login(access_aqua)--- */
+/* --- Bouton validation formulaire dans register(button_crate_aqu et login(access_aqua)--- */
 #button_create_aqua, #access_aqua{
     margin-top: 30px;
     height: 60px;
