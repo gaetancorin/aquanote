@@ -15,7 +15,8 @@
     flex-grow: 1;
     list-style-type: none;
     background-color: rgba(222, 239, 255, 0.5); 
-    box-shadow: inset 0px 0px 15px rgba(0, 32, 138, 0.1); 
+    box-shadow: inset 0px 0px 15px rgba(0, 32, 138, 0.1);
+    zoom: 1.1; 
 }
 
 .navigation:nth-of-type(1){

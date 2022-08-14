@@ -8,15 +8,19 @@ input_date.addEventListener('change', (event)=>{
 
 // change les couleurs des inputs en fonction de si ils ont changé ou non
 inputs = document.querySelectorAll('input[readchangement]');
-inputs.forEach( input => {;
+inputs.forEach( input => {
     input.style.color = 'rgb(24 41 207)';
-    // console.log(input.defaultValue);
-    input.addEventListener('change', (event)=>{
+
+    input.addEventListener('input', (event)=>{
+        console.log(event);
         if (input.defaultValue !== input.value){
             input.style.color = 'black';
         }
         if (input.defaultValue === input.value){
             input.style.color = 'rgb(24 41 207)';
+        }
+        if (event.data === '.'){
+            input.style.color = 'black';
         }
     });
 });

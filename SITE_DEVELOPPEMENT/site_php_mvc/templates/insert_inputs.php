@@ -3,6 +3,7 @@
 <?php 
     $title = "Insertion des données"; 
     $stylesheets[] = 'src/lib/css/insert_inputs.css';
+    $stylesheets[] = 'src/lib/css/pop_up/create_new_aquarium.css';
     // variable pour layout header_app_asides
     $aquariums = $aquariums;
     $aquarium_connected =  $aquarium_connected;
@@ -112,6 +113,11 @@
     </div>
     
 </form>
+
+<!-- popup create_new_aquarium -->
+<?php require('templates/pop_up/create_new_aquarium.php'); ?>
+
+
 <script src="src/lib/inserts_inputs_refresh.js"></script>
 
 <?php $content = ob_get_clean(); ?>

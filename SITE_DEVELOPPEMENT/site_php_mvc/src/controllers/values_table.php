@@ -43,27 +43,38 @@ function valuesTable($errorMessage = null){
     $datesValuesSelector = $dateValuesSelectorRepository->DoListOfDatesContainsArrayTypesAnalysisObjectsWithValue($id_aquarium_connected);
 
 
-    // foreach($datesValuesSelector as $dateValuesSelector){
+// // Exemple pour comprendre le front
+//     $modulo = 0;
+//     //  chaque objet 'dateValuesSelector'contient la date et une liste d'objet "type_analysis" contenant un objet "value_type_analysis" uniquement si la valeur existe
+//     foreach($datesValuesSelector as $dateValuesSelector){
 
-    //     echo $dateValuesSelector->date_where_are_values." // ";
+//         if($modulo ===0){
+//             //tous les 10, on affiche l'intitulé date qui n'est pas un type d'analyse
+//             echo 'Date  //';
+//             // tous les 10, on affiche dans la liste tous les nom de 'type_analysis'
+//             foreach($dateValuesSelector->all_types_analysis_with_value_if_exist as $type_analysis_with_value_if_exist){
 
-    //     foreach($dateValuesSelector->all_types_analysis_with_value_if_exist as $type_analysis_with_value_if_exist){
+//                 echo $type_analysis_with_value_if_exist->name_type_analysis." // ";
+//             }
+//             echo '<br>';
+//         }
+
+//         // on récupère dans la liste de 'type_analysis' l'objet "value_type_analysis" si il existe. On affiche sa valeur. 
+//         echo $dateValuesSelector->date_where_are_values." // ";
+//         foreach($dateValuesSelector->all_types_analysis_with_value_if_exist as $type_analysis_with_value_if_exist){
         
-    //         if($type_analysis_with_value_if_exist->value_type_analysis !== null){
-    //             echo "  ". $type_analysis_with_value_if_exist->value_type_analysis->value_type_analysis;
-    //         }
-    //         echo $type_analysis_with_value_if_exist->name_type_analysis." // ";
-    //     }  
-    //     echo '<br>';
-    // }
+//             if($type_analysis_with_value_if_exist->value_type_analysis !== null){
+//                 echo $type_analysis_with_value_if_exist->value_type_analysis->value_type_analysis." // ";
+//             } else{ 
+//                 echo " // ";
+//             }
+//         } 
+//         $modulo += 1; // on incrémente le modulo et on remet a 0 arrivé a 10.
+//         $modulo = ($modulo % 10); 
+//         echo '<br>';
 
-
-
-
-
-
+//     }
 
 
     require('templates/values_table.php');
-    // require('templates/insert_inputs.php');
 }

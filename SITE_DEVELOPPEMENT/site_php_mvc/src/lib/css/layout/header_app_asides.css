@@ -199,12 +199,6 @@ aside{
     }
 }
 
-@media screen and (min-width: 1200px){
-    .section_centrale{
-        zoom: 1.1;
-    }
-}
-
 /* aside_gauche_hbg / aside_droite_pub actif-- */
 @media screen and (min-width: 1500px){
     #responsive_des_aside{
@@ -247,7 +241,7 @@ aside{
     cursor: pointer;
     font-size: 18px;
     font-weight: 400;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 .img_fish_hamb{
