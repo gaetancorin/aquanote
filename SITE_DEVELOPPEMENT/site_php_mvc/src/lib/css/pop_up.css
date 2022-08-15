@@ -218,6 +218,9 @@ Au clique,
     margin-top: 20px;
 }
 /* create_aquarium */
+#texts_pop_up_div_create_aqua{
+    margin-top: 20px;
+}
 /* change_name_aquarium */
 .name_aquarium_to_change{
     font-weight: 600;

@@ -23,7 +23,6 @@ class AquariumRepository{
 		$statement->execute([$name_aquarium, $id_user]);
 	}
 
-
 	public function getAquariumById(string $id_aquarium): ?Aquarium
 	{
         $statement = $this->connection->getConnection()->prepare(
@@ -93,6 +92,21 @@ class AquariumRepository{
         return $aquariums;
     }
 
+
+	public function updateNameAquariumById(string $name_aquarium, string $id_aquarium)
+	{
+        $statement = $this->connection->getConnection()->prepare(
+			'UPDATE 
+				aquariums 
+			SET 
+				name_aquarium = ? 
+			WHERE 
+				id_aquarium = ?'
+        );
+        $statement->execute([$name_aquarium, $id_aquarium]);
+    }
+
+	
 	public function deleteAquariumsById(string $id_aquarium)
 	{
         $statement = $this->connection->getConnection()->prepare(

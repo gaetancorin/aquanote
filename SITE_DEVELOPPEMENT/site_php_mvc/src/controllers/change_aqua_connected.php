@@ -1,5 +1,5 @@
 <?php
-// controllers/create_new_aqua.php
+// controllers/change_aqua_connected.php
 
 require_once('src/lib/database.php');
 require_once('src/models/aquarium.php');

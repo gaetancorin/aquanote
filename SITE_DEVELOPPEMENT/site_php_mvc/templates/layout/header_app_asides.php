@@ -48,7 +48,7 @@
                     </a></li>                
                 <li><a class="a_aside_hamb activator_pop_up_deconnect_aquarium">
                         <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
-                        Déconnection       
+                        Déconnexion       
                     </a></li>   
             </ul>
             <img class="hamburger_header" src="src/lib/img/parametre_header.svg">
@@ -102,7 +102,7 @@
             <li>
                 <a class="a_aside_hamb activator_pop_up_deconnect_aquarium">
                     <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
-                    Déconnection       
+                    Déconnexion       
                 </a>
             </li>
 

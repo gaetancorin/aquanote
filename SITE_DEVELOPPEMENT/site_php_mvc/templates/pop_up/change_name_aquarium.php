@@ -15,18 +15,22 @@
 
         <div class="texts_pop_up">
             <div>
-                <p>Ancien nom : <span class="name_aquarium_to_change">Aquarium 1</span></p>
+                <p>Ancien nom : 
+                    <span class="name_aquarium_to_change">
+                    <?= htmlspecialchars($aquarium_connected->name_aquarium) ?>
+                    </span>
+                </p>
             </div>
         </div>
 
-        <form class="form_pop_up" action="index.php" method="POST">
+        <form class="form_pop_up" action="index.php?action=changeNameAqua" method="POST">
 
         <div class="input_and_error_message">
 
             <div class="inputs_form_pop_up">
                 <div class="input_pop_up">
-                    <label for="name_aquarium">Nouveau nom de l'Aquarium</label>
-                    <input maxlength="25" minlength="1" type="text" id="name_aquarium" name='name_aquarium' value="" required>
+                    <label for="new_name_aquarium">Nouveau nom de l'Aquarium</label>
+                    <input maxlength="25" minlength="1" type="text" id="new_name_aquarium" name='new_name_aquarium' value="" required>
                 </div>
             </div>
             <div class="error_text">

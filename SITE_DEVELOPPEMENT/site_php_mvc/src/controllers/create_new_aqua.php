@@ -44,7 +44,7 @@ function createNewAqua(array $input){
     // vérification que aucun aquarium ne l'user ne possède le même nom que le nouveau
     foreach ($aquariums as $aquarium) {
         if($aquarium->name_aquarium === $name_new_aquarium){
-            throw new Exception('Vous avez déjà un aquarium au nom de '.$aquarium->name_aquarium.', merci de choisir un autre nom');
+            throw new Exception('Vous avez déjà un aquarium au nom de "'.$aquarium->name_aquarium.'", merci de choisir un autre nom');
         }
     }
 

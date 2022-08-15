@@ -6,10 +6,7 @@ Architecture sur le projet :
     - controllers (controllers)
     - lib =
         * img (images)
-        * les fonction techniques(database)
-
-Si plusieurs controllers utilise le même modèle, on peut les ranger dans un dossier
-(ex: dossier 'comment' contient fichier add et update)
+        * les fonction techniques(database, js)
 
 Convention typographique sur le projet :
 

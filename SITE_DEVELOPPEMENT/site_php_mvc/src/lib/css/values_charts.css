@@ -28,7 +28,9 @@
 
 .navigation:nth-of-type(2){
     background-color: rgba(222, 239, 255, 0);
-    border: none;
+    border-left: rgba(222, 239, 255, 0);
+    border-right: rgba(222, 239, 255, 0);
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
     box-shadow: none;
 }
 .navigation:nth-of-type(2) a{

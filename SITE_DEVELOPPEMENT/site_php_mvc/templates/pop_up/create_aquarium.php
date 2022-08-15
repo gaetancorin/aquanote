@@ -13,8 +13,17 @@
 
     <div class="body_pop_up">
 
-        <div class="texts_pop_up">
+    <div class="texts_pop_up">
             <div id="texts_pop_up_div_create_aqua">
+                <p>Noms déjà utilisés:</p>
+
+                <?php //Liste des aquariums
+                    foreach ($aquariums as $aquarium) { ?>
+                    <p class="name_aquarium_pop_up">
+                        <?="• ".htmlspecialchars($aquarium->name_aquarium);?>
+                    </p>                         
+                <?php } ?>
+
             </div>
         </div>
 

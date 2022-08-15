@@ -47,7 +47,7 @@ function deleteAqua(array $input){
         }
     }
     if($aquarium_to_delete === null){
-        throw new Exception('Auncun nom d\'aquarium ne correspond à : '.$name_delete_aquarium);
+        throw new Exception('Impossible de supprimer "'.$name_delete_aquarium.'" car aucun aquarium ne correspond à ce nom');
     }
 
     // Si l'user est connecté sur l'aquarium à supprimer, changement de l'aquarium connecté par le premier trouvé
