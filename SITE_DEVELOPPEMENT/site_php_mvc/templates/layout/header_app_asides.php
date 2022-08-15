@@ -23,7 +23,10 @@
                     $number_of_fish_picture += 1; ?>
 
                     <li>
-                        <a class="a_aside_hamb" href="https://www.google.com/">
+                        <a class="a_aside_hamb" 
+                        <?= // controller pour changer d'aquarium par l'id
+                        htmlspecialchars('href=index?action=changeAquaConnected&aqua_to_connect='.$aquarium->id_aquarium);?>
+                        >
                             <img class="img_fish_hamb" src="src/lib/img/poisson_burger_<?= $number_of_fish_picture?>.svg">
                             <?= htmlspecialchars($aquarium->name_aquarium);?>      
                         </a>
@@ -60,17 +63,23 @@
     <aside id="aside_gauche_hamb">
         <ul class="ul_aside_hamb">
 
-            <?php $number_of_fish_picture = 0;
-                    foreach ($aquariums as $aquarium) {
-                        $number_of_fish_picture += 1; ?>
+            <?php $number_of_fish_picture = 1;
+                    foreach ($aquariums as $aquarium) { ?>
 
                         <li>
-                            <a class="a_aside_hamb" href="https://www.google.com/">
+                            <a class="a_aside_hamb"  
+                            <?= // controller pour changer d'aquarium par l'id
+                            htmlspecialchars('href=index?action=changeAquaConnected&aqua_to_connect='.$aquarium->id_aquarium);?>
+                            >
                                 <img class="img_fish_hamb" src="src/lib/img/poisson_burger_<?= $number_of_fish_picture?>.svg">
                                 <?= htmlspecialchars($aquarium->name_aquarium);?>      
                             </a>
-                        </li>
-            <?php } ?>
+                        </li>                        
+                        
+                        <?php $number_of_fish_picture = ($number_of_fish_picture % 6) + 1;?>
+
+                    <?php } ?>
+                    
            
             <li>
                 <a class="a_aside_hamb activator_pop_up_create_aquarium">

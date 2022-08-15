@@ -18,14 +18,14 @@
             </div>
         </div>
 
-        <form class="form_pop_up" action="index.php" method="POST">
+        <form class="form_pop_up" action="index.php?action=createNewAqua" method="POST">
 
         <div class="input_and_error_message">
 
             <div class="inputs_form_pop_up">
                 <div class="input_pop_up">
-                    <label for="name_aquarium">Nom du nouvel Aquarium</label>
-                    <input maxlength="25" minlength="1" type="text" id="name_aquarium" name='name_aquarium' value="" required>
+                    <label for="name_new_aquarium">Nom du nouvel Aquarium</label>
+                    <input maxlength="25" minlength="1" type="text" id="name_new_aquarium" name='name_new_aquarium' value="" required>
                 </div>
             </div>
             <div class="error_text">

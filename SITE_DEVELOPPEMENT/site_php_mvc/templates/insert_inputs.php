@@ -107,7 +107,7 @@
         readChangement>
     </div>
 
-    <div class="error_text">
+    <div class="error_text" id="error_text_insert_inputs">
         <?php if (isset($errorMessage)){
             echo $errorMessage;} ?>
     </div>

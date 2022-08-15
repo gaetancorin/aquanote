@@ -410,14 +410,14 @@ input[id="notation"]{
     
 }
 
-/* ------- Erreut text ------- */
-.error_text{
+/* ------- Erreur text ------- */
+#error_text_insert_inputs{
     color: red;
     font-size: 18px;
     margin-top: 6px;
 }
-@media screen and (max-width: 750px){
-    .error_text{
+@media screen and (max-width: 600px){
+    #error_text_insert_inputs{
         font-size: 15px;
     }
 }

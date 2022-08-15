@@ -13,6 +13,10 @@ require_once('src/controllers/insert_inputs.php');
 require_once('src/controllers/values_charts.php');
 require_once('src/controllers/values_table.php');
 require_once('src/controllers/get_inputs.php');
+//pop_up
+require_once('src/controllers/create_new_aqua.php');
+require_once('src/controllers/change_aqua_connected.php');
+require_once('src/controllers/delete_aqua.php');
 
 try {
 	if (isset($_GET['action']) && $_GET['action'] !== '') {
@@ -43,6 +47,17 @@ try {
 		elseif ($_GET['action'] === 'valuesTable') {
 			valuesTable();
     	}
+
+		elseif ($_GET['action'] === 'createNewAqua') {
+			createNewAqua($_POST);
+    	}
+		elseif ($_GET['action'] === 'changeAquaConnected') {
+			changeAquaConnected();
+    	}
+		elseif ($_GET['action'] === 'deleteAqua') {
+			deleteAqua($_POST);
+    	}
+
 
        
         else {
@@ -82,6 +97,16 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 	if (strpos($UrlAfterControllers, 'values_table') !== false){
 		error($errorMessage);
 	}
+	if (strpos($UrlAfterControllers, 'create_new_aqua') !== false){
+		insertInputs($errorMessage);
+	}
+	if (strpos($UrlAfterControllers, 'change_aqua_connected') !== false){
+		insertInputs($errorMessage);
+	}
+	if (strpos($UrlAfterControllers, 'delete_aqua') !== false){
+		insertInputs($errorMessage);
+	}
+
 	
 
 

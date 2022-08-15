@@ -16,19 +16,25 @@
         <div class="texts_pop_up">
             <div id="texts_pop_up_div_delete_aqua">
                 <p>Nom des aquariums:</p>
-                <p class="name_aquarium_pop_up">• Aquarium 1</p>
-                <p class="name_aquarium_pop_up">• Aquarium 2</p>
+
+                <?php //Liste des aquariums
+                    foreach ($aquariums as $aquarium) { ?>
+                    <p class="name_aquarium_pop_up">
+                        <?="• ".htmlspecialchars($aquarium->name_aquarium);?>
+                    </p>                         
+                <?php } ?>
+
             </div>
         </div>
 
-        <form class="form_pop_up" action="index.php" method="POST">
+        <form class="form_pop_up" action="index.php?action=deleteAqua" method="POST">
 
         <div class="input_and_error_message">
 
             <div class="inputs_form_pop_up">
                 <div class="input_pop_up">
-                    <label for="name_aquarium">Aquarium à supprimer</label>
-                    <input maxlength="25" minlength="1" type="text" id="name_aquarium" name='name_aquarium' value="" required>
+                    <label for="name_delete_aquarium">Aquarium à supprimer</label>
+                    <input maxlength="25" minlength="1" type="text" id="name_delete_aquarium" name='name_delete_aquarium' value="" required>
                 </div>
             </div>
             <p class="error_text">Toutes les données de l'aquarium seront perdues</p>
