@@ -1,18 +1,12 @@
 /* en js
 Au clique, 
-#background_pop_up display flex
 ::-webkit-scrollbar {
   width: 10px;
 }
-à la fleche back=
-#background_pop_up display none
 */
-::-webkit-scrollbar {
-    width: 10px;
-  }
 .background_pop_up{
-    display: flex;
-    /* display: none; */
+    /* display: flex; */
+    display: none;
     background-color: rgba(30, 30, 30, 0.25);
     width: 100vw;
     height: 100vh;
@@ -25,12 +19,7 @@ Au clique,
 /* création pop_up */
 .pop_up{
     width: 40%;
-    /* 1000 = 65 */
-    /* 650 = 80 */
-    /* 400 = 85 */
-    /* width: 35%; */
     max-width: 650px;
-    
     max-height: 98vh;   
     position: relative;
     background-color: #dfe8f0;
@@ -69,6 +58,7 @@ Au clique,
 }
 .header_back a{
     zoom: 1.2;
+    cursor: pointer;
     background-color: white;
     padding: 4px 6px 1px 6px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
@@ -196,12 +186,7 @@ Au clique,
 }
 
 
-/* RESPONSIVE */
-
-    /* 1000 = 65 */
-    /* 650 = 80 */
-    /* 400 = 85 */
-    /* width: 35%; */
+/* RESPONSIVE de la taille de la fenêtre*/
 @media screen and (min-width: 850px) and (max-width: 1000px){
     .pop_up{
         width:50%;
@@ -226,9 +211,12 @@ Au clique,
     }
 }
 
-/* Modification supplémentaire */
+/* ///// Modification supplémentaire par pop_up ////*/
 
 /* delete_aquarium */
+#texts_pop_up_div_delete_aqua{
+    margin-top: 20px;
+}
 /* create_aquarium */
 /* change_name_aquarium */
 .name_aquarium_to_change{

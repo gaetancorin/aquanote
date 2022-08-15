@@ -4,7 +4,7 @@
 
     <div class="block_header_back">
         <div class="header_back">
-            <a class="button_back button_back_delete_aqua">
+            <a class="button_back" id="button_arrow_delete_aqua">
                 <img class="arrow_button_back" src="src/lib/img/fleche_bouton_retour.svg" alt="bouton retour">
             </a>
             <p>Supprimer un Aquarium</p>
@@ -14,7 +14,7 @@
     <div class="body_pop_up">
 
         <div class="texts_pop_up">
-            <div>
+            <div id="texts_pop_up_div_delete_aqua">
                 <p>Nom des aquariums:</p>
                 <p class="name_aquarium_pop_up">• Aquarium 1</p>
                 <p class="name_aquarium_pop_up">• Aquarium 2</p>
@@ -27,10 +27,11 @@
 
             <div class="inputs_form_pop_up">
                 <div class="input_pop_up">
-                    <label for="name_aquarium">Nom de l'Aquarium</label>
+                    <label for="name_aquarium">Aquarium à supprimer</label>
                     <input maxlength="25" minlength="1" type="text" id="name_aquarium" name='name_aquarium' value="" required>
                 </div>
             </div>
+            <p class="error_text">Toutes les données de l'aquarium seront perdues</p>
             <div class="error_text">
             <?php if (isset($errorMessage)){
                     echo $errorMessage;} ?>

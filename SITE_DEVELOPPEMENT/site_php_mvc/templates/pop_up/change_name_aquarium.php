@@ -4,7 +4,7 @@
 
     <div class="block_header_back">
         <div class="header_back">
-            <a class="button_back button_back_change_name_aqua">
+            <a class="button_back" id="button_arrow_change_name_aqua">
                 <img class="arrow_button_back" src="src/lib/img/fleche_bouton_retour.svg" alt="bouton retour">
             </a>
             <p>Changer nom de l'Aquarium</p>
@@ -25,7 +25,7 @@
 
             <div class="inputs_form_pop_up">
                 <div class="input_pop_up">
-                    <label for="name_aquarium">Nom de l'Aquarium</label>
+                    <label for="name_aquarium">Nouveau nom de l'Aquarium</label>
                     <input maxlength="25" minlength="1" type="text" id="name_aquarium" name='name_aquarium' value="" required>
                 </div>
             </div>

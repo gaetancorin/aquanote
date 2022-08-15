@@ -76,7 +76,7 @@
 /* //////////////\\\\\\\\\\\\\\\\ */
 /* /////// FORMULAIRE AFFICHEUR \\\\\\\\ */
 #form_insert_input{
-    margin: calc(25px + 2vw) auto 0 auto;
+    margin: calc(25px + 2vw) auto 20px auto;
     text-align: center;
     width: 90%;
     min-width: 350px;

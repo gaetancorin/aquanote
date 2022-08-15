@@ -4,7 +4,7 @@
 
     <div class="block_header_back">
         <div class="header_back">
-            <a class="button_back button_back_create_aqua">
+            <a class="button_back" id="button_arrow_create_aqua">
                 <img class="arrow_button_back" src="src/lib/img/fleche_bouton_retour.svg" alt="bouton retour">
             </a>
             <p>Créer un Aquarium</p>
@@ -14,7 +14,7 @@
     <div class="body_pop_up">
 
         <div class="texts_pop_up">
-            <div>
+            <div id="texts_pop_up_div_create_aqua">
             </div>
         </div>
 
@@ -24,7 +24,7 @@
 
             <div class="inputs_form_pop_up">
                 <div class="input_pop_up">
-                    <label for="name_aquarium">Nom de l'Aquarium</label>
+                    <label for="name_aquarium">Nom du nouvel Aquarium</label>
                     <input maxlength="25" minlength="1" type="text" id="name_aquarium" name='name_aquarium' value="" required>
                 </div>
             </div>

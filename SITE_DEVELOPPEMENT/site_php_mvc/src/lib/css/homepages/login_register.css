@@ -114,6 +114,7 @@ section{
 /* --- Bouton validation formulaire dans register(button_crate_aqu et login(access_aqua)--- */
 #button_create_aqua, #access_aqua{
     margin-top: 30px;
+    margin-bottom: 30px;
     height: 60px;
     width: 100%;
     font-weight: 500;

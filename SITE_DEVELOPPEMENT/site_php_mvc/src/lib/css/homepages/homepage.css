@@ -23,7 +23,8 @@ section{
     flex: 0 0 50%;
     max-width: 50%;
     height: calc(100vh - 60px);
-    zoom: 1.1;    
+    zoom: 1.1;
+    overflow-x: auto;    
 }
 
 #center_button{
@@ -33,6 +34,7 @@ section{
     width: 80%;
     margin: auto;
     margin-top: 100px;
+    margin-bottom: 50px;
 }
 .button_login_register{
     display: block;

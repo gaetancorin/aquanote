@@ -86,7 +86,7 @@ header #div_logo{
 
 .conteneur_aside_hamb{
     display: block;
-    /* position: absolute; */
+    overflow-x: auto;
     position: fixed;
     background-color: #eaf3fb;
     z-index: 3;
