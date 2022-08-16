@@ -46,7 +46,7 @@
                         <img class="img_fish_hamb" src="src/lib/img/poisson_burger_4.svg">
                         Supprimer un aquarium       
                     </a></li>                
-                <li><a class="a_aside_hamb activator_pop_up_deconnect_aquarium">
+                <li><a class="a_aside_hamb activator_pop_up_logout_user">
                         <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
                         Déconnexion       
                     </a></li>   
@@ -100,7 +100,7 @@
                 </a>
             </li>                
             <li>
-                <a class="a_aside_hamb activator_pop_up_deconnect_aquarium">
+                <a class="a_aside_hamb activator_pop_up_logout_user">
                     <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
                     Déconnexion       
                 </a>

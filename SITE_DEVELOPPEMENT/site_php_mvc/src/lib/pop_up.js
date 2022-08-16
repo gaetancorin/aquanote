@@ -20,20 +20,20 @@ let button_arrow_delete_aqua = document.querySelector('#button_arrow_delete_aqua
 button_arrow_delete_aqua.addEventListener('click', (event)=>{
     background_delete_aqua.style.display = 'none';
 });
-//  deconnect_aquarium
-let background_deconnect_aqua = document.querySelector('.background_deconnect_aqua');
-let button_arrow_deconnect_aqua = document.querySelector('#button_arrow_deconnect_aqua');
-let button_retour_deconnect = document.querySelector('#button_retour_deconnect');
+//  logout_user
+let background_logout_user = document.querySelector('.background_logout_user');
+let button_arrow_logout_user = document.querySelector('#button_arrow_logout_user');
+let button_back_logout_user = document.querySelector('#button_back_logout_user');
 
-button_arrow_deconnect_aqua.addEventListener('click', (event)=>{
-    background_deconnect_aqua.style.display = 'none';
+button_arrow_logout_user.addEventListener('click', (event)=>{
+    background_logout_user.style.display = 'none';
 });
-button_retour_deconnect.addEventListener('click', (event)=>{
-    background_deconnect_aqua.style.display = 'none';
+button_back_logout_user.addEventListener('click', (event)=>{
+    background_logout_user.style.display = 'none';
 });
 
 ///////////////////////////////////////////////////////////
-// BUTTONS DECLENCHEURS pop_up
+// BUTTONS DECLENCHEURS DE POP_UP
 //burger checkbox
 let hamburger_checkbox = document.querySelector('#hamburger_checkbox');
 
@@ -64,12 +64,18 @@ activator_pop_up_delete_aquarium.forEach(item=>
         hamburger_checkbox.checked = false;
     })
 );
-// deconnect_aquarium
-let activator_pop_up_deconnect_aquarium = document.querySelectorAll('.activator_pop_up_deconnect_aquarium');
+// logout_user
+let activator_pop_up_logout_user = document.querySelectorAll('.activator_pop_up_logout_user');
 
-activator_pop_up_deconnect_aquarium.forEach(item=>
+activator_pop_up_logout_user.forEach(item=>
     item.addEventListener('click', (event)=>{
-        background_deconnect_aqua.style.display = 'flex';
+        background_logout_user.style.display = 'flex';
         hamburger_checkbox.checked = false;
     })
 );
+// bouton logout pour se déconnecter(les autres pop-up fonctionnent en formulaire)
+let button_logout_user = document.querySelector('#button_logout_user');
+
+button_logout_user.addEventListener('click', (event)=>{
+    window.location = 'index.php?action=logoutUser';
+});

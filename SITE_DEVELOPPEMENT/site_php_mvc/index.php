@@ -18,6 +18,7 @@ require_once('src/controllers/change_aqua_connected.php');
 require_once('src/controllers/create_new_aqua.php');
 require_once('src/controllers/change_name_aqua.php');
 require_once('src/controllers/delete_aqua.php');
+require_once('src/controllers/logout_user.php');
 
 try {
 	if (isset($_GET['action']) && $_GET['action'] !== '') {
@@ -60,6 +61,9 @@ try {
     	}
 		elseif ($_GET['action'] === 'deleteAqua') {
 			deleteAqua($_POST);
+    	}
+		elseif ($_GET['action'] === 'logoutUser') {
+			logoutUser();
     	}
 
 
@@ -113,6 +117,9 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 		insertInputs($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'delete_aqua') !== false){
+		insertInputs($errorMessage);
+	}
+	if (strpos($UrlAfterControllers, 'logout_user') !== false){
 		insertInputs($errorMessage);
 	}
 

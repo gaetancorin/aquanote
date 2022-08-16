@@ -225,15 +225,15 @@ Au clique,
 .name_aquarium_to_change{
     font-weight: 600;
 }
-/* deconnect_aquarium */
-#button_deconnect{
+/* logout_user */
+#button_logout_user{
     background-color: #B92323;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#button_deconnect:hover{
+#button_logout_user:hover{
     background-color: #9b0000;
 }
-#button_deconnect:active {
+#button_logout_user:active {
     box-shadow: inset 3px 3px 7px rgba(30, 23, 70, 0.75);
 }

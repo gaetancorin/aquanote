@@ -3,6 +3,7 @@
 <?php 
     $title = "Graphiques des données"; 
     $stylesheets[] = 'src/lib/css/values_charts.css';
+    $stylesheets[] = 'src/lib/css/pop_up.css';
 ?>
 
 <?php ob_start(); ?>
@@ -30,7 +31,12 @@
     </ul>
 </nav>
 
-
+<!-- popup -->
+<?php require('templates/pop_up/create_aquarium.php'); ?>
+<?php require('templates/pop_up/change_name_aquarium.php'); ?>
+<?php require('templates/pop_up/delete_aquarium.php'); ?>
+<?php require('templates/pop_up/logout_user.php'); ?>
+<script src="src/lib/pop_up.js"></script>
 
 <?php $content = ob_get_clean(); ?>
 

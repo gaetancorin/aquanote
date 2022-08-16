@@ -115,14 +115,14 @@
 </form>
 
 <!-- popup -->
-<?php require('templates/pop_up/delete_aquarium.php'); ?>
 <?php require('templates/pop_up/create_aquarium.php'); ?>
 <?php require('templates/pop_up/change_name_aquarium.php'); ?>
-<?php require('templates/pop_up/deconnect_aquarium.php'); ?>
-
+<?php require('templates/pop_up/delete_aquarium.php'); ?>
+<?php require('templates/pop_up/logout_user.php'); ?>
+<script src="src/lib/pop_up.js"></script>
 
 <script src="src/lib/inserts_inputs_refresh.js"></script>
-<script src="src/lib/pop_up.js"></script>
+
 
 <?php $content = ob_get_clean(); ?>
 

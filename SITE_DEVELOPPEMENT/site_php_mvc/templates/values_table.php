@@ -114,8 +114,11 @@ if($dateValuesSelectorRepository->dates_where_are_values === []) { ?>
 </div>
 
 
-<!-- popup create_new_aquarium -->
+<!-- popup -->
+<?php require('templates/pop_up/create_aquarium.php'); ?>
+<?php require('templates/pop_up/change_name_aquarium.php'); ?>
 <?php require('templates/pop_up/delete_aquarium.php'); ?>
+<?php require('templates/pop_up/logout_user.php'); ?>
 <script src="src/lib/pop_up.js"></script>
 
 <?php $content = ob_get_clean(); ?>
