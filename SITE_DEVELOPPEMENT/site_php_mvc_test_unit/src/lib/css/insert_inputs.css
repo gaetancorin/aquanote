@@ -1,0 +1,426 @@
+/* ///////  INSERT_INPUTS \\\\\\\\ */
+
+/* /////// HEADER TOP INSERT_INPUTS AFFICHEUR \\\\\\\\ */
+
+.header_top_afficheur{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    border-collapse: collapse; 
+}
+
+.navigation{
+    padding: 0px;
+    flex-grow: 1;
+    list-style-type: none;
+    background-color: rgba(222, 239, 255, 0.5); 
+    box-shadow: inset 0px 0px 15px rgba(0, 32, 138, 0.1);
+    zoom: 1.1; 
+}
+
+.navigation:nth-of-type(1){
+    background-color: rgba(222, 239, 255, 0);
+    border-right: 2px solid rgba(0, 0, 0, 0);
+    border-left: 2px solid rgba(0, 0, 0, 0);
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+.navigation:nth-of-type(1) a{
+    cursor: default;
+    pointer-events: none;
+}
+
+.navigation:nth-of-type(2){
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    box-shadow: none;
+}
+
+
+.navigation:nth-of-type(3) {
+    border-left: 2px solid rgba(0, 0, 0, 0);
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    box-shadow: none;
+}
+
+.navigation:nth-of-type(2):hover,
+.navigation:nth-of-type(3):hover{
+    background-color: #deefff;
+    box-shadow: inset -3px -3px 5px rgba(45, 45, 45, 0.3);
+}
+.navigation:nth-of-type(2):active,
+.navigation:nth-of-type(3):active{
+    background-color: #deefff;
+    box-shadow: inset 3px 3px 5px rgba(45, 45, 45, 0.3);
+}
+
+.navigation a img{
+    width: 6vw;
+    max-width: 40px;
+    display: block;
+    padding: 2.5vw 0px;
+    margin: 0 auto;
+
+}
+
+/*  header top afficheur RESPONSIVE*/
+
+@media screen and (min-width: 600px){
+    .navigation a img{
+        max-width: 32px;
+        padding: 12px 0px; 
+    }
+}
+
+/* //////////////\\\\\\\\\\\\\\\\ */
+/* //////////////\\\\\\\\\\\\\\\\ */
+/* /////// FORMULAIRE AFFICHEUR \\\\\\\\ */
+#form_insert_input{
+    margin: calc(25px + 2vw) auto 20px auto;
+    text-align: center;
+    width: 90%;
+    min-width: 350px;
+    max-width: 600px;
+    zoom: 1.1;
+}
+
+@media screen and (max-width: 1200px){
+    #form_insert_input{
+        zoom: 1;
+    }
+}
+@media screen and (min-width: 750px){
+    #form_insert_input{
+        max-width: 750px;
+    }
+}
+
+/*////// DATE ET CHECKBOX \\\\\\\\*/
+
+.date_and_checkbox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+
+}
+
+label[for="date"]{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+
+input[type="date"]{
+    border: none;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: solid 1px black;
+}
+
+.explain_checkbox{
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+/* ---------- Bouton checkbox en slider ------*/
+/* represente la partie cliquable cache derriere slider*/
+.label_click {
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 34px;
+  }
+  /* transforme le label en checkbox mais opacite 0 */
+  input[type="checkbox"] { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* represente le bouton visuel mais aucun lien avec checkbox */
+  .fake_button {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    outline: 2px solid black;
+    outline-offset: -2px;
+    border-radius: 18px;
+    -webkit-transition: .6s;
+    transition: .6s;
+  }
+  
+  .fake_button:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 0px;
+    bottom: 0px;
+    background-color: #b92323;
+    outline: 2px solid black;
+    outline-offset: -2px;
+    border-radius: 50%;
+    -webkit-transition: .6s;
+    transition: .6s;
+  }
+  
+  input:focus + .fake_button {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .fake_button:before {
+    -webkit-transform: translatey(-16px);
+    -ms-transform: translatey(-16px);
+    transform: translatey(-16px);
+    background-color: #2c82db;
+
+  }
+
+/* /////// DATE ET CHECKBOX-responsive\\\\\\\\ */
+  
+@media screen and (min-width: 600px){
+
+    input[type="date"]{
+        font-size: 20px;
+    }
+/* -----bouton explication responsive----- */
+    .explain_checkbox{
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+    }
+
+}
+
+ /*/////////   WRAP DE DATA   \\\\\\\\\\*/
+
+ #form_insert_input > div:nth-child(2){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* ------- boutton- wrap_de_data-------- */
+
+.wrap_data{
+    width: calc(100px + 15vw);
+    height: calc(40px + 5vw);
+    min-width: 160px;
+    max-width: 210px;
+    min-height: 60px;
+    max-height: 78px;
+
+    background-color: white;
+    text-align: start;
+
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 12px;
+}
+
+.trait_noir{
+    width: calc(82px + 15vw);
+    height: calc(30px + 5vw);
+    min-width: 142px;
+    max-width: 192px;
+    min-height: 50px;
+    max-height: 68px;
+
+    position: absolute;
+    border-bottom: solid 1.5px #b8b8b8;
+    margin: 0px 9px;
+
+}
+
+
+.wrap_data input[type="number"]{
+    width: calc(100px + 15vw);
+    height: calc(40px + 5vw);
+    min-width: 160px;
+    max-width: 210px;
+    min-height: 60px;
+    max-height: 78px;
+
+    position: absolute;
+    padding-top: 17px;
+    background-color: rgba(255, 255, 255, 0);
+    border: solid black 1px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #373737;  
+}
+
+/* Retire les fleches du type number 
+pour Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.label_wrap_data{
+    display: block;
+    padding: 3%;
+    font-size: calc(10px + 1.1vw);
+    color: rgb(49, 49, 49);
+    font-weight: 500;
+}
+
+.pourcentage{
+    width: calc(100px + 15vw);
+    height: calc(40px + 5vw);
+    min-width: 160px;
+    max-width: 210px;
+    min-height: 60px;
+    max-height: 78px;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    position: absolute;
+    text-align: end;
+}
+
+.pourcentage p{
+    display: inline-block;
+    font-size: 25px; 
+    font-weight: 400; 
+    align-self: flex-end;
+    padding: 6px 7px;
+}
+
+.wrap_data_button{
+    width: calc(100px + 15vw);
+    height: calc(40px + 5vw);
+    min-width: 160px;
+    max-width: 210px;
+    min-height: 60px;
+    max-height: 78px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 12px;
+}
+
+div input[type="submit"]{
+
+    width: calc(90px + 15vw);
+    height: calc(40px + 5vw);
+    min-width: 150px;
+    max-width: 200px;
+    min-height: 60px;
+    max-height: 78px;
+
+    font-size: calc(10px + 1.1vw);
+    font-weight: 500;
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #2c82d2; 
+    box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    border: 2px solid black;
+}
+div input[type="submit"]:hover{
+    background-color: #624cd1;
+}
+div input[type="submit"]:active{
+    background-color: #624cd1;
+    box-shadow: inset 4px 4px 5px rgba(45, 45, 45, 0.5);
+}
+
+@media screen and (min-width: 750px){
+
+    .pourcentage p{
+        font-size: 30px; 
+        font-weight: 400;     
+    }   
+}
+
+@media screen and (min-width: 1000px){
+
+    .label_wrap_data{      
+        font-size: 21px;
+    }
+
+    div input[type="submit"]{
+        font-size: 20px;
+    }
+}
+
+
+/* ------- Notation data ------- */
+
+#form_insert_input > div:nth-child(3){
+    display: flex;
+    flex-direction: row;
+    width: calc(210px + 30vw);
+    min-width: 330px;
+    margin: 5px auto 0 auto;
+}
+
+.label_notation{
+    display: inline-block;
+    align-self: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+
+input[id="notation"]{
+    display: inline-block;
+    height: 30px;
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px 5px;
+}
+
+@media screen and (min-width: 750px){
+
+    #form_insert_input > div:nth-child(3){
+        width: calc(320px + 45vw);
+        max-width: 650px;
+        margin: 15px auto 0 auto;
+    }
+
+    .label_notation{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+
+    input[id="notation"]{
+        height: 36px;
+        font-size: 18px;
+    }
+    
+}
+
+/* ------- Erreur text ------- */
+#error_text_insert_inputs{
+    color: red;
+    font-size: 18px;
+    margin-top: 6px;
+}
+@media screen and (max-width: 600px){
+    #error_text_insert_inputs{
+        font-size: 15px;
+    }
+}

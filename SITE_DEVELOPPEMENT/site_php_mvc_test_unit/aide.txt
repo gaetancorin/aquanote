@@ -1,0 +1,55 @@
+Architecture sur le projet :
+• index (le routeur)
+• template (template html), 
+• src = 
+    - models (les modèles) 
+    - controllers (controllers)
+    - lib =
+        * img (images)
+        * les fonction techniques(database, js)
+
+Convention typographique sur le projet :
+
+• dossier (snake_case)
+• nom_de_fichier (snake_case)
+
+• bdd
+- table (snake_case) écrit au pluriel
+- champ_de_table (snake_case)
+
+• modèle
+- LaClass (PascalCase) écrit au singulier
+- laFonction (camelCase)
+- laVariable (camelCase)
+- variable_contenant_attribut_objet (snake_case)(adéquation avec bdd)
+- attribut_objet (snake_case)(adéquation avec bdd)
+
+• controller
+- LaClass (PascalCase) écrit au singulier
+- laFonction (camelCase)
+- laVariable (camelCase)
+
+• routeur
+- uneAction (camelCase)
+
+• template
+- mon_attribut (snake_case)
+- name_formulaire (snake_case)
+
+• $_SESSION
+- ma_donnee_bdd (snake_case)
+- monAutreDonnee (camelCase)
+
+
+/* Breakpoint de bootstrap utilisé sur maquette take : */
+
+/* @media screen and (max-width: 575px) {
+@media screen and (min-width: 576px) and (max-width: 767px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+@media screen and (min-width: 1200px) { */
+
+\r\n pour faire un retour à la ligne dans la bdd
+
+session_start(); = demarre ou continue session
+
