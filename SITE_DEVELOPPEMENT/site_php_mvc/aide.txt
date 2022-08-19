@@ -53,3 +53,6 @@ Convention typographique sur le projet :
 
 session_start(); = demarre ou continue session
 
+lancer les tests unitaires = php vendor/bin/phpunit tests/app_tests.php
+lancer un test unitaire = php vendor/bin/phpunit tests/app_tests.php --filter test_create_user
+

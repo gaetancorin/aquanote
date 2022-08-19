@@ -1,4 +1,5 @@
 <?php
+
 require_once('src/lib/database.php');
 
 class User{
@@ -89,5 +90,19 @@ class UserRepository{
 		);
 		$statement->execute([$id_user]);
 	}
+
+
+
+	public function deleteUserByEmail(string $email_user)
+	{
+		$statement = $this->connection->getConnection()->prepare(
+			'DELETE FROM 
+				users
+			WHERE
+				email_user = ?'
+		);
+		$statement->execute([$email_user]);
+	}
+	
 	
 }
