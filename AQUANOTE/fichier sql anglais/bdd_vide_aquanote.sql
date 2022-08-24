@@ -1,7 +1,7 @@
 -- base de donnee du fil rouge vide
-drop database aquarium_data;
-create database aquarium_data;
-use aquarium_data;
+drop database aquanote;
+create database aquanote;
+use aquanote;
 
 CREATE TABLE users (
     id_user INT NOT NULL PRIMARY KEY AUTO_INCREMENT,

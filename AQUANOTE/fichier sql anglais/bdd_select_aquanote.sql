@@ -1,4 +1,4 @@
-use aquarium_data;
+use aquanote;
 
 -- TABLE UTILISATEUR AQUARIUM COMMENTAIRE
 select * from users

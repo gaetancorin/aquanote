@@ -7,7 +7,7 @@
     <header id="header_login_register">
         <div id="div_logo">
             <img id="logoAquaData" src="src/lib/img/logo_aqua_data.png" alt="Aqua Data logo">
-            <p id="title_logo">AquaData</p>
+            <p id="title_logo">AquaNote</p>
         </div>
     </header>
 

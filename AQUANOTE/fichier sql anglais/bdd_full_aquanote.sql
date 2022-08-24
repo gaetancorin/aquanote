@@ -1,4 +1,4 @@
-use aquarium_data;
+use aquanote;
 
 insert into users (email_user, password_user) values
 ('exemple@exemple.exemple', 'exemple'),
