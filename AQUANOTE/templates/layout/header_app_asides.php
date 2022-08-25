@@ -25,7 +25,7 @@
                     <li>
                         <a class="a_aside_hamb" 
                         <?= // controller pour changer d'aquarium par l'id
-                        htmlspecialchars('href=index?action=changeAquaConnected&aqua_to_connect='.$aquarium->id_aquarium);?>
+                        htmlspecialchars('href=index.php?action=changeAquaConnected&aqua_to_connect='.$aquarium->id_aquarium);?>
                         >
                             <img class="img_fish_hamb" src="src/lib/img/poisson_burger_<?= $number_of_fish_picture?>.svg">
                             <?= htmlspecialchars($aquarium->name_aquarium);?>      
@@ -69,7 +69,7 @@
                         <li>
                             <a class="a_aside_hamb"  
                             <?= // controller pour changer d'aquarium par l'id
-                            htmlspecialchars('href=index?action=changeAquaConnected&aqua_to_connect='.$aquarium->id_aquarium);?>
+                            htmlspecialchars('href=index.php?action=changeAquaConnected&aqua_to_connect='.$aquarium->id_aquarium);?>
                             >
                                 <img class="img_fish_hamb" src="src/lib/img/poisson_burger_<?= $number_of_fish_picture?>.svg">
                                 <?= htmlspecialchars($aquarium->name_aquarium);?>      

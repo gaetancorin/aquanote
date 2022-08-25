@@ -8,7 +8,7 @@ class DatabaseConnection
 	public function getConnection(): PDO
 	{
     	if ($this->database === null) {
-			$this->database = new PDO('mysql:host=localhost;dbname='.$_ENV["dbname"].';charset=utf8', $_ENV["dbuser"], $_ENV["dbpassword"]);
+			$this->database = new PDO('mysql:host='.$_ENV["dbhost"].';dbname='.$_ENV["dbname"].';charset=utf8', $_ENV["dbuser"], $_ENV["dbpassword"]);
     	}
 
     	return $this->database;

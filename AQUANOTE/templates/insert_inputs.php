@@ -100,9 +100,9 @@
         <input type="text" id="notation" name='comment_analysis' 
         <?php if($comment_analysis === null){ 
                     echo 'value=""';
-                 } elseif($comment_analysis !== null){                     
-                     echo htmlspecialchars('value='.$comment_analysis->comment_analysis);
-                    }  ?>
+                 } elseif($comment_analysis !== null){ ?>
+                    value="<?= htmlspecialchars($comment_analysis->comment_analysis);?>"
+                <?php } ?>
         
         readChangement>
     </div>
