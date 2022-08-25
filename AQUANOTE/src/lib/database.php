@@ -1,4 +1,5 @@
 <?php
+require_once('src/lib/.dbaccess.php');
 
 class DatabaseConnection
 {
@@ -7,7 +8,7 @@ class DatabaseConnection
 	public function getConnection(): PDO
 	{
     	if ($this->database === null) {
-			$this->database = new PDO('mysql:host=localhost;dbname=aquanote;charset=utf8', 'root', '');
+			$this->database = new PDO('mysql:host=localhost;dbname='.$_ENV["dbname"].';charset=utf8', $_ENV["dbuser"], $_ENV["dbpassword"]);
     	}
 
     	return $this->database;
