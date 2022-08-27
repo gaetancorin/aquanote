@@ -12,7 +12,7 @@ require_once('src/controllers/homepages/connect_user.php');
 require_once('src/controllers/values_insertion.php');
 require_once('src/controllers/data_charts.php');
 require_once('src/controllers/data_table.php');
-require_once('src/controllers/get_inputs.php');
+require_once('src/controllers/save_values_insertion.php');
 //pop_up
 require_once('src/controllers/change_aqua_connected.php');
 require_once('src/controllers/create_new_aqua.php');
@@ -39,8 +39,8 @@ try {
 		elseif ($_GET['action'] === 'valuesInsertion') {
 			valuesInsertion();
     	}
-		elseif ($_GET['action'] === 'getInputs') {
-			getInputs();
+		elseif ($_GET['action'] === 'saveValuesInsertion') {
+			saveValuesInsertion();
     	}
 
 		elseif ($_GET['action'] === 'dataCharts') {
@@ -101,7 +101,7 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 	if (strpos($UrlAfterControllers, 'values_insertion') !== false){
 		error($errorMessage);
 	}
-	if (strpos($UrlAfterControllers, 'get_inputs') !== false){
+	if (strpos($UrlAfterControllers, 'save_values_insertion') !== false){
 		valuesInsertion($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'data_table') !== false){

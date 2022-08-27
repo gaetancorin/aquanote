@@ -37,7 +37,7 @@
 
 
 <!-- FORMULAIRE VALUES_INSERTION -->
-<form method="post" action="index.php?action=getInputs" id="form_insert_input">
+<form method="post" action="index.php?action=saveValuesInsertion" id="form_insert_input">
 
     <!-- Date et checkbox --> 
     <div class="date_and_checkbox">

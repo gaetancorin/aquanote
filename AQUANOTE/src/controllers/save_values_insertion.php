@@ -1,12 +1,12 @@
 <?php
-// controllers/get_inputs.php
+// controllers/save_values_insertion.php
 
 require_once('src/lib/database.php');
 require_once('src/models/type_analysis.php');
 require_once('src/models/value_type_analysis.php');
 require_once('src/models/comment_analysis.php');
 
-function getInputs($errorMessage = null){
+function saveValuesInsertion($errorMessage = null){
 
     if (!isset($_SESSION)){
         session_start();
