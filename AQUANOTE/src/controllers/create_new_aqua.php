@@ -70,5 +70,5 @@ function createNewAqua(array $input){
     $_SESSION['id_aquarium_connected'] = $Newaquarium->id_aquarium;
 
 
-    header('Location: index.php?action=insertInputs');
+    header('Location: index.php?action=valuesInsertion');
 }

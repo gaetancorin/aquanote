@@ -9,9 +9,9 @@ require_once('src/controllers/homepages/login.php');
 require_once('src/controllers/homepages/create_user.php');
 require_once('src/controllers/homepages/connect_user.php');
 //app
-require_once('src/controllers/insert_inputs.php');
-require_once('src/controllers/values_charts.php');
-require_once('src/controllers/values_table.php');
+require_once('src/controllers/values_insertion.php');
+require_once('src/controllers/data_charts.php');
+require_once('src/controllers/data_table.php');
 require_once('src/controllers/get_inputs.php');
 //pop_up
 require_once('src/controllers/change_aqua_connected.php');
@@ -36,18 +36,18 @@ try {
 			connectUser($_POST);
     	}
 		// app
-		elseif ($_GET['action'] === 'insertInputs') {
-			insertInputs();
+		elseif ($_GET['action'] === 'valuesInsertion') {
+			valuesInsertion();
     	}
 		elseif ($_GET['action'] === 'getInputs') {
 			getInputs();
     	}
 
-		elseif ($_GET['action'] === 'valuesCharts') {
-			valuesCharts();
+		elseif ($_GET['action'] === 'dataCharts') {
+			dataCharts();
     	}
-		elseif ($_GET['action'] === 'valuesTable') {
-			valuesTable();
+		elseif ($_GET['action'] === 'dataTable') {
+			dataTable();
     	}
 
 		elseif ($_GET['action'] === 'changeAquaConnected') {
@@ -98,30 +98,30 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 		login($errorMessage);
 	}
 
-	if (strpos($UrlAfterControllers, 'insert_inputs') !== false){
+	if (strpos($UrlAfterControllers, 'values_insertion') !== false){
 		error($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'get_inputs') !== false){
-		insertInputs($errorMessage);
+		valuesInsertion($errorMessage);
 	}
-	if (strpos($UrlAfterControllers, 'values_table') !== false){
+	if (strpos($UrlAfterControllers, 'data_table') !== false){
 		error($errorMessage);
 	}
 
 	if (strpos($UrlAfterControllers, 'change_aqua_connected') !== false){
-		insertInputs($errorMessage);
+		valuesInsertion($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'create_new_aqua') !== false){
-		insertInputs($errorMessage);
+		valuesInsertion($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'change_name_aqua') !== false){
-		insertInputs($errorMessage);
+		valuesInsertion($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'delete_aqua') !== false){
-		insertInputs($errorMessage);
+		valuesInsertion($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'logout_user') !== false){
-		insertInputs($errorMessage);
+		valuesInsertion($errorMessage);
 	}
 
 	

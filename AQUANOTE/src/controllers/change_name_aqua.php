@@ -49,5 +49,5 @@ function changeNameAqua(array $input){
         throw new Exception('Une erreur est survenue lors du changement du nom de votre aquarium');
     }
 
-    header('Location: index.php?action=insertInputs');
+    header('Location: index.php?action=valuesInsertion');
 }

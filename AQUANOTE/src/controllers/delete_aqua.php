@@ -64,5 +64,5 @@ function deleteAqua(array $input){
     // Suppression de l'aquarium
     $aquariumRepository->deleteAquariumsById($aquarium_to_delete->id_aquarium);
 
-    header('Location: index.php?action=insertInputs');
+    header('Location: index.php?action=valuesInsertion');
 }

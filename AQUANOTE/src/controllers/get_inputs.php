@@ -132,7 +132,7 @@ function getInputs($errorMessage = null){
     }
 
     // Renvois sur le formulaire à la date d'insertion
-    header('Location: index.php?action=insertInputs&date='.$date);
+    header('Location: index.php?action=valuesInsertion&date='.$date);
 
 
 }

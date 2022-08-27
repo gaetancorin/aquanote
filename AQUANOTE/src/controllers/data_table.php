@@ -1,5 +1,5 @@
 <?php
-// controllers/values_table.php
+// controllers/data_table.php
 
 require_once('src/lib/database.php');
 require_once('src/models/aquarium.php');
@@ -7,7 +7,7 @@ require_once('src/models/type_analysis.php');
 require_once('src/models/value_type_analysis.php');
 require_once('src/models/date_value_selector.php');
 
-function valuesTable($errorMessage = null){
+function dataTable($errorMessage = null){
 
     if (!isset($_SESSION)){
         session_start();
@@ -35,7 +35,7 @@ function valuesTable($errorMessage = null){
 
 
     //////////////////////////////////////////////////////////////:
-        // pour template value_table // 
+        // pour template data_table // 
 
     $DatabaseConnection = new DatabaseConnection();
     $dateValuesSelectorRepository = new DateValuesSelectorRepository();
@@ -90,5 +90,5 @@ function valuesTable($errorMessage = null){
 //     }
 
 
-    require('templates/values_table.php');
+    require('templates/data_table.php');
 }

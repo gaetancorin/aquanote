@@ -42,5 +42,5 @@ function connectUser(array $input){
     $_SESSION['id_user'] = $user->id_user;
     $_SESSION['id_aquarium_connected'] = $id_aquarium_connected;
 
-	header('Location: index.php?action=insertInputs');
+	header('Location: index.php?action=valuesInsertion');
 }

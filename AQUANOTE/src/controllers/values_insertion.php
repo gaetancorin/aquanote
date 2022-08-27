@@ -1,5 +1,5 @@
 <?php
-// controllers/insert_inputs.php
+// controllers/values_insertion.php
 
 require_once('src/lib/database.php');
 require_once('src/models/aquarium.php');
@@ -7,7 +7,7 @@ require_once('src/models/type_analysis.php');
 require_once('src/models/value_type_analysis.php');
 require_once('src/models/comment_analysis.php');
 
-function insertInputs($errorMessage = null){
+function valuesInsertion($errorMessage = null){
 
     if (!isset($_SESSION)){
         session_start();
@@ -36,7 +36,7 @@ function insertInputs($errorMessage = null){
 
 
     //////////////////////////////////////////////////////////////:
-    // pour template insert_inputs // 
+    // pour template values_insertion // 
 
     // récupération de la date dans l'url et sa vérification
     //si aucune fournis récupérer la date du jour
@@ -68,5 +68,5 @@ function insertInputs($errorMessage = null){
     $types_analysis = $typeAnalysisRepository->getTypesAnalisysWithObjectValueIfExistByIdAquariumAndDate($id_aquarium_connected, $date_inputs);
 
 
-    require('templates/insert_inputs.php');
+    require('templates/values_insertion.php');
 }

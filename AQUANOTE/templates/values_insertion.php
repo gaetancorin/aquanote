@@ -1,8 +1,8 @@
-<!-- PAGE INSERT_INPUTS -->
+<!-- PAGE VALUES_INSERTION -->
 
 <?php 
     $title = "Insertion des données"; 
-    $stylesheets[] = 'src/lib/css/insert_inputs.css';
+    $stylesheets[] = 'src/lib/css/values_insertion.css';
     $stylesheets[] = 'src/lib/css/pop_up.css';
     // variable pour layout header_app_asides
     $aquariums = $aquariums;
@@ -12,9 +12,9 @@
 
 <?php ob_start(); ?>
 
-<!----  INSERT_INPUTS  ---->
+<!----  VALUES_INSERTION  ---->
 
-<!--  header top INSERT_INPUTS afficheur -->
+<!--  header top VALUES_INSERTION afficheur -->
 <nav>
     <ul  class="header_top_afficheur">
         <li class="navigation">
@@ -23,12 +23,12 @@
             </a>
         </li>
         <li class="navigation">
-            <a href="index.php?action=valuesCharts">
+            <a href="index.php?action=dataCharts">
             <img src="src/lib/img/icone_diagramme.svg">
             </a>
         </li>
         <li class="navigation">
-            <a href="index.php?action=valuesTable">
+            <a href="index.php?action=dataTable">
             <img src="src/lib/img/icone_tableau.svg">
             </a>
         </li>
@@ -36,7 +36,7 @@
 </nav>    
 
 
-<!-- FORMULAIRE INSERT_INPUTS-->
+<!-- FORMULAIRE VALUES_INSERTION -->
 <form method="post" action="index.php?action=getInputs" id="form_insert_input">
 
     <!-- Date et checkbox --> 
@@ -121,7 +121,7 @@
 <?php require('templates/pop_up/logout_user.php'); ?>
 <script src="src/lib/pop_up.js"></script>
 
-<script src="src/lib/inserts_inputs_refresh.js"></script>
+<script src="src/lib/values_insertion_refresh.js"></script>
 
 
 <?php $content = ob_get_clean(); ?>

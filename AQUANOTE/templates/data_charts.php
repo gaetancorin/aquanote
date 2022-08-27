@@ -1,20 +1,20 @@
-<!-- PAGE VALUES_CHARTS -->
+<!-- PAGE DATA_CHARTS -->
 
 <?php 
     $title = "Graphiques des données"; 
-    $stylesheets[] = 'src/lib/css/values_charts.css';
+    $stylesheets[] = 'src/lib/css/data_charts.css';
     $stylesheets[] = 'src/lib/css/pop_up.css';
 ?>
 
 <?php ob_start(); ?>
 
-<!----  VALUES_CHARTS  ---->
+<!----  DATA_CHARTS  ---->
 
-<!--  header top VALUES_CHARTS afficheur  -->
+<!--  header top DATA_CHARTS afficheur  -->
 <nav>
     <ul  class="header_top_afficheur">
         <li class="navigation">
-            <a href="index.php?action=insertInputs">
+            <a href="index.php?action=valuesInsertion">
             <img src="src/lib/img/icone_insertion_donnees.svg">
             </a>
         </li>
@@ -24,7 +24,7 @@
             </a>
         </li>
         <li class="navigation">
-            <a href="index.php?action=valuesTable">
+            <a href="index.php?action=dataTable">
             <img src="src/lib/img/icone_tableau.svg">
             </a>
         </li>

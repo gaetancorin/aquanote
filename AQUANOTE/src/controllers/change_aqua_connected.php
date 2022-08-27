@@ -43,5 +43,5 @@ function changeAquaConnected(){
     // changement de l'aquarium connecté par la session
     $_SESSION['id_aquarium_connected'] = $id_aquarium_to_connect;
 
-    header('Location: index.php?action=insertInputs');
+    header('Location: index.php?action=valuesInsertion');
 }

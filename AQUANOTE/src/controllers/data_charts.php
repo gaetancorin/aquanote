@@ -1,7 +1,7 @@
 <?php
-// controllers/values_charts.php
+// controllers/data_charts.php
 
-function valuesCharts($errorMessage = null){
+function dataCharts($errorMessage = null){
 
     if (!isset($_SESSION)){
         session_start();
@@ -30,5 +30,5 @@ function valuesCharts($errorMessage = null){
 
     //////////////////////////////////////////////////////////////:
 
-    require('templates/values_charts.php');
+    require('templates/data_charts.php');
 }

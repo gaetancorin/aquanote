@@ -3,7 +3,7 @@ let input_date = document.getElementById('date');
 
 input_date.addEventListener('change', (event)=>{
     let newDate  = input_date.value;
-    window.location = 'index.php?action=insertInputs&date='+newDate;
+    window.location = 'index.php?action=valuesInsertion&date='+newDate;
 });
 
 // change les couleurs des inputs en fonction de si ils ont changé ou non

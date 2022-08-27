@@ -1,25 +1,25 @@
-<!-- PAGE VALUES_TABLE -->
+<!-- PAGE DATA_TABLE -->
 
 <?php 
     $title = "Tableau des données"; 
-    $stylesheets[] = 'src/lib/css/values_table.css';
+    $stylesheets[] = 'src/lib/css/data_table.css';
     $stylesheets[] = 'src/lib/css/pop_up.css';
 ?>
 
 <?php ob_start(); ?>
 
-<!----  VALUES_TABLE  ---->
+<!----  DATA_TABLE  ---->
 
-<!--  header top VALUES_TABLE afficheur  -->
+<!--  header top DATA_TABLE afficheur  -->
 <nav>
     <ul  class="header_top_afficheur">
         <li class="navigation">
-            <a href="index.php?action=insertInputs">
+            <a href="index.php?action=valuesInsertion">
             <img src="src/lib/img/icone_insertion_donnees.svg">
             </a>
         </li>
         <li class="navigation">
-            <a href="index.php?action=valuesCharts">
+            <a href="index.php?action=dataCharts">
             <img src="src/lib/img/icone_diagramme.svg">
             </a>
         </li>
