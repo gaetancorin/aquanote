@@ -58,7 +58,7 @@ function getInputs($errorMessage = null){
     if($date){
 
     foreach($inputs as $key => $value){
-        echo '<br>key = ', $key, ' value = ', $value, ' ';
+        // echo '<br>key = ', $key, ' value = ', $value, ' ';
 
         // récupère valeurs d'analyses avec une key commencant par 'type_analysis_' (ex: 'type_analysis_28')
         if( (strpos($key, 'type_analysis_')) !== false ){

@@ -35,7 +35,7 @@ function valuesTable($errorMessage = null){
 
 
     //////////////////////////////////////////////////////////////:
-        // pour template valeu_table // 
+        // pour template value_table // 
 
     $DatabaseConnection = new DatabaseConnection();
     $dateValuesSelectorRepository = new DateValuesSelectorRepository();
