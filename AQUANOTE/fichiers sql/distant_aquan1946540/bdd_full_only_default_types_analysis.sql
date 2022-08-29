@@ -1,12 +1,12 @@
 use aquan1946540;
 
--- TABLE DE DONNEE POUR REMPLIR LES TYPES_ANALYSIS PAR DEFAULT A LA CREATION D'UN AQUARIUM
+-- remplissage de la table de données par défaut de default_types_analysis afin de l'utiliser à la création d'un aquarium.
 
 insert into default_types_analysis (name_type_analysis, tutorial_how_testing_type_analysis) values
-('°C', 'Ceci est la température'),
-('K', 'Ceci est le potassium'),
-('NO3', 'Ceci est le nitrate'),
-('PO4', 'Ceci est le phosphate'),
-('Fe', 'Ceci est le Fer'),
-('NO2', 'Ceci est le nitrite'),
+('°C', 'Tutoriel de réalisation de test de température'),
+('K', 'Tutoriel de réalisation de test du potassium'),
+('NO3', 'Tutoriel de réalisation de test du nitrate'),
+('PO4', 'Tutoriel de réalisation de test du phosphate'),
+('Fe', 'Tutoriel de réalisation de test du Fer'),
+('NO2', 'Tutoriel de réalisation de test du nitrite'),
 ('chang eau %', '');
