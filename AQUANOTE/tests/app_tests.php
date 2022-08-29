@@ -7,7 +7,6 @@ require_once('src/models/value_type_analysis.php');
 require_once('src/models/date_value_selector.php');
 require_once('src/models/comment_analysis.php');
 
-
 class app_tests extends \PHPUnit\Framework\TestCase{
     // Attributs de app_tests représentant les méthodes des modèles connectés à la bdd
     protected $DatabaseConnection;

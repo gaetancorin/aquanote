@@ -85,12 +85,12 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 	}
 	
 	//récupère l'url ou est déclenché l'exception
-	//Puis récupère le nom du controller
 	$getUrlError = $exception->getFile();
+	//Puis parse l'url pour récupérer le nom du controller
 	$cutUrlBeforeControllers = strstr($getUrlError, 'controllers');
 	$UrlAfterControllers = substr($cutUrlBeforeControllers, 12);
 
-	//Renvois le massage d'erreur sur le controller approprié en fonction du nom du controller qui à créer l'exception
+	//Renvois le massage d'erreur de l'exception sur le controleur approprié en fonction du nom du controleur qui a capturé l'exception
 	if (strpos($UrlAfterControllers, 'create_user') !== false){
 		register($errorMessage);
 	}
