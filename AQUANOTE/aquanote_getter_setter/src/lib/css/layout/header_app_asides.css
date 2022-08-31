@@ -1,0 +1,331 @@
+
+/* --- RETIRER CSS PAR DEFAUT NAVIGATEUR --*/
+
+body{
+    background-color: #f6f6f6;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400;   
+    overflow-x: hidden; 
+}
+h2{
+    margin: 0px;
+}
+
+p{
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* ///////////-- HEADER TOP--\\\\\\\\\\ */
+
+
+/* --------header top------ */
+
+.header_top{
+    width: 100vw;
+    height: 55px;
+    background-color: #deefff;
+    border-bottom: solid 2px black;    
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    
+}
+
+
+.aquarium_name{
+    margin-left: 8vw;
+    font-weight: 400;
+    align-self: center;
+    justify-self: start;
+    font-size: 1.1em;  
+}
+
+
+/* logo */
+header #div_logo{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logoAquaData{
+    width: 40px;
+    padding-right:8px;
+}
+ #title_logo{/*apparait a 600px */
+    display: none;
+}
+
+
+/* hanburger */
+.hamburger_conteneur{
+    justify-self: end;
+    display: flex;
+}
+
+.header_top input[type="checkbox"]{
+    display: block;
+    align-self: center;
+    position: absolute;
+    z-index: 5;
+    height: 32px;
+    width: 30px;    
+    opacity: 0;
+    cursor: pointer;
+}
+
+.header_top input[type="checkbox"]:checked ~ .conteneur_aside_hamb {
+    transform: translateX(0);
+  }
+
+.conteneur_aside_hamb{
+    display: block;
+    overflow-x: auto;
+    position: fixed;
+    background-color: #eaf3fb;
+    z-index: 3;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0px;
+    right: 0px;
+    width: 280px;
+    height: calc(100vh - 55px);
+    padding-top: 55px;
+    box-shadow: -5px 0px 10px 0px #aaa;
+    transform: translate(150%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.conteneur_aside_hamb .a_aside_hamb{
+    font-size: 17px;
+    padding: 17px 5px 17px 12px;
+}
+
+.conteneur_aside_hamb .img_fish_hamb{
+    display: inline-block;
+}
+
+.hamburger_header{
+    display: block;
+    z-index: 4;
+    align-self: center;
+    width: 34px;
+    margin-right: 25px;
+}
+
+
+/* --------header top responsive------ */
+
+@media screen and (min-width: 600px){
+
+    .header_top{
+        height: 60px;
+    }
+
+    .hamburger_header{
+        width: 38px;
+    }
+
+    .aquarium_name{
+        font-size: 1.3em;  
+    }
+
+    #title_logo{
+        display: block;
+        font-size: 25px;
+        font-weight: 500;
+        padding-right: 48px;
+    }
+
+    .hamburger_header{
+        margin-right: 50px;
+    }
+
+    .conteneur_aside_hamb{
+        height: calc(100vh - 60px);
+        padding-top: 60px;
+        width: 300px;
+    }
+
+    .conteneur_aside_hamb .a_aside_hamb{
+        font-size: 19px;
+        padding: 22px 5px 22px 12px;
+    }
+}
+@media screen and (min-width: 1000px){
+
+    .hamburger_conteneur{
+        display: none;
+    }
+}
+
+
+/* ////// RESPONSIVE DES ASIDE PAR GRID //// */
+/* ------tous les asides none---- */
+#responsive_des_aside{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+aside{
+    display: none;
+}
+.section_centrale{
+    zoom: 1;
+}
+
+
+/* ------aside_gauche_hbg actif---- */
+@media screen and (min-width: 1000px){
+    #responsive_des_aside{
+        grid-template-columns: 1fr 3fr;
+    }
+    
+    #aside_gauche_hamb{
+        display: block;
+        order: 1;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+        min-height: calc(100vh - 62px)
+    }
+
+    .section_centrale{
+        order: 2;
+    }
+}
+
+/* aside_gauche_hbg / aside_droite_pub actif-- */
+@media screen and (min-width: 1500px){
+    #responsive_des_aside{
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    
+    #aside_gauche_hamb{
+        display: block;
+        order: 1;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+        min-height: calc(100vh - 62px)
+    }
+
+    #aside_droite_pub{
+        order: 3;
+        display: block;
+        min-height: calc(100vh - 62px)
+    }
+
+    .section_centrale{
+        order: 2;
+    }
+}
+
+/* //////// ASIDE GAUCHE HAMBURGER\\\\\\ */
+/* hérite du css header_top hamburger */
+
+.ul_aside_hamb{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 56px;
+}
+
+.a_aside_hamb {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space:nowrap;
+    word-break: keep-all;
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    padding: 17px 5px 17px 12px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.img_fish_hamb{
+    display: none;
+    padding-right: 8px;
+}
+
+.a_aside_hamb:hover{
+    background-color: #deefff;
+    outline: solid 2px #2c82d2;
+    outline-offset: -2px;
+}
+.a_aside_hamb:active{
+    box-shadow: inset 6px 3px 5px rgba(26, 26, 26, 0.3);
+}
+
+/*  aside hamburger gauche responsive */
+
+@media screen and (min-width: 1200px){
+    .img_fish_hamb{
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 1650px){
+    .img_fish_hamb{
+        padding-left: 2vw;
+    }
+}
+
+/* //////// ASIDE DROITE PUBLICITE \\\\\\ */
+
+.box_publicite{
+    width: 290px;
+    background-color: white;
+    border: 2px solid #7a84d8;
+    border-radius: 20px;
+    margin: 30px auto 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.zone_titre_top_pub{
+    width: 290px;
+    height:40px;
+    background-color: #deefff;
+    border-radius: 17px;
+}
+
+.text_titre_top_pub{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.lien_pub{
+    display: block;
+    flex-grow: 1;
+    background: none;
+    transition: 0.5s;
+    
+}
+
+.lien_pub:hover{
+    background: radial-gradient( #ffdb83, rgba(255,255,255,1));
+}
+
+.img_1_aside_pub{
+    display: block;
+    width: 182px;
+    margin: 25px auto 12px auto;
+}
+
+.img_2_aside_pub{
+    display: block;
+    width: 182px;
+    margin: 12px auto 25px auto;
+    
+}
+
+/* le css de la section du contenu central est gérer par cette page */
+/* /////// SECTION CENTRALE \\\\\\\\ */
