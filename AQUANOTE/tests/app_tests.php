@@ -9,7 +9,7 @@ require_once('src/models/comment_analysis.php');
 
 class app_tests extends \PHPUnit\Framework\TestCase{
     // Attributs de app_tests représentant les méthodes des modèles connectés à la bdd
-    protected $DatabaseConnection;
+    protected $database;
     protected $userRepository;
     protected $aquariumRepository;
     protected $typeAnalysisRepository;
@@ -19,19 +19,19 @@ class app_tests extends \PHPUnit\Framework\TestCase{
 
     // mise en place des attributs de app_tests
     protected function setUp(): void {
-        $this->DatabaseConnection = new DatabaseConnection();
+        $this->database = new Database();
         $this->userRepository = new UserRepository();
-        $this->userRepository->set_connection($this->DatabaseConnection);
+        $this->userRepository->set_database($this->database);
         $this->aquariumRepository = new AquariumRepository();
-        $this->aquariumRepository->set_connection($this->DatabaseConnection);
+        $this->aquariumRepository->set_database($this->database);
         $this->typeAnalysisRepository = new TypeAnalysisRepository();
-		$this->typeAnalysisRepository->set_connection($this->DatabaseConnection);
+		$this->typeAnalysisRepository->set_database($this->database);
         $this->valueTypeAnalysisRepository = new ValueTypeAnalysisRepository();
-        $this->valueTypeAnalysisRepository->set_connection($this->DatabaseConnection);
+        $this->valueTypeAnalysisRepository->set_database($this->database);
         $this->dateValuesSelectorRepository = new DateValuesSelectorRepository();
-        $this->dateValuesSelectorRepository->set_connection($this->DatabaseConnection);
+        $this->dateValuesSelectorRepository->set_database($this->database);
         $this->commentAnalysisRepository = new CommentAnalysisRepository();
-        $this->commentAnalysisRepository->set_connection($this->DatabaseConnection);
+        $this->commentAnalysisRepository->set_database($this->database);
     }
 
     //////// tests ///////
@@ -49,7 +49,6 @@ class app_tests extends \PHPUnit\Framework\TestCase{
         $User = $this->userRepository->getUserById($user->get_id_user());
         $this->assertNotNull($User);
     }
-
 
     /** creation de l'aquarium du user **/
     public function test_create_aquarium_by_id_user(){
