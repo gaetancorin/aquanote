@@ -3,15 +3,37 @@
 require_once('src/lib/database.php');
 
 class User{
+	private string $id_user;
+	private string $email_user;
+	private string $password_user;
 
-	public string $id_user;
-	public string $email_user;
-	public string $password_user;
+	public function get_id_user() :string{
+		return $this->id_user;
+	}
+	public function get_email_user() :string{
+		return $this->id_user;
+	}
+	public function get_password_user() :string{
+		return $this->password_user;
+	}
+	public function set_id_user(string $id_user){
+		$this->id_user = $id_user;
+	}
+	public function set_email_user(string $email_user){
+		$this->email_user = $email_user;
+	}
+	public function set_password_user(string $password_user){
+		$this->password_user = $password_user;
+	}
 }
 
 class UserRepository{
 
-	public DatabaseConnection $connection;
+	private DatabaseConnection $connection;
+
+	public function set_connection(DatabaseConnection $DatabaseConnection){
+		$this->connection = $DatabaseConnection;
+	}
 	
 	public function createUser(string $email_user, string $password_user)
 	{
@@ -41,9 +63,9 @@ class UserRepository{
         }
 
         $user = new User();
-        $user->id_user = $row['id_user'];
-        $user->email_user = $row['email_user'];
-        $user->password_user = $row['password_user'];
+        $user->set_id_user($row['id_user']);
+        $user->set_email_user($row['email_user']);
+        $user->set_password_user($row['password_user']);
 
         return $user;
     }
@@ -65,9 +87,9 @@ class UserRepository{
         }
 
         $user = new User();
-        $user->id_user = $row['id_user'];
-        $user->email_user = $row['email_user'];
-        $user->password_user = $row['password_user'];
+        $user->set_id_user($row['id_user']);
+        $user->set_email_user($row['email_user']);
+        $user->set_password_user($row['password_user']);
 
         return $user;
     }

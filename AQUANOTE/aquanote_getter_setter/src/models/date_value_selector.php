@@ -3,15 +3,38 @@ require_once('src/lib/database.php');
 require_once('src/models/type_analysis.php');
 
 class DateValuesSelector{
-	public string $date_where_are_value;
-	public array $all_types_analysis_with_value_if_exist;
+	private string $date_where_are_values;
+	private array $all_types_analysis_with_value_if_exist;
+
+	public function get_date_where_are_values() :string{
+		return $this->date_where_are_values;
+	}
+	public function get_all_types_analysis_with_value_if_exist() :array{
+		return $this->all_types_analysis_with_value_if_exist;
+	}
+	public function set_date_where_are_values(string $date_where_are_values){
+		$this->date_where_are_values = $date_where_are_values;
+	}
+	public function set_all_types_analysis_with_value_if_exist(array $all_types_analysis_with_value_if_exist){
+		$this->all_types_analysis_with_value_if_exist = $all_types_analysis_with_value_if_exist;
+	}
 
 }
 
 class DateValuesSelectorRepository{
 
-	public DatabaseConnection $connection;
-	public array $dates_where_are_values;
+	private DatabaseConnection $connection;
+	private array $dates_where_are_values;
+
+	public function set_connection(DatabaseConnection $DatabaseConnection){
+		$this->connection = $DatabaseConnection;
+	}
+	public function get_dates_where_are_values() :array{
+		return $this->dates_where_are_values;
+	}
+	public function set_dates_where_are_values(array $dates_where_are_values){
+		$this->dates_where_are_values = $dates_where_are_values;
+	}
 
 	public function getAllDatesWhereAreValuesTypesAnalysisByIdAquarium(string $id_aquarium)
 	{
@@ -35,26 +58,26 @@ class DateValuesSelectorRepository{
 			$datesSelectAll[] = $dateSelect;
 		}
 
-        $this->dates_where_are_values = $datesSelectAll;
+        $this->set_dates_where_are_values($datesSelectAll);
 
 	}
 
-	public function DoListOfDatesContainsArrayTypesAnalysisObjectsWithValue(string $id_aquarium)
-	{ // crée une liste d'objets 'DateValuesSelector'. Ses objets contiennent une date ainsi que un tableau des instances de tous les types de valeurs. Chaque instance contient une instance de 'value_type_analysis' pour la date si la donnée existe;  
+	public function DoListOfDatesContainsArrayTypesAnalysisObjectsWithValue(string $id_aquarium) :array
+	{ // crée une liste d'objets 'DateValuesSelector'. Ces objets contiennent une date ainsi que un tableau des instances de tous les types d'analyses'. Chaque instance de type d'analyse contient une instance de 'value_type_analysis' pour la date si la donnée existe;  
 
 		$datesWithValues = [];
-		foreach($this->dates_where_are_values as $date){
+		foreach($this->get_dates_where_are_values() as $date){
 			// récupère la date dans l'attribut de l'encapsulation(déjà remplis au préalable)
 			$dateWithValues = new DateValuesSelector();
-			$dateWithValues->date_where_are_values = $date;
+			$dateWithValues->set_date_where_are_values($date);
 
 			// récupère tous les types de valeurs avec les objets 'value_type_analysis' pour la date si la donnée existe'
 			$typeAnalysisRepository = new TypeAnalysisRepository();
-			$typeAnalysisRepository->connection = $this->connection;
+			$typeAnalysisRepository->set_connection($this->connection);
 
-			$TypesAnalisysWithValueOject = $typeAnalysisRepository->getTypesAnalisysWithObjectValueIfExistByIdAquariumAndDate( $id_aquarium, $date);
+			$TypesAnalisysWithValueOject = $typeAnalysisRepository->getTypesAnalisysWithObjectValueIfExistByIdAquariumAndDate($id_aquarium, $date);
 
-			$dateWithValues->all_types_analysis_with_value_if_exist = $TypesAnalisysWithValueOject;
+			$dateWithValues->set_all_types_analysis_with_value_if_exist($TypesAnalisysWithValueOject);
 
 
 			$datesWithValues[] = $dateWithValues;

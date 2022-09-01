@@ -17,7 +17,7 @@
             <div>
                 <p>Ancien nom : 
                     <span class="name_aquarium_to_change">
-                    <?= htmlspecialchars($aquarium_connected->name_aquarium) ?>
+                    <?= htmlspecialchars($aquarium_connected->get_name_aquarium()) ?>
                     </span>
                 </p>
             </div>

@@ -47,9 +47,9 @@ foreach($datesValuesSelector as $dateValuesSelector){
 <tr>
 <th>Date</th>
         <?php
-        foreach($dateValuesSelector->all_types_analysis_with_value_if_exist as $type_analysis_with_value_if_exist){ ?>
+        foreach($dateValuesSelector->get_all_types_analysis_with_value_if_exist() as $type_analysis_with_value_if_exist){ ?>
 <th>           
-        <?php echo htmlspecialchars($type_analysis_with_value_if_exist->name_type_analysis);?>
+        <?php echo htmlspecialchars($type_analysis_with_value_if_exist->get_name_type_analysis());?>
 </th>
         <?php } ?>
 </tr>
@@ -63,23 +63,23 @@ foreach($datesValuesSelector as $dateValuesSelector){
 <td>
         <?php //On affiche la date en premier qui n'est pas un type de valeur
         // on transforme de yyyy-mm-dd en dd-mm
-        $date = $dateValuesSelector->date_where_are_values;
+        $date = $dateValuesSelector->get_date_where_are_values();
         echo htmlspecialchars(date('d-m', strtotime($date)));?>
 </td>
-        <?php //On itère la liste contenant les objets types de valeurs
-        foreach($dateValuesSelector->all_types_analysis_with_value_if_exist as $type_analysis_with_value_if_exist){ ?>
+        <?php //On itère l'attribut contenant la liste d'objets types de valeurs
+        foreach($dateValuesSelector->get_all_types_analysis_with_value_if_exist() as $type_analysis_with_value_if_exist){ ?>
 <td>
-            <?php //Si le type_value contient un objet value_type_value, on récupère la valeur, si il n'existe pas on passe
-            if($type_analysis_with_value_if_exist->value_type_analysis !== null){
+            <?php //Si le type_analysis contient un objet value_type_analysis, on récupère la valeur, si il n'existe pas on passe
+            if($type_analysis_with_value_if_exist->get_value_type_analysis() !== null){
 
-                echo htmlspecialchars($type_analysis_with_value_if_exist->value_type_analysis->value_type_analysis);
+                echo htmlspecialchars($type_analysis_with_value_if_exist->get_value_type_analysis()->get_value_type_analysis());
 
             }  ?>
 </td>
         <?php }?>
 
     <?php 
-    $modulo += 1; // on incrémente le modulo et on remet a 0 arrivé a 10.
+    $modulo += 1; // on incrémente le modulo et on remet à 0 arrivé à 10.
     $modulo = ($modulo % 10);?>
 
     <?php 
@@ -94,14 +94,14 @@ foreach($datesValuesSelector as $dateValuesSelector){
 <?php // Deuxième tableau, actif si aucune donnée n'est enregistré
 // Si l'utilisateusr n'as rentré aucune donné, on itère les types de valeurs de l'aquarium récupéré sur une autre variable-->
 
-if($dateValuesSelectorRepository->dates_where_are_values === []) { ?>
+if($dateValuesSelectorRepository->get_dates_where_are_values() === []) { ?>
 <thead>
 <tr>
 <th>Date</th>
     <?php
     foreach($arrayTypesAnalysisObject as $type_analysis){ ?>
 <th>           
-        <?php echo htmlspecialchars($type_analysis->name_type_analysis);?>
+        <?php echo htmlspecialchars($type_analysis->get_name_type_analysis());?>
 </th>
     <?php } ?>
 </tr>

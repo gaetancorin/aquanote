@@ -18,7 +18,7 @@ function logoutUser(){
     $id_aquarium_connected = $_SESSION['id_aquarium_connected'];
 
 
-    //////////////////////////////////////////////////////////////:
+    //////////////////////////////////////////////////////////////
     // logout_user // 
     $sessionDestroy = session_destroy();
     if($sessionDestroy === 0){

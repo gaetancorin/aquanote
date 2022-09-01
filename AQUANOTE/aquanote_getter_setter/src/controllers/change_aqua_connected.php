@@ -28,7 +28,7 @@ function changeAquaConnected(){
     // vérification de l'existance et du propriétaire de l'aquarium à connecté
     $DatabaseConnection = new DatabaseConnection();
     $aquariumRepository = new AquariumRepository();
-    $aquariumRepository->connection = $DatabaseConnection;
+    $aquariumRepository->set_connection($DatabaseConnection);
     try{
         $aquarium = $aquariumRepository->getAquariumById($id_aquarium_to_connect);
     } catch(Exception){
@@ -37,7 +37,7 @@ function changeAquaConnected(){
     if ($aquarium === null){
         throw new Exception('L\'aquarium sur lequel vous essayez de vous connecter n\'existe pas');
     }
-    if ($aquarium->id_user !== $id_user){
+    if ($aquarium->get_id_user() !== $id_user){
         throw new Exception('L\'aquarium sur lequel vous essayez de vous connecter n\'est pas à vous');
     }
     // changement de l'aquarium connecté par la session

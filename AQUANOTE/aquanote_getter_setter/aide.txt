@@ -10,24 +10,29 @@ Architecture sur le projet :
 
 Convention typographique sur le projet :
 
+• bdd
+- table (snake_case) écrit au pluriel
+- attribut_de_table (snake_case)
+
 • dossier (snake_case)
 • nom_de_fichier (snake_case)
 
-• bdd
-- table (snake_case) écrit au pluriel
-- champ_de_table (snake_case)
-
 • modèle
-- LaClass (PascalCase) écrit au singulier
-- laFonction (camelCase)
-- laVariable (camelCase)
-- variable_contenant_attribut_objet (snake_case)(adéquation avec bdd)
-- attribut_objet (snake_case)(adéquation avec bdd)
+ [classe d'objet représentant un enregistrement bdd]
+    - LaClasse (PascalCase) écrit au singulier
+    - son_attribut (snake_case)(adéquation avec bdd)
+    - getter_setter (snake_case)(adéquation avec bdd et distinction des méthode de requête)
+ [classe d'encapsulation des requêtes bdd]
+    - laClasse (camelCase)
+    - laVariable (camelCase)
+    - attribut_contenant_attribut_objet (snake_case)(adéquation avec bdd)
+    - attribut_objet (snake_case)(adéquation avec bdd)
 
 • controller
 - LaClass (PascalCase) écrit au singulier
 - laFonction (camelCase)
 - laVariable (camelCase)
+- la_variable_de_attribut_objet_de_enregistrement_bdd(snake_case)(adéquation avec bdd)
 
 • routeur
 - uneAction (camelCase)
@@ -37,8 +42,8 @@ Convention typographique sur le projet :
 - name_formulaire (snake_case)
 
 • $_SESSION
-- ma_donnee_bdd (snake_case)
-- monAutreDonnee (camelCase)
+- une_variable_de_donnee_bdd (snake_case)
+- uneVariableDeAutreDonnee (camelCase)
 
 
 /* Breakpoint de bootstrap utilisé sur maquette take : */

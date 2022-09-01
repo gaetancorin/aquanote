@@ -23,7 +23,7 @@ function valuesInsertion($errorMessage = null){
     // pour template header_app_asides // récupération de la liste des aquariums 
     $DatabaseConnection = new DatabaseConnection();
     $aquariumRepository = new AquariumRepository();
-    $aquariumRepository->connection = $DatabaseConnection;
+    $aquariumRepository->set_connection($DatabaseConnection);
     try{
         $aquariums = $aquariumRepository->getAquariumsByIdUser($id_user);
         if ($aquariums === []){throw new Exception();}
@@ -32,7 +32,6 @@ function valuesInsertion($errorMessage = null){
     }
     // pour template header_app_asides // récupération de l'aquarium connecté par l'id 
     $aquarium_connected = $aquariumRepository->getAquariumById($id_aquarium_connected);
-
 
 
     //////////////////////////////////////////////////////////////:
@@ -57,14 +56,14 @@ function valuesInsertion($errorMessage = null){
 
     //récupération du commentaire de l'aquarium connecté à la date choisi
     $commentAnalysisRepository = new CommentAnalysisRepository();
-    $commentAnalysisRepository->connection = $DatabaseConnection;
+    $commentAnalysisRepository->set_connection($DatabaseConnection);
     $comment_analysis = $commentAnalysisRepository->getCommentAnalysisByDateAnalysisAndIdAquarium($date_inputs, $id_aquarium_connected);
 
 
     //récupération de tous les types d'analyses de l'aquarium connecté
     //avec dans l'attribut de ses objets TypeAnalyses un objet ValueTypeAnalysis correspondant à la date choisi
     $typeAnalysisRepository = new TypeAnalysisRepository();
-    $typeAnalysisRepository->connection = $DatabaseConnection;
+    $typeAnalysisRepository->set_connection($DatabaseConnection);
     $types_analysis = $typeAnalysisRepository->getTypesAnalisysWithObjectValueIfExistByIdAquariumAndDate($id_aquarium_connected, $date_inputs);
 
 

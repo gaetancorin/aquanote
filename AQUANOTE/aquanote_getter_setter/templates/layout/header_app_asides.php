@@ -8,7 +8,7 @@
 <header>
     <div class="header_top">
         <h2 class="aquarium_name">
-            <?= htmlspecialchars($aquarium_connected->name_aquarium); ?></h2>
+            <?= htmlspecialchars($aquarium_connected->get_name_aquarium()); ?></h2>
         <div id="div_logo">
             <img id="logoAquaData" src="src/lib/img/logo_aqua_data.png" alt="Aqua Data logo">
             <p id="title_logo">AquaNote</p>
@@ -25,10 +25,10 @@
                     <li>
                         <a class="a_aside_hamb" 
                         <?= // controller pour changer d'aquarium par l'id
-                        htmlspecialchars('href=index.php?action=changeAquaConnected&aqua_to_connect='.$aquarium->id_aquarium);?>
+                        htmlspecialchars('href=index.php?action=changeAquaConnected&aqua_to_connect='.$aquarium->get_id_aquarium());?>
                         >
                             <img class="img_fish_hamb" src="src/lib/img/poisson_burger_<?= $number_of_fish_picture?>.svg">
-                            <?= htmlspecialchars($aquarium->name_aquarium);?>      
+                            <?= htmlspecialchars($aquarium->get_name_aquarium());?>      
                         </a>
                     </li>
 
@@ -69,10 +69,10 @@
                         <li>
                             <a class="a_aside_hamb"  
                             <?= // controller pour changer d'aquarium par l'id
-                            htmlspecialchars('href=index.php?action=changeAquaConnected&aqua_to_connect='.$aquarium->id_aquarium);?>
+                            htmlspecialchars('href=index.php?action=changeAquaConnected&aqua_to_connect='.$aquarium->get_id_aquarium());?>
                             >
                                 <img class="img_fish_hamb" src="src/lib/img/poisson_burger_<?= $number_of_fish_picture?>.svg">
-                                <?= htmlspecialchars($aquarium->name_aquarium);?>      
+                                <?= htmlspecialchars($aquarium->get_name_aquarium());?>      
                             </a>
                         </li>                        
                         

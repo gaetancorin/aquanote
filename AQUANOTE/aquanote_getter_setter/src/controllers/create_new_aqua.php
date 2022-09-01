@@ -25,7 +25,7 @@ function createNewAqua(array $input){
     // récupération de la liste des aquariums de l'user 
     $DatabaseConnection = new DatabaseConnection();
     $aquariumRepository = new AquariumRepository();
-    $aquariumRepository->connection = $DatabaseConnection;
+    $aquariumRepository->set_connection($DatabaseConnection);
     try{
         $aquariums = $aquariumRepository->getAquariumsByIdUser($id_user);
         if ($aquariums === []){throw new Exception();}
@@ -43,8 +43,8 @@ function createNewAqua(array $input){
 
     // vérification que aucun aquarium ne l'user ne possède le même nom que le nouveau
     foreach ($aquariums as $aquarium) {
-        if($aquarium->name_aquarium === $name_new_aquarium){
-            throw new Exception('Vous avez déjà un aquarium au nom de "'.$aquarium->name_aquarium.'", merci de choisir un autre nom');
+        if($aquarium->get_name_aquarium() === $name_new_aquarium){
+            throw new Exception('Vous avez déjà un aquarium au nom de "'.$aquarium->get_name_aquarium().'", merci de choisir un autre nom');
         }
     }
 
@@ -57,17 +57,17 @@ function createNewAqua(array $input){
     // récupération nouvel aquarium pour avoir son id
     $Newaquarium = $aquariumRepository->getAquariumByNameAndIdUser($name_new_aquarium, $id_user);
 
-    // ajout des types d'analyses par défaults relié à l'aquarium
+    // ajout des types d'analyses par défaults reliés à l'aquarium
     $typeAnalysisRepository = new TypeAnalysisRepository();
-    $typeAnalysisRepository->connection = $DatabaseConnection;
+    $typeAnalysisRepository->set_connection($DatabaseConnection);
     try{
-        $typeAnalysisRepository->createDefaultTypesAnalysis($Newaquarium->id_aquarium);
+        $typeAnalysisRepository->createDefaultTypesAnalysis($Newaquarium->get_id_aquarium());
     } catch (Exception) {
         throw new Exception('Votre aquarium à été créé mais une erreur est survenue sur la création de ses types d\'analyses par défault. Vous pouvez tout de  même accéder à votre nouvel aquarium.');
     }
 
     // sur la session, changement de l'aquarium connecté par le nouvel aquarium
-    $_SESSION['id_aquarium_connected'] = $Newaquarium->id_aquarium;
+    $_SESSION['id_aquarium_connected'] = $Newaquarium->get_id_aquarium();
 
 
     header('Location: index.php?action=valuesInsertion');

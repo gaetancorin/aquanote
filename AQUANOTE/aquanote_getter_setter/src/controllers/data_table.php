@@ -22,7 +22,7 @@ function dataTable($errorMessage = null){
     // pour template header_app_asides // récupération de la liste des aquariums 
     $DatabaseConnection = new DatabaseConnection();
     $aquariumRepository = new AquariumRepository();
-    $aquariumRepository->connection = $DatabaseConnection;
+    $aquariumRepository->set_connection($DatabaseConnection);
     try{
         $aquariums = $aquariumRepository->getAquariumsByIdUser($id_user);
         if ($aquariums === []){throw new Exception();}
@@ -39,18 +39,23 @@ function dataTable($errorMessage = null){
 
     $DatabaseConnection = new DatabaseConnection();
     $dateValuesSelectorRepository = new DateValuesSelectorRepository();
-    $dateValuesSelectorRepository->connection = $DatabaseConnection;
-        // récupère toutes les dates et les met dans l'attribut du répository.
+    $dateValuesSelectorRepository->set_connection($DatabaseConnection);
+    
+    // récupère toutes les dates et les met dans l'attribut $dates_where_are_values du répository.
     $dateValuesSelectorRepository->getAllDatesWhereAreValuesTypesAnalysisByIdAquarium($id_aquarium_connected);
 
-    //  Puis ce sert de ses dates pour, dans chacune d'elle, créer un objet 'dateValuesSelector'. Cette objet va récupérer la date ainsi que tous les objects type_analysis lié à l'aquarium. Si il y a une valeur à cette date, l'objet 'ty^pe_analysis' l' aura en attribut.(objet 'dateValuesSelector' qui contient une liste d'objet 'type_analysis' qui contient un objet 'value_type_analysis' si cette valeur existe) 
+    //  Puis recupère cette attribut,et pour chaque date,va créerun objet 'dateValuesSelector'. 
+    // Cette objet va récupérer la date dans son attribut ainsi que tous les objects type_analysis lié à l'aquarium dans son autre attribut.
+    //Dans les types analysis qu'elle a récupérer, il y aura l'objet value_type_analysis si il existe a la date de datevaluesselector. SInon, il y aura un null. 
+    // Une fois l'objet créer, il est ajouter à une liste.
+    // A la fin de la fonction, on retourne la liste.
     $datesValuesSelector = $dateValuesSelectorRepository->DoListOfDatesContainsArrayTypesAnalysisObjectsWithValue($id_aquarium_connected);
 
     // Si le user n'as encore rentré aucune donnée(et donc aucune date), on récupère les types d'analyse pour les itérer séparement
-    if($dateValuesSelectorRepository->dates_where_are_values === [])
+    if($dateValuesSelectorRepository->get_dates_where_are_values() === [])
     {
         $typeAnalysisRepository = new TypeAnalysisRepository();
-        $typeAnalysisRepository->connection = $DatabaseConnection;
+        $typeAnalysisRepository->set_connection($DatabaseConnection);
         $arrayTypesAnalysisObject = $typeAnalysisRepository->getTypesAnalisysByIdAquarium($id_aquarium_connected);
     }
 
@@ -66,19 +71,19 @@ function dataTable($errorMessage = null){
 //             //tous les 10, on affiche l'intitulé date qui n'est pas un type d'analyse
 //             echo 'Date  //';
 //             // tous les 10, on affiche dans la liste tous les nom de 'type_analysis'
-//             foreach($dateValuesSelector->all_types_analysis_with_value_if_exist as $type_analysis_with_value_if_exist){
+//             foreach($dateValuesSelector->get_all_types_analysis_with_value_if_exist() as $type_analysis_with_value_if_exist){
 
-//                 echo $type_analysis_with_value_if_exist->name_type_analysis." // ";
+//                 echo $type_analysis_with_value_if_exist->get_name_type_analysis()." // ";
 //             }
 //             echo '<br>';
 //         }
 
 //         // on récupère dans la liste de 'type_analysis' l'objet "value_type_analysis" si il existe. On affiche sa valeur. 
-//         echo $dateValuesSelector->date_where_are_values." // ";
-//         foreach($dateValuesSelector->all_types_analysis_with_value_if_exist as $type_analysis_with_value_if_exist){
+//         echo $dateValuesSelector->get_date_where_are_values()." // ";
+//         foreach($dateValuesSelector->get_all_types_analysis_with_value_if_exist() as $type_analysis_with_value_if_exist){
         
-//             if($type_analysis_with_value_if_exist->value_type_analysis !== null){
-//                 echo $type_analysis_with_value_if_exist->value_type_analysis->value_type_analysis." // ";
+//             if($type_analysis_with_value_if_exist->get_value_type_analysis() !== null){
+//                 echo $type_analysis_with_value_if_exist->get_value_type_analysis()->get_value_type_analysis()." // ";
 //             } else{ 
 //                 echo " // ";
 //             }

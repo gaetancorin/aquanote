@@ -35,7 +35,7 @@ function createUser(array $input){
     // vérifier que l'email n'est pas déjà utilisé
 	$DatabaseConnection = new DatabaseConnection();
     $userRepository = new UserRepository();
-	$userRepository->connection = $DatabaseConnection;
+	$userRepository->set_connection($DatabaseConnection);
 
 	$emailExist = $userRepository->getUserByEmail($email_user);
 	if ($emailExist !== null) {
@@ -53,10 +53,10 @@ function createUser(array $input){
 	try{
 
 		$user = $userRepository->getUserByEmail($email_user);
-		$id_user = $user->id_user;
+		$id_user = $user->get_id_user();
 	
 		$aquariumRepository = new AquariumRepository();
-		$aquariumRepository->connection = $DatabaseConnection;
+		$aquariumRepository->set_connection($DatabaseConnection);
 		try{
 			$aquariumRepository->createAquarium($name_aquarium, $id_user);
 		} catch (Exception) {
@@ -67,10 +67,10 @@ function createUser(array $input){
 
 		$aquariums = $aquariumRepository->getAquariumsByIdUser($id_user);
 		$aquarium = $aquariums[0];
-		$id_aquarium = $aquarium->id_aquarium;
+		$id_aquarium = $aquarium->get_id_aquarium();
 	
 		$typeAnalysisRepository = new TypeAnalysisRepository();
-		$typeAnalysisRepository->connection = $DatabaseConnection;
+		$typeAnalysisRepository->set_connection($DatabaseConnection);
 		try{
 			$typeAnalysisRepository->createDefaultTypesAnalysis($id_aquarium);
 		} catch (Exception) {

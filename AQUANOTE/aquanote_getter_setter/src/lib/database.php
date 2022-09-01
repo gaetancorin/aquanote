@@ -3,7 +3,7 @@ require_once('src/lib/.dbaccess.php');
 
 class DatabaseConnection
 {
-	public ?PDO $database = null;
+	private ?PDO $database = null;
 
 	public function getConnection(): PDO
 	{

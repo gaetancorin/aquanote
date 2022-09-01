@@ -2,15 +2,37 @@
 require_once('src/lib/database.php');
 
 class Aquarium{
+	private string $id_aquarium;
+	private string $name_aquarium;
+	private string $id_user;
 
-	public string $id_aquarium;
-	public string $name_aquarium;
-	public string $id_user;
+	public function get_id_aquarium() :string{
+		return $this->id_aquarium;
+	}
+	public function get_name_aquarium() :string{
+		return $this->name_aquarium;
+	}
+	public function get_id_user() :string{
+		return $this->id_user;
+	}
+	public function set_id_aquarium(string $id_aquarium){
+		$this->id_aquarium = $id_aquarium;
+	}
+	public function set_name_aquarium(string $name_aquarium){
+		$this->name_aquarium = $name_aquarium;
+	}
+	public function set_id_user(string $id_user){
+		$this->id_user = $id_user;
+	}
 }
 
 class AquariumRepository{
 
-	public DatabaseConnection $connection;
+	private DatabaseConnection $connection;
+	
+	public function set_connection(DatabaseConnection $DatabaseConnection){
+		$this->connection = $DatabaseConnection;
+	}
 	
 	public function createAquarium(string $name_aquarium, string $id_user) 
 	{
@@ -39,9 +61,9 @@ class AquariumRepository{
         }
 
         $aquarium = new Aquarium();
-        $aquarium->id_aquarium = $row['id_aquarium'];
-        $aquarium->name_aquarium = $row['name_aquarium'];
-        $aquarium->id_user = $row['id_user'];
+        $aquarium->set_id_aquarium($row['id_aquarium']);
+        $aquarium->set_name_aquarium($row['name_aquarium']);
+        $aquarium->set_id_user($row['id_user']);
 
         return $aquarium;
     }
@@ -62,9 +84,9 @@ class AquariumRepository{
         }
 
         $aquarium = new Aquarium();
-        $aquarium->id_aquarium = $row['id_aquarium'];
-        $aquarium->name_aquarium = $row['name_aquarium'];
-        $aquarium->id_user = $row['id_user'];
+        $aquarium->set_id_aquarium($row['id_aquarium']);
+        $aquarium->set_name_aquarium($row['name_aquarium']);
+        $aquarium->set_id_user($row['id_user']);
 
         return $aquarium;
     }
@@ -83,9 +105,9 @@ class AquariumRepository{
 		$aquariums = [];
 		while (($row = $statement->fetch())){
 			$aquarium = new Aquarium();
-			$aquarium->id_aquarium = $row['id_aquarium'];
-			$aquarium->name_aquarium = $row['name_aquarium'];
-			$aquarium->id_user = $row['id_user'];
+			$aquarium->set_id_aquarium($row['id_aquarium']);
+			$aquarium->set_name_aquarium($row['name_aquarium']);
+			$aquarium->set_id_user($row['id_user']);
 			$aquariums[] = $aquarium;
 		}
 

@@ -20,7 +20,7 @@
                 <?php //Liste des aquariums
                     foreach ($aquariums as $aquarium) { ?>
                     <p class="name_aquarium_pop_up">
-                        <?="• ".htmlspecialchars($aquarium->name_aquarium);?>
+                        <?="• ".htmlspecialchars($aquarium->get_name_aquarium());?>
                     </p>                         
                 <?php } ?>
 

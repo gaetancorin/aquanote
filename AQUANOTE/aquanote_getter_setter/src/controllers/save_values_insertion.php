@@ -6,7 +6,7 @@ require_once('src/models/type_analysis.php');
 require_once('src/models/value_type_analysis.php');
 require_once('src/models/comment_analysis.php');
 
-function saveValuesInsertion($errorMessage = null){
+function saveValuesInsertion(array $inputs){
 
     if (!isset($_SESSION)){
         session_start();
@@ -20,17 +20,19 @@ function saveValuesInsertion($errorMessage = null){
 
 
     // récupération des inputs du formulaire insert_inputs
-    $inputs = $_POST;
+    $inputs = $inputs;
 
     // connection à la bdd des modèles
     $DatabaseConnection = new DatabaseConnection();
     $typeAnalysisRepository = new TypeAnalysisRepository();
-	$typeAnalysisRepository->connection = $DatabaseConnection;
+	$typeAnalysisRepository->set_connection($DatabaseConnection);
     $valueTypeAnalysisRepository = new ValueTypeAnalysisRepository();
-    $valueTypeAnalysisRepository->connection = $DatabaseConnection;
+    $valueTypeAnalysisRepository->set_connection($DatabaseConnection);
     $commentAnalysisRepository = new CommentAnalysisRepository();
-    $commentAnalysisRepository->connection = $DatabaseConnection;
+    $commentAnalysisRepository->set_connection($DatabaseConnection);
 
+
+//////////////////////////////////////////////////
     // Vérification et Récupération date
     foreach($inputs as $key => $value){
         // Change les valeurs int en string
@@ -41,7 +43,7 @@ function saveValuesInsertion($errorMessage = null){
                 throw new Exception('Vous devez insérez une date pour ajouter des données');
             }
             $date = $value;
-            try{
+            try{    // vérification de la date
                 list($year, $month, $day) = explode("-", $date);
                 if (checkdate($month, $day, $year) === false){
                     throw new Exception();
@@ -54,6 +56,7 @@ function saveValuesInsertion($errorMessage = null){
     }
 
 
+////////////////////////////////////////////////////////
     // modification de la valeur des types d'analyses
     if($date){
 
@@ -71,8 +74,8 @@ function saveValuesInsertion($errorMessage = null){
             }
             
             // vérifie que le type d'analyse appartient à l'aquarium connecté
-            if($type_analysis->id_aquarium !== $id_aquarium_connected){
-                throw new Exception('Le champ "'.$type_analysis->name_type_analysis.'" n\'appartient pas à votre aquarium');
+            if($type_analysis->get_id_aquarium() !== $id_aquarium_connected){
+                throw new Exception('Le champ "'.$type_analysis->get_name_type_analysis().'" n\'appartient pas à votre aquarium');
             }
             
             // Si type_analysis est vide, supprime la valeur du type d'analyses à la date
@@ -98,6 +101,7 @@ function saveValuesInsertion($errorMessage = null){
     }
     }
 
+//////////////////////////////////////////////////////////
     // modification des commentaires d'analyses
     if($date){
 

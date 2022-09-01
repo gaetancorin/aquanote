@@ -10,6 +10,7 @@
     
 ?>
 
+
 <?php ob_start(); ?>
 
 <!----  VALUES_INSERTION  ---->
@@ -65,24 +66,24 @@
 
                 <input type="number" max="999" min="0.1" step="0.1"
 
-                <?php echo htmlspecialchars('id=type_analysis_'.$type_analysis->id_type_analysis);?>
+                <?php echo htmlspecialchars('id=type_analysis_'.$type_analysis->get_id_type_analysis());?>
 
-                <?php echo htmlspecialchars('name=type_analysis_'.$type_analysis->id_type_analysis);?>
+                <?php echo htmlspecialchars('name=type_analysis_'.$type_analysis->get_id_type_analysis());?>
                 
-                <?php if($type_analysis->value_type_analysis === null){ 
+                <?php if($type_analysis->get_value_type_analysis() === null){ 
                     echo 'value=""';
-                 } elseif($type_analysis->value_type_analysis !== null){ 
+                 } elseif($type_analysis->get_value_type_analysis() !== null){ 
                     
-                     echo htmlspecialchars('value='.$type_analysis->value_type_analysis->value_type_analysis);
-                    //Va chercher l'objet ValueTypeAnalysis assigné un attribut
-                    //d'objet TypeAnalysis
+                     echo htmlspecialchars('value='.$type_analysis->get_value_type_analysis()->get_value_type_analysis());
+                    //Va chercher l'instance ValueTypeAnalysis dans l'attribut de type_analysis
+                    //puis dans l'instance value_type_analysis récupère l'attribut value_type_analysis 
                     }  ?>
 
                 readChangement>
                 <label class="label_wrap_data" 
-                <?php echo htmlspecialchars('for=type_analysis_'.$type_analysis->id_type_analysis);?>>
+                <?php echo htmlspecialchars('for=type_analysis_'.$type_analysis->get_id_type_analysis());?>>
                 
-                    <?= htmlspecialchars($type_analysis->name_type_analysis);?>
+                    <?= htmlspecialchars($type_analysis->get_name_type_analysis());?>
                 </label>           
             </div>
                      
@@ -101,7 +102,7 @@
         <?php if($comment_analysis === null){ 
                     echo 'value=""';
                  } elseif($comment_analysis !== null){ ?>
-                    value="<?= htmlspecialchars($comment_analysis->comment_analysis);?>"
+                    value="<?= htmlspecialchars($comment_analysis->get_comment_analysis());?>"
                 <?php } ?>
         
         readChangement>

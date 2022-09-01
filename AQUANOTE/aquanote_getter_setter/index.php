@@ -40,7 +40,7 @@ try {
 			valuesInsertion();
     	}
 		elseif ($_GET['action'] === 'saveValuesInsertion') {
-			saveValuesInsertion();
+			saveValuesInsertion($_POST);
     	}
 
 		elseif ($_GET['action'] === 'dataCharts') {

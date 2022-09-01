@@ -16,7 +16,7 @@ function dataCharts($errorMessage = null){
     // pour template header_app_asides // récupération de la liste des aquariums 
     $DatabaseConnection = new DatabaseConnection();
     $aquariumRepository = new AquariumRepository();
-    $aquariumRepository->connection = $DatabaseConnection;
+    $aquariumRepository->set_connection($DatabaseConnection);
     try{
         $aquariums = $aquariumRepository->getAquariumsByIdUser($id_user);
         if ($aquariums === []){throw new Exception();}

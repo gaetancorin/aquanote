@@ -3,17 +3,52 @@ require_once('src/lib/database.php');
 require_once('src/models/value_type_analysis.php');
 
 class TypeAnalysis{
-	public string $id_type_analysis;
-	public string $name_type_analysis;
-	public string $tutorial_how_testing_type_analysis;
-	public string $id_aquarium;
+	private string $id_type_analysis;
+	private string $name_type_analysis;
+	private string $tutorial_how_testing_type_analysis;
+	private string $id_aquarium;
 
-	public ?ValueTypeAnalysis $value_type_analysis;
+	private ?ValueTypeAnalysis $value_type_analysis;
+
+	public function get_id_type_analysis() :string{
+		return $this->id_type_analysis;
+	}
+	public function get_name_type_analysis() :string{
+		return $this->name_type_analysis;
+	}
+	public function get_tutorial_how_testing_type_analysis() :string{
+		return $this->tutorial_how_testing_type_analysis;
+	}
+	public function get_id_aquarium() :string{
+		return $this->id_aquarium;
+	}
+	public function get_value_type_analysis() :?ValueTypeAnalysis{
+		return $this->value_type_analysis;
+	}
+	public function set_id_type_analysis(string $id_type_analysis){
+		$this->id_type_analysis = $id_type_analysis;
+	}
+	public function set_name_type_analysis(string $name_type_analysis){
+		$this->name_type_analysis = $name_type_analysis;
+	}
+	public function set_tutorial_how_testing_type_analysis(string $tutorial_how_testing_type_analysis){
+		$this->tutorial_how_testing_type_analysis = $tutorial_how_testing_type_analysis;
+	}
+	public function set_id_aquarium(string $id_aquarium){
+		$this->id_aquarium = $id_aquarium;
+	}
+	public function set_value_type_analysis(?ValueTypeAnalysis $value_type_analysis){
+		$this->value_type_analysis = $value_type_analysis;
+	}
 }
 
 class TypeAnalysisRepository{
 
-	public DatabaseConnection $connection;
+	private DatabaseConnection $connection;
+	
+	public function set_connection(DatabaseConnection $DatabaseConnection){
+		$this->connection = $DatabaseConnection;
+	}
 	
 	public function createTypeAnalysis(string $name_type_analysis, string $tutorial_how_testing_type_analysis, string $id_aquarium) 
 	{
@@ -62,10 +97,10 @@ class TypeAnalysisRepository{
         }
 
 		$type_analysis = new TypeAnalysis();
-		$type_analysis->id_type_analysis = $row['id_type_analysis'];
-		$type_analysis->name_type_analysis = $row['name_type_analysis'];
-		$type_analysis->tutorial_how_testing_type_analysis = $row['tutorial_how_testing_type_analysis'];
-		$type_analysis->id_aquarium = $row['id_aquarium'];
+		$type_analysis->set_id_type_analysis($row['id_type_analysis']);
+		$type_analysis->set_name_type_analysis($row['name_type_analysis']);
+		$type_analysis->set_tutorial_how_testing_type_analysis($row['tutorial_how_testing_type_analysis']);
+		$type_analysis->set_id_aquarium($row['id_aquarium']);
 
         return $type_analysis;
     }
@@ -84,10 +119,10 @@ class TypeAnalysisRepository{
 		$types_analysis = [];
 		while (($row = $statement->fetch())){
 			$type_analysis = new TypeAnalysis();
-			$type_analysis->id_type_analysis = $row['id_type_analysis'];
-			$type_analysis->name_type_analysis = $row['name_type_analysis'];
-			$type_analysis->tutorial_how_testing_type_analysis = $row['tutorial_how_testing_type_analysis'];
-			$type_analysis->id_aquarium = $row['id_aquarium'];
+			$type_analysis->set_id_type_analysis($row['id_type_analysis']);
+			$type_analysis->set_name_type_analysis($row['name_type_analysis']);
+			$type_analysis->set_tutorial_how_testing_type_analysis($row['tutorial_how_testing_type_analysis']);
+			$type_analysis->set_id_aquarium($row['id_aquarium']);
 			$types_analysis[] = $type_analysis;
 		}
 
@@ -98,7 +133,7 @@ class TypeAnalysisRepository{
 	// récupère uniquement sur la date donnée les types d'analyses avec sa value_type_analysis en attribut
 	{
 		$valueTypeAnalysisRepository = new ValueTypeAnalysisRepository();
-		$valueTypeAnalysisRepository->connection = $this->connection;
+		$valueTypeAnalysisRepository->set_connection($this->connection); 
 
         $statement = $this->connection->getConnection()->prepare(
             "SELECT 
@@ -111,14 +146,14 @@ class TypeAnalysisRepository{
 		$types_analysis = [];
 		while (($row = $statement->fetch())){
 			$type_analysis = new TypeAnalysis();
-			$type_analysis->id_type_analysis = $row['id_type_analysis'];
-			$type_analysis->name_type_analysis = $row['name_type_analysis'];
-			$type_analysis->tutorial_how_testing_type_analysis = $row['tutorial_how_testing_type_analysis'];
-			$type_analysis->id_aquarium = $row['id_aquarium'];
+			$type_analysis->set_id_type_analysis($row['id_type_analysis']);
+			$type_analysis->set_name_type_analysis($row['name_type_analysis']);
+			$type_analysis->set_tutorial_how_testing_type_analysis($row['tutorial_how_testing_type_analysis']);
+			$type_analysis->set_id_aquarium($row['id_aquarium']);
 
-			$value_type_analysis = $valueTypeAnalysisRepository->getValueTypeAnalysisByDateAnalysisAndIdTypeAnalysis($date_analysis, $type_analysis->id_type_analysis);
+			$value_type_analysis = $valueTypeAnalysisRepository->getValueTypeAnalysisByDateAnalysisAndIdTypeAnalysis($date_analysis, $type_analysis->get_id_type_analysis());
 			
-			$type_analysis->value_type_analysis = $value_type_analysis;
+			$type_analysis->set_value_type_analysis($value_type_analysis);
 
 			$types_analysis[] = $type_analysis;
 		}
