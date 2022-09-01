@@ -25,7 +25,7 @@ function createUser(array $input){
 	elseif ( strlen($password_user) < 8 ) {
 		throw new Exception('le Mot de Passe est trop court');
 	}
-	elseif ( strlen($name_aquarium) < 0 ) {
+	elseif ( strlen($name_aquarium) < 1 ) {
 		throw new Exception('le Nom de l\'Aquarium est trop court');
 	}
 
