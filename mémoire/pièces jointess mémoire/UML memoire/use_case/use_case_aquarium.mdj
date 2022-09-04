@@ -6833,7 +6833,7 @@
 											"top": 60,
 											"width": 240,
 											"height": 15,
-											"text": "choisir la date de relevé à afficher"
+											"text": "afficher valeurs d'analyses"
 										},
 										{
 											"_type": "LabelView",
@@ -6869,7 +6869,7 @@
 									"font": "Arial;15;0",
 									"left": 484,
 									"top": 53,
-									"width": 250.94482421875,
+									"width": 250,
 									"height": 27,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF9E2RRhKv4ErQ="
@@ -11442,7 +11442,7 @@
 											"visible": false,
 											"fillColor": "#ffffdf",
 											"font": "Arial;15;0",
-											"left": -32,
+											"left": 16,
 											"top": 816,
 											"height": 15
 										},
@@ -11454,11 +11454,11 @@
 											},
 											"fillColor": "#ffffdf",
 											"font": "Arial;15;1",
-											"left": 467.5,
+											"left": 480.5,
 											"top": 636,
-											"width": 253,
+											"width": 200,
 											"height": 15,
-											"text": "selectionner un aquarium à afficher"
+											"text": "afficher aquarium"
 										},
 										{
 											"_type": "LabelView",
@@ -11469,7 +11469,7 @@
 											"visible": false,
 											"fillColor": "#ffffdf",
 											"font": "Arial;15;0",
-											"left": -32,
+											"left": 16,
 											"top": 816,
 											"width": 93.3544921875,
 											"height": 15,
@@ -11484,7 +11484,7 @@
 											"visible": false,
 											"fillColor": "#ffffdf",
 											"font": "Arial;15;0",
-											"left": -32,
+											"left": 16,
 											"top": 816,
 											"height": 15,
 											"horizontalAlignment": 1
@@ -11492,9 +11492,9 @@
 									],
 									"fillColor": "#ffffdf",
 									"font": "Arial;15;0",
-									"left": 462.5,
+									"left": 475.5,
 									"top": 629,
-									"width": 263.4033203125,
+									"width": 210,
 									"height": 27,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF9ACPhL+RHgEc="
@@ -11521,7 +11521,6 @@
 									"visible": false,
 									"fillColor": "#ffffdf",
 									"font": "Arial;15;0",
-									"left": -24,
 									"top": 392,
 									"width": 10,
 									"height": 10
@@ -11538,7 +11537,6 @@
 									"visible": false,
 									"fillColor": "#ffffdf",
 									"font": "Arial;15;0",
-									"left": -24,
 									"top": 392,
 									"width": 10,
 									"height": 10
@@ -11555,7 +11553,6 @@
 									"visible": false,
 									"fillColor": "#ffffdf",
 									"font": "Arial;15;0",
-									"left": -24,
 									"top": 392,
 									"width": 10,
 									"height": 10
@@ -11572,7 +11569,6 @@
 									"visible": false,
 									"fillColor": "#ffffdf",
 									"font": "Arial;15;0",
-									"left": -24,
 									"top": 392,
 									"width": 10,
 									"height": 10
@@ -11589,7 +11585,6 @@
 									"visible": false,
 									"fillColor": "#ffffdf",
 									"font": "Arial;15;0",
-									"left": -24,
 									"top": 392,
 									"width": 10,
 									"height": 10
@@ -11598,9 +11593,9 @@
 							"fillColor": "#ffffdf",
 							"font": "Arial;15;0",
 							"containerChangeable": true,
-							"left": 408,
+							"left": 432,
 							"top": 624,
-							"width": 372,
+							"width": 297,
 							"height": 38,
 							"nameCompartment": {
 								"$ref": "AAAAAAF9ACPhL+RGpTQ="
@@ -12774,7 +12769,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8/zEu3GvkChc="
 					},
-					"name": "selectionner un aquarium à afficher"
+					"name": "afficher aquarium"
 				},
 				{
 					"_type": "UMLUseCase",
@@ -12965,7 +12960,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8/zEu3GvkChc="
 					},
-					"name": "choisir la date de relevé à afficher",
+					"name": "afficher valeurs d'analyses",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
