@@ -45,9 +45,13 @@
                 <li><a class="a_aside_hamb activator_pop_up_delete_aquarium">
                         <img class="img_fish_hamb" src="src/lib/img/poisson_burger_4.svg">
                         Supprimer un aquarium       
+                    </a></li>
+                <li><a class="a_aside_hamb activator_pop_up_create_type_analysis">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
+                    Créer un type d'analyse       
                     </a></li>                
                 <li><a class="a_aside_hamb activator_pop_up_logout_user">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
+                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_2.svg">
                         Déconnexion       
                     </a></li>   
             </ul>
@@ -98,10 +102,16 @@
                     <img class="img_fish_hamb" src="src/lib/img/poisson_burger_4.svg">
                     Supprimer un aquarium       
                 </a>
+            </li> 
+            <li>
+                <a class="a_aside_hamb activator_pop_up_create_type_analysis">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
+                    Créer un type d'analyse     
+                </a>
             </li>                
             <li>
                 <a class="a_aside_hamb activator_pop_up_logout_user">
-                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_2.svg">
                     Déconnexion       
                 </a>
             </li>

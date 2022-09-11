@@ -20,6 +20,13 @@ let button_arrow_delete_aqua = document.querySelector('#button_arrow_delete_aqua
 button_arrow_delete_aqua.addEventListener('click', (event)=>{
     background_delete_aqua.style.display = 'none';
 });
+//  create_type_analysis
+let background_create_type_analysis = document.querySelector('.background_create_type_analysis');
+let button_arrow_create_type_analysis = document.querySelector('#button_arrow_create_type_analysis');
+
+button_arrow_create_type_analysis.addEventListener('click', (event)=>{
+    background_create_type_analysis.style.display = 'none';
+});
 //  logout_user
 let background_logout_user = document.querySelector('.background_logout_user');
 let button_arrow_logout_user = document.querySelector('#button_arrow_logout_user');
@@ -64,6 +71,15 @@ activator_pop_up_delete_aquarium.forEach(item=>
         hamburger_checkbox.checked = false;
     })
 );
+// create_type_analysis
+let activator_pop_up_create_type_analysis = document.querySelectorAll('.activator_pop_up_create_type_analysis');
+
+activator_pop_up_create_type_analysis.forEach(item=>
+    item.addEventListener('click', (event)=>{
+        background_create_type_analysis.style.display = 'flex';
+        hamburger_checkbox.checked = false;
+    })
+);
 // logout_user
 let activator_pop_up_logout_user = document.querySelectorAll('.activator_pop_up_logout_user');
 
@@ -73,9 +89,14 @@ activator_pop_up_logout_user.forEach(item=>
         hamburger_checkbox.checked = false;
     })
 );
+
+///////////////////////////////////////////////////////////
+//AUTRE JAVASCRIPT
+
 // bouton logout pour se déconnecter(les autres pop-up fonctionnent en formulaire)
 let button_logout_user = document.querySelector('#button_logout_user');
 
 button_logout_user.addEventListener('click', (event)=>{
     window.location = 'index.php?action=logoutUser';
 });
+

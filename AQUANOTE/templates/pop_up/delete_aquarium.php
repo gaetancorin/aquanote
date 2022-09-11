@@ -16,13 +16,14 @@
         <div class="texts_pop_up">
             <div id="texts_pop_up_div_delete_aqua">
                 <p>Nom des aquariums:</p>
-
-                <?php //Liste des aquariums
-                    foreach ($aquariums as $aquarium) { ?>
-                    <p class="name_aquarium_pop_up">
-                        <?="• ".htmlspecialchars($aquarium->get_name_aquarium());?>
-                    </p>                         
-                <?php } ?>
+                <div id="div_text_list">
+                    <?php //Liste des aquariums
+                        foreach ($aquariums as $aquarium) { ?>
+                        <p class="text_list_pop_up">
+                            <?="• ".htmlspecialchars($aquarium->get_name_aquarium());?>
+                        </p>                         
+                    <?php } ?>
+                </div>
 
             </div>
         </div>
