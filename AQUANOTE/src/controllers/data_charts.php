@@ -1,6 +1,10 @@
 <?php
 // controllers/data_charts.php
 
+require_once('src/lib/database.php');
+require_once('src/models/aquarium.php');
+require_once('src/models/type_analysis.php');
+
 function dataCharts($errorMessage = null){
 
     if (!isset($_SESSION)){
@@ -26,7 +30,10 @@ function dataCharts($errorMessage = null){
     // pour template header_app_asides // récupération de l'aquarium connecté par l'id 
     $aquarium_connected = $aquariumRepository->getAquariumById($id_aquarium_connected);
 
-
+    // pour pop_up create_type_analysis et pop_up delete_type_analysis // récupération des types d'analyses de l'aquarium connecté
+    $typeAnalysisRepository = new TypeAnalysisRepository();
+    $typeAnalysisRepository->set_database($database);
+    $types_analysis = $typeAnalysisRepository->getTypesAnalisysByIdAquarium($id_aquarium_connected); 
 
     //////////////////////////////////////////////////////////////:
 

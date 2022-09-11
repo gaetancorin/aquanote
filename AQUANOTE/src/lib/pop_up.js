@@ -1,4 +1,18 @@
 ////// FLECHE RETOUR SUR POP_UP///////
+//  create_type_analysis
+let background_create_type_analysis = document.querySelector('.background_create_type_analysis');
+let button_arrow_create_type_analysis = document.querySelector('#button_arrow_create_type_analysis');
+
+button_arrow_create_type_analysis.addEventListener('click', (event)=>{
+    background_create_type_analysis.style.display = 'none';
+});
+//  delete_type_analysis
+let background_delete_type_analysis = document.querySelector('.background_delete_type_analysis');
+let button_arrow_delete_type_analysis = document.querySelector('#button_arrow_delete_type_analysis');
+
+button_arrow_delete_type_analysis.addEventListener('click', (event)=>{
+    background_delete_type_analysis.style.display = 'none';
+});
 //  create_aquarium
 let background_create_aqua = document.querySelector('.background_create_aqua');
 let button_arrow_create_aqua = document.querySelector('#button_arrow_create_aqua');
@@ -20,13 +34,6 @@ let button_arrow_delete_aqua = document.querySelector('#button_arrow_delete_aqua
 button_arrow_delete_aqua.addEventListener('click', (event)=>{
     background_delete_aqua.style.display = 'none';
 });
-//  create_type_analysis
-let background_create_type_analysis = document.querySelector('.background_create_type_analysis');
-let button_arrow_create_type_analysis = document.querySelector('#button_arrow_create_type_analysis');
-
-button_arrow_create_type_analysis.addEventListener('click', (event)=>{
-    background_create_type_analysis.style.display = 'none';
-});
 //  logout_user
 let background_logout_user = document.querySelector('.background_logout_user');
 let button_arrow_logout_user = document.querySelector('#button_arrow_logout_user');
@@ -44,6 +51,24 @@ button_back_logout_user.addEventListener('click', (event)=>{
 //burger checkbox
 let hamburger_checkbox = document.querySelector('#hamburger_checkbox');
 
+// create_type_analysis
+let activator_pop_up_create_type_analysis = document.querySelectorAll('.activator_pop_up_create_type_analysis');
+
+activator_pop_up_create_type_analysis.forEach(item=>
+    item.addEventListener('click', (event)=>{
+        background_create_type_analysis.style.display = 'flex';
+        hamburger_checkbox.checked = false;
+    })
+);
+// create_type_analysis
+let activator_pop_up_delete_type_analysis = document.querySelectorAll('.activator_pop_up_delete_type_analysis');
+
+activator_pop_up_delete_type_analysis.forEach(item=>
+    item.addEventListener('click', (event)=>{
+        background_delete_type_analysis.style.display = 'flex';
+        hamburger_checkbox.checked = false;
+    })
+);
 // create_aquarium
 let activator_pop_up_create_aquarium = document.querySelectorAll('.activator_pop_up_create_aquarium');
 
@@ -68,15 +93,6 @@ let activator_pop_up_delete_aquarium = document.querySelectorAll('.activator_pop
 activator_pop_up_delete_aquarium.forEach(item=>
     item.addEventListener('click', (event)=>{
         background_delete_aqua.style.display = 'flex';
-        hamburger_checkbox.checked = false;
-    })
-);
-// create_type_analysis
-let activator_pop_up_create_type_analysis = document.querySelectorAll('.activator_pop_up_create_type_analysis');
-
-activator_pop_up_create_type_analysis.forEach(item=>
-    item.addEventListener('click', (event)=>{
-        background_create_type_analysis.style.display = 'flex';
         hamburger_checkbox.checked = false;
     })
 );

@@ -32,6 +32,10 @@ function dataTable($errorMessage = null){
     // pour template header_app_asides // récupération de l'aquarium connecté par l'id 
     $aquarium_connected = $aquariumRepository->getAquariumById($id_aquarium_connected);
 
+    // pour pop_up create_type_analysis et pop_up delete_type_analysis // récupération des types d'analyses de l'aquarium connecté
+    $typeAnalysisRepository = new TypeAnalysisRepository();
+    $typeAnalysisRepository->set_database($database);
+    $types_analysis = $typeAnalysisRepository->getTypesAnalisysByIdAquarium($id_aquarium_connected); 
 
 
     //////////////////////////////////////////////////////////////:
@@ -53,8 +57,6 @@ function dataTable($errorMessage = null){
     // Si le user n'as encore rentré aucune donnée(et donc aucune date), on récupère les types d'analyse pour les itérer séparement
     if($dateValuesSelectorRepository->get_dates_where_are_values() === [])
     {
-        $typeAnalysisRepository = new TypeAnalysisRepository();
-        $typeAnalysisRepository->set_database($database);
         $arrayTypesAnalysisObject = $typeAnalysisRepository->getTypesAnalisysByIdAquarium($id_aquarium_connected);
     }
 

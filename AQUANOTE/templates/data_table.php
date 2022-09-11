@@ -115,6 +115,8 @@ if($dateValuesSelectorRepository->get_dates_where_are_values() === []) { ?>
 
 
 <!-- popup -->
+<?php require('templates/pop_up/create_type_analysis.php'); ?>
+<?php require('templates/pop_up/delete_type_analysis.php'); ?>
 <?php require('templates/pop_up/create_aquarium.php'); ?>
 <?php require('templates/pop_up/change_name_aquarium.php'); ?>
 <?php require('templates/pop_up/delete_aquarium.php'); ?>

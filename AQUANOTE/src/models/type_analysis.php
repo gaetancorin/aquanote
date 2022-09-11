@@ -160,5 +160,16 @@ class TypeAnalysisRepository{
 
         return $types_analysis;
     }
+
+	public function deleteTypeAnalysisById(string $id_type_analysis)
+	{
+        $statement = $this->database->get_connection()->prepare(
+			'DELETE FROM 
+				types_analysis
+			WHERE
+				id_type_analysis = ?'
+        );
+        $statement->execute([$id_type_analysis]);
+    }
 	
 }

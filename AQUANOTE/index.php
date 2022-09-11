@@ -15,10 +15,11 @@ require_once('src/controllers/data_table.php');
 require_once('src/controllers/save_values_insertion.php');
 //pop_up
 require_once('src/controllers/change_aqua_connected.php');
+require_once('src/controllers/create_type_analysis.php');
+require_once('src/controllers/delete_type_analysis.php');
 require_once('src/controllers/create_new_aqua.php');
 require_once('src/controllers/change_name_aqua.php');
 require_once('src/controllers/delete_aqua.php');
-require_once('src/controllers/create_type_analysis.php');
 require_once('src/controllers/logout_user.php');
 
 try {
@@ -54,6 +55,12 @@ try {
 		elseif ($_GET['action'] === 'changeAquaConnected') {
 			changeAquaConnected();
     	}
+		elseif ($_GET['action'] === 'createTypeAnalysis') {
+			createTypeAnalysis($_POST);
+    	}
+		elseif ($_GET['action'] === 'deleteTypeAnalysis') {
+			deleteTypeAnalysis($_POST);
+    	}
 		elseif ($_GET['action'] === 'createNewAqua') {
 			createNewAqua($_POST);
     	}
@@ -62,9 +69,6 @@ try {
     	}
 		elseif ($_GET['action'] === 'deleteAqua') {
 			deleteAqua($_POST);
-    	}
-		elseif ($_GET['action'] === 'createTypeAnalysis') {
-			createTypeAnalysis($_POST);
     	}
 		elseif ($_GET['action'] === 'logoutUser') {
 			logoutUser();
@@ -115,6 +119,12 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 	if (strpos($UrlAfterControllers, 'change_aqua_connected') !== false){
 		valuesInsertion($errorMessage);
 	}
+	if (strpos($UrlAfterControllers, 'create_type_analysis') !== false){
+		valuesInsertion($errorMessage);
+	}
+	if (strpos($UrlAfterControllers, 'delete_type_analysis') !== false){
+		valuesInsertion($errorMessage);
+	}
 	if (strpos($UrlAfterControllers, 'create_new_aqua') !== false){
 		valuesInsertion($errorMessage);
 	}
@@ -122,9 +132,6 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 		valuesInsertion($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'delete_aqua') !== false){
-		valuesInsertion($errorMessage);
-	}
-	if (strpos($UrlAfterControllers, 'create_type_analysis') !== false){
 		valuesInsertion($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'logout_user') !== false){

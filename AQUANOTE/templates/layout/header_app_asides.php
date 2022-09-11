@@ -33,25 +33,29 @@
                     </li>
 
                 <?php } ?>
-               
+ 
+                <li><a class="a_aside_hamb activator_pop_up_create_type_analysis">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_6.svg">
+                    Créer un type d'analyse       
+                    </a></li>
+                <li><a class="a_aside_hamb activator_pop_up_delete_type_analysis">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_5.svg">
+                    Supprimer un type d'analyse       
+                    </a></li>
                 <li><a class="a_aside_hamb activator_pop_up_create_aquarium">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_6.svg">
+                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_4.svg">
                         Créer nouvel aquarium      
                     </a></li>                
                 <li><a class="a_aside_hamb activator_pop_up_change_name_aquarium">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_5.svg">
+                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
                         Changer nom de l'aquarium       
                     </a></li>                
                 <li><a class="a_aside_hamb activator_pop_up_delete_aquarium">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_4.svg">
+                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_2.svg">
                         Supprimer un aquarium       
-                    </a></li>
-                <li><a class="a_aside_hamb activator_pop_up_create_type_analysis">
-                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
-                    Créer un type d'analyse       
                     </a></li>                
                 <li><a class="a_aside_hamb activator_pop_up_logout_user">
-                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_2.svg">
+                        <img class="img_fish_hamb" src="src/lib/img/poisson_burger_1.svg">
                         Déconnexion       
                     </a></li>   
             </ul>
@@ -84,34 +88,39 @@
 
                     <?php } ?>
                     
-           
+            <li>
+                <a class="a_aside_hamb activator_pop_up_create_type_analysis">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_6.svg">
+                    Créer un type d'analyse     
+                </a>
+            </li>
+            <li>
+                <a class="a_aside_hamb activator_pop_up_delete_type_analysis">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_5.svg">
+                    Supprimer un type d'analyse     
+                </a>
+            </li> 
             <li>
                 <a class="a_aside_hamb activator_pop_up_create_aquarium">
-                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_6.svg">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_4.svg">
                     Créer nouvel aquarium      
                 </a>
             </li>
             <li>
                 <a class="a_aside_hamb activator_pop_up_change_name_aquarium">
-                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_5.svg">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
                     Changer nom de l'aquarium       
                 </a>
             </li>                
             <li>
                 <a class="a_aside_hamb activator_pop_up_delete_aquarium">
-                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_4.svg">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_2.svg">
                     Supprimer un aquarium       
-                </a>
-            </li> 
-            <li>
-                <a class="a_aside_hamb activator_pop_up_create_type_analysis">
-                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_3.svg">
-                    Créer un type d'analyse     
                 </a>
             </li>                
             <li>
                 <a class="a_aside_hamb activator_pop_up_logout_user">
-                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_2.svg">
+                    <img class="img_fish_hamb" src="src/lib/img/poisson_burger_1.svg">
                     Déconnexion       
                 </a>
             </li>
