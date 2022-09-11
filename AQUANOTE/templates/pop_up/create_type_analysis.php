@@ -34,7 +34,7 @@
             <div class="inputs_form_pop_up">
                 <div class="input_pop_up">
                     <label for="name_new_type_analysis">Nom du nouveau type d'analyse</label>
-                    <input maxlength="25" minlength="1" type="text" id="name_new_type_analysis" name='name_new_aquarium' value="" required>
+                    <input maxlength="25" minlength="1" type="text" id="name_new_type_analysis" name='name_new_type_analysis' value="" required>
 
                     <label for="tutorial_type_analysis">tutoriel du type d'analyse</label>
                     <textarea rows="3" id="tutorial_type_analysis" name='tutorial_type_analysis'></textarea>

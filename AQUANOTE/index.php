@@ -18,6 +18,7 @@ require_once('src/controllers/change_aqua_connected.php');
 require_once('src/controllers/create_new_aqua.php');
 require_once('src/controllers/change_name_aqua.php');
 require_once('src/controllers/delete_aqua.php');
+require_once('src/controllers/create_type_analysis.php');
 require_once('src/controllers/logout_user.php');
 
 try {
@@ -61,6 +62,9 @@ try {
     	}
 		elseif ($_GET['action'] === 'deleteAqua') {
 			deleteAqua($_POST);
+    	}
+		elseif ($_GET['action'] === 'createTypeAnalysis') {
+			createTypeAnalysis($_POST);
     	}
 		elseif ($_GET['action'] === 'logoutUser') {
 			logoutUser();
@@ -118,6 +122,9 @@ catch (Exception $exception) { // Catch toutes les exceptions...
 		valuesInsertion($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'delete_aqua') !== false){
+		valuesInsertion($errorMessage);
+	}
+	if (strpos($UrlAfterControllers, 'create_type_analysis') !== false){
 		valuesInsertion($errorMessage);
 	}
 	if (strpos($UrlAfterControllers, 'logout_user') !== false){
