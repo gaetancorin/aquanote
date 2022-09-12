@@ -136,11 +136,11 @@
                 <p class="text_titre_top_pub">Liens pratiques</p>
             </div>
 
-            <a class="lien_pub" href="https://www.amazon.fr/">
+            <a class="lien_pub" href="https://amzn.to/3L72I2L" target="_blank">
                 <img class="img_1_aside_pub" src="src/lib/img/image_malette_1_transparent.png" alt="mallette de test a goutte JBl lien Amazon">
             </a>
 
-            <a  class="lien_pub" href="https://www.amazon.fr/">
+            <a  class="lien_pub" href="https://amzn.to/3DfCMQI" target="_blank">
                 <img class="img_2_aside_pub" src="src/lib/img/image_malette_2_transparent.png" alt="mallette de test a goutte JBl lien Amazon">
             </a>
 

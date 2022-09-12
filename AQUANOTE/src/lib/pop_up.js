@@ -60,7 +60,7 @@ activator_pop_up_create_type_analysis.forEach(item=>
         hamburger_checkbox.checked = false;
     })
 );
-// create_type_analysis
+// delete_type_analysis
 let activator_pop_up_delete_type_analysis = document.querySelectorAll('.activator_pop_up_delete_type_analysis');
 
 activator_pop_up_delete_type_analysis.forEach(item=>
